@@ -1,0 +1,109 @@
+/* Sticky Section Styles */
+
+/* Basic sticky section */
+.sticky-section {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white; /* Add background to prevent content showing through */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Sticky section with shadow on scroll */
+.sticky-section-with-shadow {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.sticky-section-with-shadow.scrolled {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky section with offset (useful when you have a fixed header) */
+.sticky-section-offset {
+  position: sticky;
+  top: 80px; /* Adjust based on your header height */
+  z-index: 10;
+  background-color: white;
+}
+
+/* Sticky section that sticks to bottom instead of top */
+.sticky-section-bottom {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  background-color: white;
+}
+
+/* Sticky section with responsive behavior */
+.sticky-section-responsive {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+}
+
+/* On larger screens, add offset for fixed header */
+@media (min-width: 1024px) {
+  .sticky-section-responsive {
+    top: 80px; /* Adjust based on your header height */
+  }
+}
+
+/* Sticky section with fade effect */
+.sticky-section-fade {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.sticky-section-fade.fade-out {
+  opacity: 0.95;
+}
+
+/* Sticky section with blur effect */
+.sticky-section-blur {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Sticky section for sidebar navigation */
+.sticky-sidebar {
+  position: sticky;
+  top: 20px;
+  z-index: 5;
+  height: fit-content;
+}
+
+/* Sticky section with smooth scroll behavior */
+.sticky-section-smooth {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  scroll-behavior: smooth;
+}
+
+/* Sticky section with custom breakpoint */
+.sticky-section-custom {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .sticky-section-custom {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
+

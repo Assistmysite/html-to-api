@@ -1,0 +1,4 @@
+{
+  "apiBase": "https://dev-ahm-wp-api:8890/wp-json",
+  "_comment": "Override apiBase via env WP_API_BASE if needed (e.g. production). Scripts read this file."
+}

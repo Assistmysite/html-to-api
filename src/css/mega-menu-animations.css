@@ -1,0 +1,321 @@
+/* Enhanced Mega Menu Animations */
+
+/* Base Container Styles */
+.mega-menu-container {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-width: 100vw;
+    max-height: calc(100vh - 120px); /* Account for header height and some padding */
+    contain: layout;
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+}
+
+/* Navigation Arrow Styles */
+.nav-arrow {
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.nav-item.active .nav-arrow {
+    transform: rotate(180deg);
+}
+
+/* Active Navigation Item Styles - Red Background */
+.nav-item {
+    position: relative;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-item.active {
+    background-color: #3c718f !important;
+    color: white !important;
+}
+
+.nav-item.active:hover {
+    background-color: #324158 !important;
+    color: white !important;
+}
+
+/* Ensure consistent spacing for all nav items */
+nav a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* Mega Menu Links - Cursor Pointer */
+.mega-menu-container a {
+    cursor: pointer;
+}
+
+.mega-menu-container a:hover {
+    cursor: pointer;
+}
+
+/* Enhanced Directional Animations */
+.mega-menu-container.animate-from-top {
+    animation: slideFromTop 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.mega-menu-container.animate-from-left {
+    animation: slideFromLeft 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.mega-menu-container.animate-from-right {
+    animation: slideFromRight 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Ensure animations reset properly */
+.mega-menu-container {
+    animation-fill-mode: none;
+}
+
+.mega-menu-container:not(.animate-from-top):not(.animate-from-left):not(.animate-from-right) {
+    animation: none;
+    transform: none;
+}
+
+/* Enhanced Keyframe Animations */
+@keyframes slideFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+        pointer-events: none;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+        pointer-events: none;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: all;
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+        pointer-events: none;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: all;
+    }
+}
+
+/* Content Animation Enhancements */
+.mega-menu-container.animate-from-top .mega-menu-panel > * {
+    animation: contentFadeIn 0.5s ease-out 0.1s both;
+}
+
+.mega-menu-container.animate-from-left .mega-menu-panel > * {
+    animation: contentSlideInLeft 0.4s ease-out 0.05s both;
+}
+
+.mega-menu-container.animate-from-right .mega-menu-panel > * {
+    animation: contentSlideInRight 0.4s ease-out 0.05s both;
+}
+
+/* Content Animation Keyframes */
+@keyframes contentFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes contentSlideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes contentSlideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Overlay for darkening main content */
+.mega-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mega-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Prevent scrolling when mega menu is active */
+body.mega-menu-active {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Ensure mega menu containers are above overlay */
+.mega-menu-container {
+    z-index: 50;
+}
+
+/* Custom scrollbar styling for mega menu */
+.mega-menu-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.mega-menu-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.mega-menu-container::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.mega-menu-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* For Firefox */
+.mega-menu-container {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure content padding for better scroll experience */
+.mega-menu-panel {
+    padding-bottom: 2rem;
+    position: relative;
+}
+
+/* Close Button Styles */
+.mega-menu-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #374151;
+    transition: all 0.2s ease;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mega-menu-close:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #1f2937;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mega-menu-close:active {
+    transform: scale(0.95);
+}
+
+/* Ensure close button is visible on mobile */
+@media (max-width: 768px) {
+    .mega-menu-close {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.125rem;
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .mega-menu-container {
+        max-height: calc(100vh - 80px); /* Smaller header on mobile */
+        left: 1rem;
+        right: 1rem;
+        top: calc(100% + 0.5rem);
+        border-radius: 0.5rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+}
+
+@media (max-width: 480px) {
+    .mega-menu-container {
+        max-height: calc(100vh - 60px);
+        left: 0.5rem;
+        right: 0.5rem;
+    }
+}
+
+/* Accessibility - Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .mega-menu-container,
+    .mega-menu-panel,
+    .nav-arrow,
+    .mega-menu-overlay {
+        animation: none !important;
+        transition: opacity 0.2s ease !important;
+    }
+    
+    .mega-menu-container.animate-from-top .mega-menu-panel > *,
+    .mega-menu-container.animate-from-left .mega-menu-panel > *,
+    .mega-menu-container.animate-from-right .mega-menu-panel > * {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "html-to-api",
+  "private": true,
+  "description": "Static HTML from WordPress REST API. Pinegrow + WP content.",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "build:blog": "node scripts/build-blog-list.js && node scripts/build-blog-singles.js",
+    "check-api": "node scripts/check-api.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,678 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        <title>Debitis sit dolorum aut</title>         
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <link href="../src/css/post-content-prose.css" rel="stylesheet" type="text/css">
+        <link href="../src/css/mega-menu-animations.css" rel="stylesheet" type="text/css">
+        <link href="../src/css/mobile-menu.css" rel="stylesheet" type="text/css">
+    </head>     
+    <body class="bg-img_light_gray-200">
+        <!-- Mega Menu Overlay -->
+        <header class="!bg-img_red-500 pt-2 sticky top-0 w-full z-200" data-pgc="top-nav">
+            <div class="mega-menu-overlay" id="megaMenuOverlay"></div>
+            <div class="mx-auto w-11/12" data-pg-name="Menu Top">
+                <div class="flex h-14 items-center justify-between w-full">
+                    <!-- Logo on the left -->
+                    <div class="shrink-0 z-3000">
+                        <a href="../startseite.html" class="bg-white border border-img_gray-100 border-opacity-30 flex items-center p-2 p-3 rounded-b-sm z-1000 md:pt-3"> <img src="../asset/images/graphics/img-logo-header-single.png" alt="RealEstate Pro Logo" class="md:w-36 w-25"> </a>
+                    </div>
+                    <!-- Right side: Navigation, Phone, and CTA Button -->
+                    <div class="flex items-center space-x-4 md:-mt-2.5">
+                        <!-- Desktop Navigation -->
+                        <nav class="hidden space-x-6 lg:flex">
+                            <a href="#" class="cursor-pointer flex font-medium items-center nav-item space-x-10 text-sm text-white transition-colors uppercase hover:text-img_red-950" data-megamenu="solutions">LÖSUNGEN <svg class="nav-arrow w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>                                     
+                                </svg></a>
+                            <a href="#" class="cursor-pointer flex font-medium items-center nav-item space-x-10 text-sm text-white transition-colors uppercase hover:text-img_red-950" data-megamenu="leistungen">
+                                Leistungen <svg class="nav-arrow w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg> </a>
+                            <a href="#" class="font-medium space-x-10 text-sm text-white transition-colors uppercase hover:text-img_red-950">OFFERS</a>
+                            <a href="#" class="font-medium space-x-10 text-sm text-white transition-colors uppercase hover:text-img_red-950">REFERENCEN</a>
+                        </nav>
+                        <!-- Phone Icon and CTA Button -->
+                        <div class="flex items-center space-x-4">
+                            <div class="block">
+                                <button type="button" id="mobileMenuBtn" class="p-2 text-white">
+                                    <svg class="h-9 stroke-white text-xs w-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <a href="#" class="bg-gray-700 font-light gap-2 hidden hover:bg-img_red-800 items-center md:flex md:w-40 px-3 py-2 rounded-md text-base text-white transition-colors"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 5.25V4.5Z" clip-rule="evenodd"/>
+                                </svg> <span class="font-medium text-xs uppercase">Zur Anfrage</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Overlay -->
+            <div id="mobileMenuOverlay" class="bg-black/50 duration-300 fixed inset-0 transition-opacity z-40"></div>
+            <!-- Mobile Menu Panel -->
+            <div id="mobileMenuPanel" class="!w-full sm:!w-[85%] lg:!w-1/3 bg-white fixed h-full right-0 shadow-2xl top-0 z-50">
+                <div class="flex flex-col h-full">
+                    <!-- Header with close button -->
+                    <div class="!bg-img_red-500 !h-10 border-b border-gray-200 flex items-center justify-end">
+                        <button id="mobileMenuClose" class="text-white hover:text-gray-200 p-2 rounded-xs">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Navigation Links -->
+                    <div class="flex-1 overflow-y-auto p-6">
+                        <nav class="space-y-8">
+                            <!-- Solutions Section -->
+                            <div>
+                                <h3 class="!text-img_red-500 border-b border-gray-200 font-semibold mb-4 pb-2 text-lg">Lösungen</h3>
+                                <div class="space-y-3">
+                                    <a href="../immobilien-projektentwicklung-marketing.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Entwickler</a>
+                                    <a href="../marketing-fuer-immobilienmakler.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Immobilienmakler</a>
+                                    <a href="../immobilienverkauf-privat.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Privatverkäufer</a>
+                                    <a href="../ferienwohnung-marketing.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Ferienhausbesitzer</a>
+                                </div>
+                            </div>
+                            <!-- Services Section -->
+                            <div>
+                                <h3 class="!text-img_red-500 border-b border-gray-200 font-semibold mb-4 pb-2 text-lg">Leistungen</h3>
+                                <div class="space-y-3">
+                                    <a href="../3d-immobilienvisualisierungen-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">3D Visualisierung</a>
+                                    <a href="../expose-immobilien-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Exposé Erstellung</a>
+                                    <a href="../architekturfotografie.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Architekturfotografie</a>
+                                    <a href="../immobilien-broschuere-formulare-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Broschüren & Flyer</a>
+                                    <a href="../drohnenaufnahmen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Drohnenaufnahmen</a>
+                                    <a href="../immobilien-webseite-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Webdesign</a>
+                                    <a href="../360-grad-rundgang-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">360° Rundgang</a>
+                                    <a href="../social-media-marketing-berlin.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Social Media</a>
+                                    <a href="../google-ads-agentur-berlin.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Google Ads</a>
+                                </div>
+                            </div>
+                            <!-- Additional Pages Section -->
+                            <div>
+                                <h3 class="!text-img_red-500 border-b border-gray-200 font-semibold mb-4 pb-2 text-lg">Weitere Seiten</h3>
+                                <div class="space-y-3">
+                                    <a href="../referenzen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Referenzen</a>
+                                    <a href="../blog.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Blog</a>
+                                    <a href="../uber-uns.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Über uns</a>
+                                    <a href="../kontakt.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Kontakt</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- Contact Section -->
+                    <div class="p-6 border-t border-gray-200 bg-gray-50">
+                        <h3 class="!text-img_red-500 font-semibold mb-4 text-lg">Kontakt</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <svg class="!text-img_red-500 h-5 mt-0.5 shrink-0 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span class="text-gray-700 text-sm">Konrad-Zuse-Straße 4, 12489 Berlin</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="!text-img_red-500 h-5 shrink-0 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.16 10.928c-.732.732-.732 1.919 0 2.651l4.261 4.261c.732.732 1.919.732 2.651 0l1.541-1.064a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V21a2 2 0 01-2 2h-1C9.716 23 2 15.284 2 7V6a2 2 0 012-2z"></path>
+                                </svg>
+                                <a href="../tel:+4930206091167" class="text-gray-700 hover:text-img_red-500 text-sm">+49 (0) 30 206 09 167</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="!text-img_red-500 h-5 shrink-0 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <a href="../mailto:hallo@immobiliengefluester.de" class="text-gray-700 hover:text-img_red-500 text-sm">hallo@immobiliengefluester.de</a>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="bg-img_red-500 font-medium gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-white transition-colors w-full hover:bg-img_red-600"> <span>Kostenlose Beratung</span> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Solutions Mega Menu Panel -->
+            <div class="bg-white mega-menu-container mr-auto opacity-0 overflow-y-auto pointer-events-none shadow-xl z-50" data-mega-menu-container="solutions" style="display: none;" data-pg-name="Mega Menu-Solutions">
+                <div class="-mt-9 max-w-7xl mega-menu-panel mx-auto">
+                    <!-- Close Button -->
+                    <button class="mega-menu-close" aria-label="Close menu">×</button>
+                    <div class="mx-auto pb-14 rounded-b-2xl shadow-none" data-pg-name="Solutions">
+                        <!-- Scroll Navigation Bar -->
+                        <div class="gap-10 grid max-w-7xl mx-auto text-zinc-700 lg:items-start lg:mt-12 lg:pt-1">
+                            <div class="bg-img_red-500 py-6 ring-1 ring-img_gray-50 rounded-2xl shadow-sm text-center" data-pg-name="Lestungen-heading">
+                                <div class="gap-2 inline-flex items-center mb-2 text-white" data-pg-name="sub-heading">
+                                    <span class="bg-white h-[2px] w-8"></span>
+                                    <span class="flex font-medium gap-2 items-center mb-4.5 not-italic rounded-lg text-base text-center text-white w-fit lg:text-xl">Lösungen</span>
+                                    <span class="bg-white h-[2px] w-8"></span>
+                                </div>
+                                <h2 class="font-bold max-w-5xl mb-7 mx-auto text-center text-white tracking-tighter lg:leading-none lg:text-5xl lg:text-center"><span class="text-orange-300">Unsere
+bewährte</span> Lösung</h2>
+                                <p class="-mt-6 font-normal italic leading-snug mb-6 mx-auto text-balance text-base text-white lg:max-w-5xl lg:mx-auto">Wir helfen Immobilienprofis dabei, Verkäufe zu steigern, Zeit zu sparen und der Konkurrenz voraus zu sein. Keine technischen Kopfschmerzen. Keine Marketing-Raterei. Nur Ergebnisse.</p>
+                            </div>
+                        </div>
+                        <div class="container-wrap">
+                            <div class="border-gray-200 gap-3 grid md:grid-cols-2 lg:grid-cols-4" data-pg-name="item">
+                                <a href="../immobilien-projektentwicklung-marketing.html" class="bg-white cursor-pointer flex flex-col group items-center pb-3 pt-4 px-3 relative ring-1 ring-img_gray-50 rounded-xl shadow-sm text-center transition-all hover:bg-img_red-500"> <div class="flex items-center justify-center mb-5 w-full overflow-hidden rounded-lg bg-gray-50">
+                                        <img src="../asset/images/visualisation/3d-immobilienvisualisierungen-1.jpg" alt="Product" class="duration-500 h-48 object-center object-cover transition-transform w-full group-hover:scale-105 lg:rounded-t-none">
+                                    </div> <h3 class="font-semibold mb-2 text-2xl text-zinc-700 group-hover:text-white md:text-xl">Entwickler</h3><p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">durch professionelle Präsentation und smarte Strategien</p> </a>
+                                <a href="../marketing-fuer-immobilienmakler.html" class="bg-white cursor-pointer flex flex-col group items-center p-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-sm text-center transition-all hover:bg-img_red-500 lg:rounded-br-2xl"> <div class="flex items-center justify-center mb-5 w-full overflow-hidden rounded-lg bg-gray-50">
+                                        <img src="../asset/images/photos/moderne-immobilienpraesentation-mit-360-fotos-expose.jpg" alt="Product" class="h-48 w-full object-cover object-center transition-transform duration-500 group-hover:scale-105">
+                                    </div> <h3 class="font-semibold mb-2 text-2xl text-zinc-700 group-hover:text-white md:text-xl">Immobilienmakler</h3><p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Mehr Aufträge gewinnen, Marketing automatisieren und eine starke Personenmarke aufbauen</p> </a>
+                                <a href="../immobilienverkauf-privat.html" class="bg-white cursor-pointer flex flex-col group items-center p-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-sm text-center transition-all hover:bg-img_red-500 lg:rounded-b-2xl"> <div class="flex items-center justify-center mb-5 w-full overflow-hidden rounded-lg bg-gray-50">
+                                        <img src="../asset/images/photos/privates-expose-o.jpg" alt="Product" class="h-48 w-full object-cover object-center transition-transform duration-500 group-hover:scale-105">
+                                    </div> <h3 class="font-semibold mb-2 text-2xl text-zinc-700 group-hover:text-white md:text-xl">Privatverkäufer</h3><p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Schnell, professionell und mit minimalem Aufwand durch Experten-Marketing verkaufen</p> </a>
+                                <a href="../ferienwohnung-marketing.html" class="bg-white cursor-pointer flex flex-col group items-center p-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-sm text-center transition-all hover:bg-img_red-500"> <div class="bg-gray-50 flex items-center justify-center mb-5 overflow-hidden rounded-lg w-full">
+                                        <img src="../asset/images/visualisation/K38.jpeg" alt="Product" class="h-48 w-full object-cover object-center transition-transform duration-500 group-hover:scale-105">
+                                    </div> <h3 class="font-semibold mb-2 text-2xl text-zinc-700 group-hover:text-white md:text-xl">Ferienhausbesitzer</h3><p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Qualifizierte Käufer anziehen und sich in umkämpften Ferienimmobilienmärkten abheben</p> </a>
+                            </div>
+                        </div>
+                        <div class="gap-2.5 grid grid-cols-4 max-w-6xl mt-3.5 mx-auto" data-pg-name="benefits">
+                            <div class="bg-white flex gap-4 h-17 items-center p-3 ring-1 ring-img_gray-50 rounded-lg shadow-xs text-left">
+                                <div class="bg-img_red-500 flex h-5 items-center justify-center rounded-full shadow-xs shrink-0 text-white w-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <path d="M22 4 12 14.01l-3-3"/>
+                                    </svg>
+                                </div>                                 
+                                <div> 
+                                    <h4 class="font-medium text-img_red-500 text-sm">Schnellere Verkaufsprozesse</h4> 
+                                </div>                                 
+                            </div>
+                            <div class="bg-white flex gap-4 h-17 items-center p-3 ring-1 ring-img_gray-50 rounded-lg shadow-xs text-left">
+                                <div class="bg-img_red-500 flex h-5 items-center justify-center rounded-full shadow-xs shrink-0 text-white w-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <path d="M22 4 12 14.01l-3-3"/>
+                                    </svg>
+                                </div>                                 
+                                <div> 
+                                    <h4 class="font-medium text-img_red-500 text-sm">Höhere Verkaufserlöse</h4> 
+                                </div>                                 
+                            </div>
+                            <div class="bg-white flex gap-4 h-17 items-center p-3 ring-1 ring-img_gray-50 rounded-lg shadow-xs text-left">
+                                <div class="bg-img_red-500 flex h-5 items-center justify-center rounded-full shadow-xs shrink-0 text-white w-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <path d="M22 4 12 14.01l-3-3"/>
+                                    </svg>
+                                </div>                                 
+                                <div> 
+                                    <h4 class="font-medium text-img_red-500 text-sm">Weniger Aufwand</h4> 
+                                </div>                                 
+                            </div>
+                            <div class="bg-white flex gap-4 h-17 items-center p-3 ring-1 ring-img_gray-50 rounded-lg shadow-xs text-left">
+                                <div class="bg-img_red-500 flex h-5 items-center justify-center rounded-full shadow-xs shrink-0 text-white w-5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <path d="M22 4 12 14.01l-3-3"/>
+                                    </svg>
+                                </div>                                 
+                                <div> 
+                                    <h4 class="font-medium text-img_red-500 text-sm">Individuelle Lösungen</h4> 
+                                </div>                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Leistungen Mega Menu Panel -->
+            <div class="bg-img_gray-50 mega-menu-container mx-auto opacity-0 overflow-y-auto pointer-events-none shadow-xl z-50" data-mega-menu-container="leistungen" style="display: none;" data-pg-name="Mega Menu-Leistungen">
+                <div class="-mt-9 max-w-7xl mega-menu-panel mx-auto">
+                    <!-- Close Button -->
+                    <button class="mega-menu-close" aria-label="Close menu">×</button>
+                    <div class="mx-auto pb-14 rounded-b-2xl shadow-none" data-pg-name="Leistungen">
+                        <!-- Scroll Navigation Bar -->
+                        <div class="gap-10 grid max-w-6xl mx-auto text-zinc-700 lg:items-start lg:mt-12 lg:pt-1">
+                            <div class="bg-img_red-500 py-6 ring-1 ring-img_gray-50 rounded-2xl shadow-sm text-center" data-pg-name="Lestungen-heading">
+                                <div class="gap-2 inline-flex items-center mb-2 text-white" data-pg-name="sub-heading">
+                                    <span class="bg-white h-[2px] w-8"></span>
+                                    <span class="flex font-medium gap-2 items-center mb-4.5 not-italic rounded-lg text-base text-center text-white w-fit lg:text-xl">Unser Leistungen</span>
+                                    <span class="bg-white h-[2px] w-8"></span>
+                                </div>
+                                <h2 class="font-bold max-w-5xl mb-7 mx-auto text-center text-white tracking-tighter lg:leading-none lg:text-5xl lg:text-center">Fokus auf den Verkauf.<br> <span class="text-orange-300">Wir kümmern uns um den Rest</span></h2>
+                                <p class="-mt-6 font-medium italic leading-snug mb-6 mx-auto text-balance text-lg text-white lg:max-w-5xl lg:mx-auto">Lorem ipsum dolor sit amet consectetur adipiscing elit, quam tempus platea metus sem odio montes, semper quisque vel nibh sollicitudin pulvinar</p>
+                            </div>
+                        </div>
+                        <div class="bg-white gap-4 grid max-w-6xl mx-auto p-6 relative ring-1 ring-img_gray-50 rounded-2xl text-zinc-700 lg:grid-cols-3 lg:mt-3">
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group overflow-hidden ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="3D" href="../3d-immobilienvisualisierungen-erstellen.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">3D Immobilienvisualisierungen</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Lorem ipsum dolor sit amet consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Exposeerstellung" href="../expose-immobilien-erstellen.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div><div class="flex flex-col p-4">
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Exposeerstellung</h3>
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Ut enim ad minim veniam quis nostrud exercitation.Ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Architekturfotografie" href="../architekturfotografie.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div><div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Architekturfotografie</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Duis aute irure dolor in reprehenderit voluptate velit.Esse cillum dolore eu fugiat nulla pariatur.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" name="Broschüren" data-pg-name="Broschüren" href="../immobilien-broschuere-formulare-erstellen.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Broschüren, Formulare, Flyer & Co.</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Excepteur sint occaecat cupidatat non proident sunt.In culpa qui officia deserunt mollitia animi.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Drohnenaufnahmen" href="../drohnenaufnahmen.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Drohnenaufnahmen</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Id est laborum et dolorum fuga et harum.Quidem rerum facilis est et expedita distinctio.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Webdesign" href="../immobilien-webseite-erstellen.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Webdesign</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Nam libero tempore cum soluta nobis est eligendi.Optio cumque nihil impedit quo minus maxime.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Matterport 360° Rundgang" href="../360-grad-rundgang-erstellen.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Matterport 360° Rundgang</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Placeat facere possimus omnis voluptas assumenda.Est omnis dolor repellendus temporibus autem.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Social Media Marketing" href="../social-media-marketing-berlin.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Social Media Marketing</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Quibusdam et aut officiis debitis aut rerum.Necessitatibus saepe eveniet ut et voluptates.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Google Ads" href="../google-ads-agentur-berlin.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Google Ads</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Repudiandae sint et molestiae non recusandae.Itaque earum rerum hic tenetur a sapiente.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Grundrisse zeichnen in 2D und 3D" href="../3d-immobilien-visualisierung.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Grundrisse zeichnen in 2D und 3D</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Delectus ut aut reiciendis voluptatibus maiores.Alias consequatur aut perferendis doloribus asperiores.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Immobilientexte" href="../immobilien-texte.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Immobilientexte</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Repellat ratione voluptatem sequi nesciunt neque.Porro quisquam est qui dolorem ipsum quia.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Lead Generation" href="../lead-generator-immobilien.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Lead Generation</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Dolor sit amet consectetur adipiscing elit sed.Do eiusmod tempor incididunt ut labore et dolore.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Property Branding" href="../corporate-design-agentur-berlin.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Property Branding</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Magna aliqua ut enim ad minim veniam quis.Nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                                </div> </a>
+                            <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-sm transform-gpu transition-all hover:bg-img_red-500" data-pg-name="Virtuellen Rundgang erstellen" href="../virtueller-rundgang-erstellen.html"> <div class="overflow-hidden rounded-t-md">
+                                    <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
+                                </div> <div class="flex flex-col p-4 lg:text-lg"> 
+                                    <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Virtuellen Rundgang erstellen</h3> 
+                                    <p class="italic leading-4 text-img_red-500 text-sm group-hover:text-white">Ex ea commodo consequat duis aute irure dolor.In reprehenderit in voluptate velit esse cillum.</p>
+                                </div> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="bg-white pb-24">
+            <div class="max-w-7xl mt-18 mx-auto px-6 lg:px-8">
+                <!-- Breadcrumbs -->
+                <!-- Full Width Header Section -->
+                <header class="mb-10 text-center lg:text-left mx-auto max-w-5xl lg:max-w-none">
+                    <div class="mb-6 flex flex-wrap items-center justify-center gap-3">
+                        <span class="bg-img_red-50 font-medium inline-flex items-center px-3 py-1 ring-1 ring-img_red-600/10 ring-inset rounded-full text-center text-img_red-600 text-xs">Blog API</span>
+                        <span class="text-gray-400">|</span>
+                    </div>
+                    <h1 id="post-title" class="font-bold max-w-4xl mb-8 mx-auto text-3xl text-center text-gray-900 tracking-tight sm:text-4xl lg:text-7xl">Debitis sit dolorum aut</h1>
+                    <nav class="flex items-center justify-center mb-8 text-gray-500 text-sm" aria-label="Breadcrumb">
+                        <ol class="flex items-center space-x-2">
+                            <li>
+                                <a href="../startseite.html" class="hover:text-img_red-500 transition-colors">Startseite</a>
+                            </li>
+                            <li>
+                                <svg class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </li>
+                            <li>
+                                <a href="../blog.html" class="hover:text-img_red-500 transition-colors">Blog</a>
+                            </li>
+                            <li>
+                                <svg class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </li>
+                            <li class="font-medium text-gray-900" id="breadcrumb-title">Blog Post Title</li>
+                        </ol>
+                    </nav>
+                </header>
+                <!-- Content Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Main Content Column -->
+                    <div class="lg:col-span-8">
+                        <article>
+                            <!-- Social Share (Mobile Top) -->
+                            <div class="flex items-center gap-4 py-4 mb-8 border-y border-gray-100 lg:hidden">
+                                <span class="text-sm font-semibold text-gray-900">Share:</span>
+                                <div class="flex gap-2">
+                                    <a href="#" class="p-2 text-gray-400 hover:text-blue-500 bg-gray-50 rounded-full hover:bg-blue-50 transition-colors"> <span class="sr-only">Facebook</span> <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+                                        </svg> </a>
+                                    <a href="#" class="p-2 text-gray-400 hover:text-sky-500 bg-gray-50 rounded-full hover:bg-sky-50 transition-colors"> <span class="sr-only">Twitter</span> <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                                        </svg> </a>
+                                    <a href="#" class="p-2 text-gray-400 hover:text-blue-700 bg-gray-50 rounded-full hover:bg-blue-50 transition-colors"> <span class="sr-only">LinkedIn</span> <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                            <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/>
+                                        </svg> </a>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <!-- Desktop Social Sidebar -->
+                                <div class="hidden lg:flex flex-col gap-4 mr-8 sticky top-32 h-fit">
+                                    <a href="#" class="group flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-50 transition-colors" title="Share on Facebook"> <div class="p-2 rounded-full bg-white shadow-sm ring-1 ring-gray-200 group-hover:ring-blue-500 group-hover:text-blue-600 transition-all">
+                                            <svg class="h-5 w-5 text-gray-400 group-hover:text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div> </a>
+                                    <a href="#" class="group flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-50 transition-colors" title="Share on Twitter"> <div class="p-2 rounded-full bg-white shadow-sm ring-1 ring-gray-200 group-hover:ring-sky-500 group-hover:text-sky-500 transition-all">
+                                            <svg class="h-5 w-5 text-gray-400 group-hover:text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/>
+                                            </svg>
+                                        </div> </a>
+                                    <a href="#" class="group flex flex-col items-center gap-1 p-2 rounded-lg hover:bg-gray-50 transition-colors" title="Share on LinkedIn"> <div class="p-2 rounded-full bg-white shadow-sm ring-1 ring-gray-200 group-hover:ring-blue-700 group-hover:text-blue-700 transition-all">
+                                            <svg class="h-5 w-5 text-gray-400 group-hover:text-blue-700" fill="currentColor" viewBox="0 0 24 24">
+                                                <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </div> </a>
+                                </div>
+                                <div class="flex-col">
+                                    <div id="post-featured-image" class="bg-gray-100 h-100 mb-12 overflow-hidden relative rounded-2xl shadow-lg w-full">
+                                        <img src="https://dev-ahm-wp-api:8890/wp-content/uploads/2026/02/00126bfb-dfed-33ca-97b3-51eaae8ab9d1.jpg" alt="" class="absolute inset-0 h-full w-full object-cover"/>
+                                    </div>
+                                    <div id="post-content" class="prose prose-lg prose-img_red text-gray-600 prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-gray-900 prose-a:text-img_red-600 hover:prose-a:text-img_red-500 max-w-none" data-wp-content="post-body">
+                                        <h1>Ut cum enim officiis et sint. Est et eum quam ea tempore omnis. Quae laudantium debitis voluptatem quo</h1>
+<ul>
+<li>Quae doloribus aut</li>
+</ul>
+<h6>Praesentium earum esse vitae dolores non molestiae est tempora. Dolores nesciunt officiis eos quibusdam sint quam</h6>
+<hr>
+<h3>Sint consectetur aliquam commodi laboriosam. Ea distinctio soluta nihil. Sit dolores non qui perspiciatis. Odit doloremque est eos sequi</h3>
+<ul>
+<li>Qui ducimus a aut laboriosam debitis nulla nemo</li>
+<li>Ad ut asperiores sit provident</li>
+<li>Explicabo voluptas quae ut iste eum</li>
+<li>Officia error</li>
+<li>Eum ea quidem sit repellat</li>
+</ul>
+<p><!--more--></p>
+<h2>Similique inventore nihil fugit enim. Ea aut minima pariatur dolorum sed in. Ut voluptas velit excepturi dicta</h2>
+<p><img decoding="async" class="alignright" src="https://dev-ahm-wp-api:8890/wp-content/uploads/2026/02/acbdf60f-af50-30c1-80bf-ad872268a94d.jpg"><br />
+<img decoding="async" alt="Dolore culpa in est non sunt perspiciatis" src="https://dev-ahm-wp-api:8890/wp-content/uploads/2026/02/904daf83-826e-3e79-83f1-fb7b1b16b32c.jpg"></p>
+<blockquote><p>Consequatur consequatur nesciunt non reiciendis incidunt. non itaque amet reiciendis. Quidem quia a nobis voluptatibus. voluptatum sit veniam Voluptatem maiores sed explicabo ex voluptatum ea sint. Aut non quis ad. architecto exercitationem occaecati Hic laboriosam dolorum et. Eum eaque reiciendis consectetur ea <a title="Quia voluptas saepe sint quis inventore." href="http://heller.net/">Quaerat quis dolorem sint aspernatur dignissimos. Iure</a> autem officiis minus. ex maiores veniam commodi dolores qui. sit praesentium <a title="Magni ratione qui quis." href="http://www.stoltenberg.com/">nisi tempora praesentium.</a> ad aut praesentium unde. Laudantium nihil quisquam et reiciendis nisi nemo. distinctio non qui eum eveniet. Ut velit nihil qui nostrum tenetur Fuga accusamus vel libero velit voluptatem. Veniam quod ut laborum quae labore doloribus. Eum dolores quia in animi eum occaecati. ex eius est cumque. Non voluptate doloremque ea labore. Pariatur alias odit at iure.</p></blockquote>
+<blockquote><p>Optio magni officiis pariatur alias optio illum et atque. Quia dolorum placeat necessitatibus ut nulla qui sed dolor. Delectus numquam perferendis laboriosam quos expedita soluta aut. Iusto culpa pariatur rerum saepe. Sequi aliquam rerum sed nulla. Magni quod est et ut voluptates molestiae. Provident autem repellendus aut sed perferendis ut consequuntur. Velit dolor maiores error illum autem. Velit cupiditate enim ex sequi beatae et officiis. Quaerat doloribus dignissimos culpa reprehenderit labore fugit. Amet fugit laboriosam est nihil libero sit quas. Quas qui veritatis nobis unde dolor et velit consequatur. Quibusdam iste harum ea dicta pariatur. Fugiat quos fuga saepe. Ab ab quidem deserunt excepturi sit accusantium sunt. Beatae fugiat similique consectetur nihil.</p></blockquote>
+<blockquote><p>Quod assumenda voluptatum numquam. Deleniti odio dicta consectetur maiores Cum dolorem repellendus laborum <a title="Error quidem." href="http://www.deckow.net/accusamus-quos-et-eum-quasi-dolores-at">Sed qui</a> ipsam. quam minus dignissimos ullam officia placeat. Non ex et ut explicabo sed nostrum. officiis magnam tempora velit. Deserunt nihil vero odio <a title="Sint quam." href="http://www.mills.biz/amet-ipsum-ut-qui-accusantium-molestias-laborum">ratione sunt nisi.</a> mollitia quis <a title="Magnam exercitationem consequatur rerum beatae." href="http://www.jerde.com/qui-minus-ipsa-velit-aut-labore.html">et rerum</a> Provident necessitatibus deserunt sit molestiae corporis. Perspiciatis adipisci ipsum et ducimus tempore. dolores accusamus ut mollitia voluptatem assumenda architecto. Eius aliquid voluptatibus alias <a title="Repellat dolor aut vero et." href="http://turner.com/temporibus-quis-exercitationem-beatae.html">velit aut. Commodi dicta quas qui</a> deserunt aut. Qui esse magni ratione Adipisci ut ut totam incidunt nam velit Labore quod reprehenderit nostrum rerum illo. Consequatur molestiae omnis molestiae <a title="Eius sint." href="http://schmitt.com/vel-qui-illum-doloribus-deleniti-quisquam-ea-iste-cumque">Fugit a et qui</a> soluta.</p></blockquote>
+
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Sidebar Column -->
+                    <div class="lg:col-span-4 space-y-8">
+                        <!-- Contact Card -->
+                        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 sticky top-32">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="h-24 w-24 rounded-full border-4 border-white shadow-md overflow-hidden mb-4">
+                                    <img src="../asset/images/staff-pictures/FS8A0793-1-2048x1847.jpeg" alt="Daniel Marczinek" class="h-full w-full object-cover">
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Haben Sie Fragen?</h3>
+                                <p class="text-gray-600 text-sm mt-1 mb-6">Ich berate Sie gerne persönlich zu Ihrem Immobilienprojekt.</p>
+                                <a href="../kontakt.html" class="w-full bg-img_red-500 hover:bg-img_red-600 text-white font-semibold py-3 px-4 rounded-lg shadow-sm transition-colors mb-4 flex items-center justify-center gap-2"> <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                             Termin vereinbaren </a>
+                                <div class="w-full flex flex-col gap-3 text-sm">
+                                    <a href="../tel:+4930206091167" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-img_red-500 hover:text-img_red-500 transition-colors"> <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                        </svg> <span>+49 (0) 30 206 09 167</span> </a>
+                                    <a href="../mailto:hallo@immobiliengefluester.de" class="flex items-center gap-3 p-3 bg-white rounded-lg border border-gray-200 hover:border-img_red-500 hover:text-img_red-500 transition-colors"> <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg> <span class="truncate">Email schreiben</span> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Newsletter / Lead Magnet -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div data-pg-name="footer" class="relative z-10" data-pgc="footer-cta">
+            <div data-pg-name="footer-cta" class="relative z-30 text-white pointer-events-none">
+                <div class="!z-50 bg-img_red-500 container-wrap lg:-mb-16 lg:p-12 mx-auto p-5 pointer-events-auto relative ring-1 ring-img_gray-50/15 rounded-3xl shadow-lg">
+                    <div class="flex flex-col items-center text-center max-w-5xl mx-auto">
+                        <div class="gap-2 inline-flex items-center mb-4 text-left"> <span class="bg-white h-[1px] w-8"></span> <span class="font-bold text-center text-white text-xs tracking-[0.2em] uppercase">Kontakt &amp; Beratung</span> <span class="bg-white h-[1px] w-8"></span> 
+                        </div>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 drop-shadow-xs">Ich berate Sie gerne!</h2>
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
+                            <!-- Profile Image Circle -->
+                            <div class="relative shrink-0 flex flex-col items-center gap-1">
+                                <div class="border-4 border-white/20 h-40 overflow-hidden rounded-full shadow-2xl w-40 md:h-40 md:w-40">
+                                    <img src="../asset/images/staff-pictures/FS8A0793-1-2048x1847.jpeg" alt="Kontaktperson" class="w-full h-full object-cover object-center">
+                                </div>
+                                <div class="font-light not-italic text-white">Daniel Marczinek</div>
+                                <div class="font-light italic text-sm text-white">Geschäftsführer</div>
+                            </div>
+                            <!-- Action Block -->
+                            <div class="flex flex-col items-center md:text-center">
+                                <a href="../kontakt.html" class="bg-zinc-700/70 border-white/5 duration-300 flex font-normal gap-2 group hover:bg-img_red-900 items-center justify-center px-8 py-3 rounded-lg text-sm text-white transition-all w-full">
+                                        Kostenlose Beratung Buchen <svg class="h-5 hidden text-white transition-transform w-5 group-hover:translate-x-1 md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg> </a>
+                                <span class="font-light italic mt-3 opacity-90 text-sm tracking-wide md:text-base">
+                        Kostenlos, Provisionsbasiert, Persönlich </span>
+                            </div>
+                        </div>
+                        <!-- Bottom Separator Line -->
+                    </div>
+                </div>
+            </div>
+            <footer class="-mt-40 z-0 bg-img_red-500 pb-1 pt-40 relative text-white" data-pg-name="footer-links">
+                <img src="../asset/svg/bgr/lines-bgr-vertical.svg" data-pg-name="hero-bg" class="absolute h-full inset-0 object-center object-contain opacity-5 visible w-full z-10 lg:z-0"/>
+                <div class="-mt-17 container-wrap max-w-7xl mx-auto px-4 relative z-50 sm:px-6 lg:mt-28 lg:px-8">
+                    <!-- Main Footer Content -->
+                    <div class="gap-8 grid grid-cols-1 mt-28 relative z-[50] md:grid-cols-1 lg:-mt-5 lg:gap-12 lg:grid-cols-4 lg:z-[1000] xl:gap-16">
+                        <!-- Company Info -->
+                        <div class="lg:!z-500 lg:col-span-1 lg:text-left">
+                            <div class="flex-col inline-flex items-center">
+                                <img src="../asset/images/graphics/img-logo-header-single.png" alt="IMMOBILIENGEFLÜSTER Logo" class="aspect-video h-25 lg:h-24 mb-6 md:w-96 object-fill w-3xs">
+                                <p class="-mt-5 font-light leading-tight lg:text-left mb-6 text-center text-sm text-white/80">Professionelle Immobilienberatung, Design, Entwicklung &amp; Vermarktung. Wir helfen Ihnen dabei, Ihre Immobilien schneller und intelligenter zu verkaufen.</p>
+                            </div>
+                            <!-- Social Media -->
+                            <div class="flex justify-center space-x-4 lg:space-x-6">
+                                <a href="#" class="bg-img_red-600 duration-300 p-2 rounded-lg transition-colors hover:bg-white/20" aria-label="Facebook"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> </a>
+                                <a href="#" class="bg-img_red-600 duration-300 p-2 rounded-lg transition-colors hover:bg-white/20" aria-label="LinkedIn"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> </a>
+                                <a href="#" class="bg-img_red-600 duration-300 p-2 rounded-lg transition-colors hover:bg-white/20" aria-label="YouTube"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> </a>
+                                <a href="#" class="bg-img_red-600 duration-300 p-2 rounded-lg transition-colors hover:bg-white/20" aria-label="Instagram"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> </a>
+                            </div>
+                        </div>
+                        <div class="text-center lg:col-span-1">
+                            <h3 class="border-b border-img_red-500 border-white/15 font-semibold mb-6 pb-2 text-center text-lg lg:mb-8 lg:text-left">Unsere Leistungen</h3>
+                            <ul class="flex flex-col mb-8 place-items-center space-y-3 lg:items-start lg:space-y-4">
+                                <li>
+                                    <a href="../3d-immobilienvisualisierungen-erstellen.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        3D Visualisierung </a>
+                                </li>
+                                <li>
+                                    <a href="../architekturfotografie.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Architekturfotografie </a>
+                                </li>
+                                <li>
+                                    <a href="../expose-immobilien-erstellen.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Exposé Erstellung </a>
+                                </li>
+                                <li>
+                                    <a href="../drohnenaufnahmen.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Drohnenaufnahmen </a>
+                                </li>
+                                <li>
+                                    <a href="../360-grad-rundgang-erstellen.html" class="flex group items-center text-sm text-white/80 transition-colors hover:text-white"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        360° Rundgänge </a>
+                                </li>
+                                <li>
+                                    <a href="../social-media-marketing-berlin.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Social Media Marketing </a>
+                                </li>
+                                <li>
+                                    <a href="../google-ads-agentur-berlin.html" class="flex group items-center text-sm text-white/80 transition-colors hover:text-white"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Google Ads </a>
+                                </li>
+                                <li>
+                                    <a href="../immobilien-webseite-erstellen.html" class="flex group items-center text-sm text-white/80 transition-colors hover:text-white"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Webdesign </a>
+                                </li>
+                                <a href="#" class="bg-img_red-600 font-light gap-2 inline-flex items-center px-3 py-2 rounded-md text-base text-white transition-colors hover:bg-img_red-800"> <span class="font-medium text-xs uppercase">Alle Leistungen</span></a>
+                            </ul>
+                        </div>
+                        <div class="-mt-4 flex flex-row justify-around lg:col-span-2 lg:mt-0">
+                            <div>
+                                <h3 class="border-b border-white/20 font-semibold mb-6 pb-2 text-center text-img_beige-800 text-lg lg:mb-8">Lösungen für</h3>
+                                <ul class="flex flex-col items-start mb-8 place-items-center space-y-3 lg:space-y-4">
+                                    <li>
+                                        <a href="../immobilien-projektentwicklung-marketing.html" class="flex group items-center text-sm text-white/80 transition-colors hover:text-white"> <span class="bg-img_beige-800 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Immobilienentwickler </a>
+                                    </li>
+                                    <li>
+                                        <a href="../marketing-fuer-immobilienmakler.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-800 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Immobilienmakler </a>
+                                    </li>
+                                    <li>
+                                        <a href="../immobilienverkauf-privat.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-800 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Privatverkäufer </a>
+                                    </li>
+                                    <li>
+                                        <a href="../ferienwohnung-marketing.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-800 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Ferienhausbesitzer </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Additional Pages -->
+                            <div>
+                                <h4 class="border-b border-white/20 font-semibold mb-6 pb-2 text-center text-img_beige-800 text-lg lg:mb-8">Weitere Seiten</h4>
+                                <ul class="flex flex-col items-start mb-8 place-items-center space-y-3 lg:space-y-4">
+                                    <li>
+                                        <a href="../referenzen.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+                                        Referenzen </a>
+                                    </li>
+                                    <li>
+                                        <a href="../blog.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+                                        Blog </a>
+                                    </li>
+                                    <li>
+                                        <a href="../uber-uns.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+                                        Über uns </a>
+                                    </li>
+                                    <li>
+                                        <a href="../preise.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+                                        Preise </a>
+                                    </li>
+                                    <li>
+                                        <a href="../jobs.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+Job</a>
+                                    </li>
+                                    <li>
+                                        <a href="../impressum.html" class="flex flex-row-reverse group items-center text-sm text-white/70 transition-colors hover:text-white">Impressum<span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="../datenschutz.html" class="flex flex-row-reverse group items-center text-sm text-white/70 transition-colors hover:text-white">Datenschutz<span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Services -->
+                        <!-- Solutions -->
+                        <!-- Contact Info -->
+                    </div>
+                    <!-- Divider -->
+                    <div class="bg-img_red-600 max-w-4xl mx-auto rounded-xl">
+                        <div class="flex flex-col gap-3 items-baseline justify-center mb-7 pl-6 pr-6 py-6 ring-1 ring-img_gray-50/25 rounded-md space-x-9 md:flex-row md:flex-wrap">
+                            <div class="flex items-center space-x-3">
+                                <svg class="h-7 mt-0.5 shrink-0 text-base text-img_beige-700 text-img_red-100 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <div class="text-white/80 text-sm">
+                                    <a href=""><div class="font-medium italic text-sm transform">Konrad-Zuse-Straße 4 12489 Berlin</div></a>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="h-7 shrink-0 text-base text-img_beige-700 text-img_red-100 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.16 10.928c-.732.732-.732 1.919 0 2.651l4.261 4.261c.732.732 1.919.732 2.651 0l1.541-1.064a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V21a2 2 0 01-2 2h-1C9.716 23 2 15.284 2 7V6a2 2 0 012-2z"></path>
+                                </svg>
+                                <a href="../tel:+4930206091167" class="font-medium hover:text-white italic text-sm text-white/80 transform transition-colors">+49 (0) 30 206 09 167</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="h-7 shrink-0 text-base text-img_beige-700 text-img_red-100 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <a href="../mailto:hallo@immobiliengefluester.de" class="font-medium hover:text-white italic text-sm text-white/80 transition-colors">hallo@immobiliengefluester.de</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center text-sm text-white/60">
+                        © 2024 IMMOBILIENGEFLÜSTER GmbH. Alle Rechte vorbehalten.
+</div>
+                    <!-- Bottom Footer -->
+                </div>
+            </footer>
+        </div>
+        <script src="../src/js/menu/nav/ui-mega-menu--1.js"></script>
+        <script src="../src/js/menu/nav/mobile-menu.js"></script>
+        <script src="../src/js/video-player.js"></script>
+        <script>
+            // Detect when sticky header is activated and change background to bg-img_red-500
+            document.addEventListener('DOMContentLoaded', function() {
+                const header = document.querySelector('header.sticky');
+                if (!header) return;
+                
+                // Get the initial offset position of the header
+                const headerOffset = header.offsetTop;
+                
+                // Function to check if header is sticky
+                function checkStickyHeader() {
+                    if (window.scrollY > headerOffset) {
+                        header.classList.remove('bg-transparent');
+                        header.classList.add('bg-img_red-500', 'transition-colors', 'duration-300');
+                    } else {
+                        header.classList.remove('bg-img_red-500', 'transition-colors', 'duration-300');
+                        header.classList.add('bg-transparent');
+                    }
+                }
+                
+                // Check on scroll
+                window.addEventListener('scroll', checkStickyHeader);
+                
+                // Check on initial load
+                checkStickyHeader();
+            });
+        </script>
+    </body>     
+</html>

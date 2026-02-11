@@ -1,0 +1,249 @@
+/* Mobile Menu Styles */
+
+/* Mobile Menu Overlay */
+#mobileMenuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay - changed from 0.5 to 0.7 */
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#mobileMenuOverlay:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Menu Panel - width controlled by Tailwind (wider on MD and smaller) */
+#mobileMenuPanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    min-width: 280px; /* ensure usable width when Tailwind sets % */
+    background-color: white;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#mobileMenuPanel.open {
+    transform: translateX(0);
+}
+
+/* Mobile Menu Header */
+#mobileMenuPanel .flex.flex-col.h-full > div:first-child {
+    background-color: #9d3838 !important;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Mobile Menu Content */
+#mobileMenuPanel .flex-1 {
+    padding: 1.5rem;
+}
+
+/* Mobile Menu Footer */
+#mobileMenuPanel .p-6.border-t {
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Mobile Menu Navigation Links */
+#mobileMenuPanel nav a {
+    display: block;
+    padding: 0.75rem 0;
+    color: #374151;
+    font-weight: 500;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: all 0.2s ease;
+}
+
+#mobileMenuPanel nav a:hover {
+    color: #9d3838;
+    border-left-color: #9d3838;
+    background-color: #f0f9ff;
+    padding-left: 0.75rem;
+}
+
+/* Mobile Menu Section Headers */
+#mobileMenuPanel h3 {
+    color: #9d3838 !important;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Mobile Menu Contact Info */
+#mobileMenuPanel .flex.items-start.space-x-3,
+#mobileMenuPanel .flex.items-center.space-x-3 {
+    margin-bottom: 0.75rem;
+}
+
+#mobileMenuPanel svg {
+    color: #9d3838;
+    flex-shrink: 0;
+}
+
+/* Ensure contact section icons are red */
+#mobileMenuPanel .p-6.border-t svg {
+    color: #9d3838 !important;
+}
+
+/* Mobile Menu CTA Button */
+#mobileMenuPanel .bg-cyan-900,
+#mobileMenuPanel .bg-img_red-500 {
+    background-color: #9d3838;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+#mobileMenuPanel .bg-cyan-900:hover,
+#mobileMenuPanel .bg-img_red-500:hover {
+    background-color: #903333;
+}
+
+/* Hamburger Button Styles */
+#mobileMenuBtn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+#mobileMenuBtn:hover {
+    background-color: #9d3838;
+}
+
+#mobileMenuBtn svg {
+    width: 2.25rem;
+    height: 2.25rem;
+    color: white;
+    stroke: white;
+    pointer-events: none; /* Prevent any hover interactions on SVG */
+}
+
+/* Ensure hamburger icon doesn't change on hover - only on click */
+#mobileMenuBtn:hover svg {
+    color: white !important;
+    stroke: white !important;
+}
+
+/* Close Button */
+#mobileMenuClose {
+    background: none;
+    border: none;
+    color: white !important;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#mobileMenuClose:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#mobileMenuClose svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white !important;
+    fill: none;
+    stroke: currentColor;
+}
+
+/* Responsive Adjustments - width from HTML/Tailwind; padding only here */
+
+@media (max-width: 480px) {
+    #mobileMenuPanel .flex-1 {
+        padding: 1rem;
+    }
+    
+    #mobileMenuPanel .p-6.border-t {
+        padding: 1rem;
+    }
+}
+
+/* Ensure mobile menu is hidden by default */
+#mobileMenuPanel.hidden {
+    display: none !important;
+}
+
+#mobileMenuOverlay.hidden {
+    display: none !important;
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.mobile-menu-open {
+    overflow: hidden;
+}
+
+/* Animation for mobile menu items */
+#mobileMenuPanel nav a {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideInRight 0.3s ease forwards;
+}
+
+#mobileMenuPanel nav a:nth-child(1) { animation-delay: 0.1s; }
+#mobileMenuPanel nav a:nth-child(2) { animation-delay: 0.2s; }
+#mobileMenuPanel nav a:nth-child(3) { animation-delay: 0.3s; }
+#mobileMenuPanel nav a:nth-child(4) { animation-delay: 0.4s; }
+#mobileMenuPanel nav a:nth-child(5) { animation-delay: 0.5s; }
+#mobileMenuPanel nav a:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    #mobileMenuPanel,
+    #mobileMenuOverlay,
+    #mobileMenuPanel nav a {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Override any conflicting styles */
+#mobileMenuPanel {
+    display: block !important;
+}
+
+#mobileMenuPanel.hidden {
+    display: none !important;
+}
+
+/* Ensure proper z-index */
+#mobileMenuPanel {
+    z-index: 9999 !important;
+}
+
+#mobileMenuOverlay {
+    z-index: 9998 !important;
+}

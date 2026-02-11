@@ -1,0 +1,246 @@
+/* Hero Slider Styles */
+
+.hero-slider-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hero-slider-track {
+    display: flex;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.hero-slide {
+    flex-shrink: 0;
+    width: 100%;
+    position: relative;
+}
+
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.hero-slide:hover img {
+    transform: scale(1.02);
+}
+
+/* Navigation Controls */
+.hero-slider-nav {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    z-index: 30;
+    opacity: 0;
+    pointer-events: auto;
+    transform: translateY(-50%);
+}
+
+.hero-slider-container:hover .hero-slider-nav {
+    opacity: 1;
+}
+
+/* Fix overlapping arrows */
+.hero-slider-prev {
+    left: 1rem !important;
+}
+
+.hero-slider-next {
+    right: 1rem !important;
+}
+
+.hero-slider-nav:hover {
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.hero-slider-nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Progress Bar */
+.hero-slider-progress {
+    background: linear-gradient(90deg, #ffffff 0%, #e5e7eb 100%);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Indicators */
+.hero-slider-indicator {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 30;
+    opacity: 0.7;
+}
+
+.hero-slider-indicator:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.hero-slider-indicator:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.hero-slider-indicator.bg-white {
+    opacity: 1;
+}
+
+/* Play/Pause Button */
+.hero-slider-play-pause {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    z-index: 30;
+    opacity: 0;
+}
+
+.hero-slider-container:hover .hero-slider-play-pause {
+    opacity: 1;
+}
+
+.hero-slider-play-pause:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Slide Overlay */
+.hero-slide .absolute {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 30%, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.3) 80%, transparent 100%);
+    transition: all 0.3s ease;
+    z-index: 35 !important;
+    pointer-events: none;
+    min-height: 180px;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+
+/* Ensure text content in overlay is clickable */
+.hero-slide .absolute > * {
+    pointer-events: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-slider-nav {
+        padding: 0.5rem;
+    }
+    
+    .hero-slider-nav svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+    
+    .hero-slider-play-pause {
+        padding: 0.375rem;
+    }
+    
+    .hero-slider-play-pause svg {
+        width: 1rem;
+        height: 1rem;
+    }
+    
+    .hero-slider-indicator {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+}
+
+/* Loading Animation */
+.hero-slide img {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ensure slider track and slides are properly sized */
+.hero-slider-track {
+    width: 100%;
+}
+
+.hero-slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Make sure controls are always visible on mobile */
+@media (max-width: 768px) {
+    .hero-slider-nav,
+    .hero-slider-play-pause {
+        opacity: 1 !important;
+    }
+    
+    .hero-slider-indicator {
+        opacity: 1 !important;
+    }
+}
+
+/* Fallback animation if JavaScript doesn't work */
+.hero-slider-container:not(.js-loaded) .hero-slider-track {
+    animation: fallback-slide 21s infinite linear;
+}
+
+@keyframes fallback-slide {
+    0%, 14.28% { transform: translateX(0); }
+    16.66%, 30.94% { transform: translateX(-100%); }
+    33.32%, 47.6% { transform: translateX(-200%); }
+    49.98%, 64.26% { transform: translateX(-300%); }
+    66.64%, 80.92% { transform: translateX(-400%); }
+    83.3%, 97.58% { transform: translateX(-500%); }
+    100% { transform: translateX(-600%); }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .hero-slider-track {
+        transition: none;
+    }
+    
+    .hero-slide img {
+        animation: none;
+        opacity: 1;
+    }
+    
+    .hero-slider-nav,
+    .hero-slider-play-pause,
+    .hero-slider-indicator {
+        transition: none;
+    }
+}
+
+/* Focus Styles for Keyboard Navigation */
+.hero-slider-nav:focus-visible,
+.hero-slider-play-pause:focus-visible,
+.hero-slider-indicator:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .hero-slider-nav,
+    .hero-slider-play-pause {
+        background: rgba(0, 0, 0, 0.8);
+        border: 2px solid #ffffff;
+    }
+    
+    .hero-slider-indicator {
+        border: 1px solid #ffffff;
+    }
+}

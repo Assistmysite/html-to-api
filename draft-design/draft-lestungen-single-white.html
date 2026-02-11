@@ -1,0 +1,1058 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+        <title>Startseite</title>         
+        <link href="../tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <link href="../src/css/mega-menu-animations.css" rel="stylesheet" type="text/css">
+        <link href="../src/css/mobile-menu.css" rel="stylesheet" type="text/css">
+        <link href="../src/css/hero-slider.css" rel="stylesheet" type="text/css">
+        <link href="../src/css/slider/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+        <link href="../src/css/slider/slider-center-swiper.css" rel="stylesheet" type="text/css">
+    </head>     
+    <body class="bg-img_light_gray-200">
+        <!-- Mega Menu Overlay -->
+        <header class="pt-2 sticky top-0 w-full z-50 lg:bg-img_red-500">
+            <div class="mega-menu-overlay" id="megaMenuOverlay"></div>
+            <div class="mx-auto w-11/12" data-pg-name="Menu Top">
+                <div class="flex h-14 items-center justify-between w-full">
+                    <!-- Logo on the left -->
+                    <div class="shrink-0 z-3000">
+                        <a href="index.html" class="bg-white border border-img_gray-100 border-opacity-30 flex items-center p-2 rounded-b-sm z-1000"> <img src="../asset/images/graphics/img-logo-header-single.png" alt="RealEstate Pro Logo" class="w-48"> </a>
+                    </div>
+                    <!-- Right side: Navigation, Phone, and CTA Button -->
+                    <div class="flex items-center space-x-4 md:-mt-3">
+                        <!-- Desktop Navigation -->
+                        <nav class="hidden space-x-6 lg:flex">
+                            <a href="#" class="cursor-pointer flex font-medium items-center nav-item space-x-10 text-sm text-white transition-colors uppercase hover:text-img_red-950" data-megamenu="solutions">LÖSUNGEN <svg class="nav-arrow w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>                                     
+                                </svg></a>
+                            <a href="#" class="cursor-pointer flex font-medium items-center nav-item space-x-10 text-sm text-white transition-colors uppercase hover:text-img_red-950" data-megamenu="leistungen">
+                                Leistungen <svg class="nav-arrow w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg> </a>
+                            <a href="#" class="font-medium space-x-10 text-sm text-white transition-colors uppercase hover:text-img_red-950">OFFERS</a>
+                            <a href="#" class="font-medium space-x-10 text-sm text-white transition-colors uppercase hover:text-img_red-950">REFERENCEN</a>
+                        </nav>
+                        <!-- Phone Icon and CTA Button -->
+                        <div class="flex items-center space-x-4">
+                            <div class="block" data-pg-name="hamburger-btn">
+                                <button type="button" id="mobileMenuBtn" class="flex items-center justify-center p-2 rounded-lg transition-all duration-300 bg-img_red-500 border-2 border-img_red-500 text-white hover:bg-white hover:text-img_red-500">
+                                    <svg class="!stroke-white duration-300 h-8 transition-colors w-8 hover:!stroke-img_red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <a href="#" class="bg-gray-700 font-light gap-2 hidden hover:bg-img_red-800 items-center md:flex md:w-40 px-3 py-2 rounded-md text-base text-white transition-colors"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-4">
+                                    <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 0 0 6.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 5.25V4.5Z" clip-rule="evenodd"/>
+                                </svg> <span class="font-medium text-xs uppercase">Zur Anfrage</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu Overlay -->
+            <div id="mobileMenuOverlay" class="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"></div>
+            <!-- Mobile Menu Panel -->
+            <div id="mobileMenuPanel" class="!w-1/3 bg-white fixed h-full right-0 shadow-2xl top-0 z-50">
+                <div class="flex flex-col h-full">
+                    <!-- Header with close button -->
+                    <div class="!bg-img_red-500 !h-10 border-b border-gray-200 flex items-center justify-end">
+                        <button id="mobileMenuClose" class="text-white hover:text-gray-200 p-2 rounded-xs">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <!-- Navigation Links -->
+                    <div class="flex-1 overflow-y-auto p-6">
+                        <nav class="space-y-8">
+                            <!-- Solutions Section -->
+                            <div>
+                                <h3 class="!text-img_red-500 border-b border-gray-200 font-semibold mb-4 pb-2 text-lg">Lösungen</h3>
+                                <div class="space-y-3">
+                                    <a href="immobilien-projektentwicklung-marketing.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Entwickler</a>
+                                    <a href="marketing-fuer-immobilienmakler.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Immobilienmakler</a>
+                                    <a href="immobilienverkauf-privat.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Privatverkäufer</a>
+                                    <a href="ferienwohnung-marketing.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Ferienhausbesitzer</a>
+                                </div>
+                            </div>
+                            <!-- Services Section -->
+                            <div>
+                                <h3 class="!text-img_red-500 border-b border-gray-200 font-semibold mb-4 pb-2 text-lg">Leistungen</h3>
+                                <div class="space-y-3">
+                                    <a href="3d-immobilienvisualisierungen-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">3D Visualisierung</a>
+                                    <a href="expose-immobilien-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Exposé Erstellung</a>
+                                    <a href="architekturfotografie.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Architekturfotografie</a>
+                                    <a href="immobilien-broschuere-formulare-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Broschüren & Flyer</a>
+                                    <a href="drohnenaufnahmen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Drohnenaufnahmen</a>
+                                    <a href="immobilien-webseite-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Webdesign</a>
+                                    <a href="360-grad-rundgang-erstellen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">360° Rundgang</a>
+                                    <a href="social-media-marketing-berlin.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Social Media</a>
+                                    <a href="google-ads-agentur-berlin.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Google Ads</a>
+                                </div>
+                            </div>
+                            <!-- Additional Pages Section -->
+                            <div>
+                                <h3 class="!text-img_red-500 border-b border-gray-200 font-semibold mb-4 pb-2 text-lg">Weitere Seiten</h3>
+                                <div class="space-y-3">
+                                    <a href="referenzen.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Referenzen</a>
+                                    <a href="blog.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Blog</a>
+                                    <a href="uber-uns.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Über uns</a>
+                                    <a href="kontakt.html" class="block border-l-4 border-transparent font-medium pl-3 py-2 text-gray-800 text-lg transition-colors hover:!bg-img_gray-50 hover:!bg-opacity-50 hover:!border-img_red-500 hover:!text-img_red-500">Kontakt</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- Contact Section -->
+                    <div class="p-6 border-t border-gray-200 bg-gray-50">
+                        <h3 class="!text-img_red-500 font-semibold mb-4 text-lg">Kontakt</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <svg class="!text-img_red-500 h-5 mt-0.5 shrink-0 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span class="text-gray-700 text-sm">Konrad-Zuse-Straße 4, 12489 Berlin</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="!text-img_red-500 h-5 shrink-0 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.16 10.928c-.732.732-.732 1.919 0 2.651l4.261 4.261c.732.732 1.919.732 2.651 0l1.541-1.064a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V21a2 2 0 01-2 2h-1C9.716 23 2 15.284 2 7V6a2 2 0 012-2z"></path>
+                                </svg>
+                                <a href="tel:+4930206091167" class="text-gray-700 hover:text-cyan-900 text-sm">+49 (0) 30 206 09 167</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="!text-img_red-500 h-5 shrink-0 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <a href="mailto:hallo@immobiliengefluester.de" class="text-gray-700 hover:text-cyan-900 text-sm">hallo@immobiliengefluester.de</a>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="bg-img_red-500 font-medium gap-2 inline-flex items-center justify-center px-6 py-3 rounded-lg text-white transition-colors w-full hover:bg-cyan-800"> <span>Kostenlose Beratung</span> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Solutions Mega Menu Panel -->
+            <div class="bg-white mega-menu-container mr-auto opacity-0 overflow-y-auto pointer-events-none shadow-xl z-50" data-mega-menu-container="solutions" style="display: none;" data-pg-name="Mega Menu-Solutions">
+                <button class="mega-menu-close" aria-label="Close menu">×</button>
+                <div class="mx-auto pb-14 pt-7 rounded-b-2xl shadow-none" data-pg-name="Solutions">
+                    <div class="flex flex-wrap gap-5 justify-center max-w-5xl mx-auto">
+                        <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-300 ease-out flex flex-col group h-1/4 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-5/12" data-pg-name="Entwickler" href="immobilien-projektentwicklung-marketing.html"> <img src="../asset/images/visualisation/K46.jpeg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-62 mb-3 object-cover rounded-t-md w-full"><div class="flex flex-col items-center mb-3 pl-2.5 pr-2.5">
+                                <h3 class="font-medium group-hover:text-white text-2xl text-center text-cyan-900">Entwickler</h3>
+                                <p class="antialiased group-hover:text-white text-base text-center text-cyan-900">Projekte im Vorverkauf, Visualisierung vor dem Bau, ROI maximieren mit professionellem Marketing</p>
+                            </div> </a>
+                        <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-300 ease-out flex flex-col group h-1/4 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-5/12" data-pg-name="Immobilienmakler" href="marketing-fuer-immobilienmakler.html"> <img src="../asset/images/photos/immobilienverkauf-o.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-62 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center mb-3 pl-2.5 pr-2.5">
+                                <h3 class="font-medium group-hover:text-white text-2xl text-center text-cyan-900">Immobilienmakler</h3>
+                                <p class="antialiased group-hover:text-white text-base text-center text-cyan-900">Mehr Aufträge gewinnen, Marketing automatisieren und eine starke Personenmarke aufbauen</p>
+                            </div> </a>
+                        <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-300 ease-out flex flex-col group h-1/4 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-5/12" data-pg-name="Privatverkäufer" href="immobilienverkauf-privat.html"> <img src="../asset/images/bgr-img/happy-mature-older-couple-laughing-bonding-sittin-2021-09-02-15-11-20-utc-scaled.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-62 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center mb-3 pl-2.5 pr-2.5">
+                                <h3 class="font-medium group-hover:text-white text-2xl text-center text-cyan-900">Privatverkäufer</h3>
+                                <p class="antialiased group-hover:text-white text-base text-center text-cyan-900">Schnell, professionell und mit minimalem Aufwand durch Experten-Marketing verkaufen</p>
+                            </div> </a>
+                        <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-300 ease-out flex flex-col group h-1/4 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-5/12" data-pg-name="Ferienhausbesitzer" href="ferienwohnung-marketing.html"> <img src="../asset/images/visualisation/kextra.jpeg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-62 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center mb-3 pl-2.5 pr-2.5">
+                                <h3 class="font-medium group-hover:text-white text-2xl text-center text-cyan-900">Ferienhausbesitzer</h3>
+                                <p class="antialiased group-hover:text-white text-base text-center text-cyan-900">Qualifizierte Käufer anziehen und sich in umkämpften Ferienimmobilienmärkten abheben</p>
+                            </div> </a>
+                    </div>
+                    <!-- Scroll Navigation Bar -->
+                </div>
+            </div>
+            <!-- Leistungen Mega Menu Panel -->
+            <div class="bg-slate-100 mega-menu-container mx-auto opacity-0 overflow-y-auto pointer-events-none shadow-xl z-50" data-mega-menu-container="leistungen" style="display: none;" data-pg-name="Mega Menu-Leistungen">
+                <div class="border-cyan-800 border-t-1 max-w-7xl mega-menu-panel mx-auto p-15 pt-0">
+                    <!-- Close Button -->
+                    <button class="mega-menu-close" aria-label="Close menu">×</button>
+                    <div class="mx-auto pb-14 pt-7 rounded-b-2xl shadow-none" data-pg-name="Leistungen">
+                        <div class="flex flex-wrap gap-x-4 gap-y-4 justify-center max-w-7xl mx-auto">
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="3D" href="3d-immobilienvisualisierungen-erstellen.html"> <img src="../asset/images/visualisation/Abend-Aussenansicht-03-B.jpeg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">3D Immobilienvisualisierungen&nbsp;</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Exposeerstellung" href="expose-immobilien-erstellen.html"> <img src="../asset/images/expose/05.RSI__Wriezen_02.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Exposeerstellung</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Ut enim ad minim veniam quis nostrud exercitation</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Architekturfotografie" href="architekturfotografie.html"> <img src="../asset/images/visualisation-interior/3-JPEG.jpeg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Architekturfotografie</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Duis aute irure dolor in reprehenderit voluptate velit</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Broschüren" href="immobilien-broschuere-formulare-erstellen.html"> <img src="../asset/images/expose/03_Sechs-Rosen_02.jpeg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Broschüren, Formulare, Flyer & Co.</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Excepteur sint occaecat cupidatat non proident sunt</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Drohnenaufnahmen" href="drohnenaufnahmen.html"> <img src="../asset/images/drons-photos/IMG_5126.jpeg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Drohnenaufnahmen</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Id est laborum et dolorum fuga et harum quidem rerum</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Webdesign" href="immobilien-webseite-erstellen.html"> <img src="../asset/images/expose/000.png" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Webdesign</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Nam libero tempore cum soluta nobis est eligendi</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Matterport 360° Rundgang" href="360-grad-rundgang-erstellen.html"> <img src="../asset/images/drons-photos/MG_8308.jpeg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Matterport 360° Rundgang</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Placeat facere possimus omnis voluptas assumenda</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Social Media Marketing" href="social-media-marketing-berlin.html"> <img src="../asset/images/photos/texte-schreiben-texting-1.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Social Media Marketing</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Quibusdam et aut officiis debitis aut rerum</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Google Ads" href="google-ads-agentur-berlin.html"> <img src="../asset/images/photos/texte-schreiben-texting-1.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Google Ads</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Repudiandae sint et molestiae non recusandae</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Grundrisse zeichnen in 2D und 3D" href="3d-immobilien-visualisierung.html"> <img src="../asset/images/photos/texte-schreiben-texting-1.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Grundrisse zeichnen in 2D und 3D</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Delectus ut aut reiciendis voluptatibus maiores</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Immobilientexte" href="immobilien-texte.html"> <img src="../asset/images/photos/texte-schreiben-texting-1.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Immobilientexte</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Repellat ratione voluptatem sequi nesciunt neque</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Lead Generation" href="lead-generator-immobilien.html"> <img src="../asset/images/photos/texte-schreiben-texting-1.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Lead Generation</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Dolor sit amet consectetur adipiscing elit sed</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Property Branding" href="corporate-design-agentur-berlin.html"> <img src="../asset/images/photos/texte-schreiben-texting-1.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Property Branding</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Magna aliqua ut enim ad minim veniam quis</p>
+                                </div> </a>
+                            <a class="bg-gray-200 border border-slate-300 cursor-pointer duration-250 flex flex-col group h-57 hover:bg-cyan-800 hover:scale-102 rounded-lg transform-gpu transition-all w-93" data-pg-name="Virtuellen Rundgang erstellen" href="virtueller-rundgang-erstellen.html"> <img src="../asset/images/visualisation/Wohnbereich-scaled.jpg" alt="Real estate agent managing deadlines and schedules" class="shrink-0 h-32 mb-3 object-cover rounded-t-md w-full"> <div class="flex flex-col items-center pl-2 pr-2">
+                                    <h3 class="font-medium group-hover:text-white text-center text-cyan-900 text-lg">Virtuellen Rundgang erstellen</h3>
+                                    <p class="group-hover:text-white text-center text-cyan-900 text-sm">Ex ea commodo consequat duis aute irure dolor</p>
+                                </div> </a>
+                        </div>
+                        <!-- Scroll Navigation Bar -->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main> 
+            <section class="-mt-8 bg-center bg-cover bg-no-repeat bg-white max-h-full pb-40 pt-24 relative" data-pg-name="Hero"> 
+                <svg class="-inset-16 absolute h-full opacity-30 w-full" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" version xml:space fill stroke> 
+                    <defs> 
+                        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"> 
+                            <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/> 
+                        </pattern>                         
+                        <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse" class="order-2 px-4 w-full lg:order-none lg:w-6/12 xl:ml-10 xl:w-7/12"> 
+                            <circle cx="20" cy="20" r="1" fill="currentColor" opacity="0.2"/> 
+                        </pattern>                         
+                    </defs>                     
+                    <rect width="100%" height="100%" fill="url(#grid)"/> 
+                    <rect width="100%" height="100%" fill="url(#dots)"/> 
+                </svg>                 
+                <div class="flex flex-col gap-10 h-full items-start justify-center mt-8 mx-auto w-11/12 lg:flex-col lg:place-items-center">
+                    <div class="max-w-4xl mx-auto space-y-5 text-center w-full z-10 lg:text-center" data-pg-name="col--text">
+                        <div class="-mb-5 gap-2 inline-flex items-center">
+                            <span class="bg-img_red-500 h-[1px] hidden w-8 md:block"></span>
+                            <span class="flex font-semibold gap-2 items-start mb-4.5 text-2xl text-center text-img_red-500 w-fit">Immobilienprojekt</span>
+                            <span class="bg-img_red-500 h-[1px] hidden w-8 md:block"></span>
+                        </div>
+                        <h1 class="font-extrabold leading-none mb-2 text-6xl text-center text-img_red-500 md:text-center lg:text-7xl" lass="lg:text-zinc-700">Gemeinsam erfolgreich: <span class="text-zinc-700">Ihre Vision trifft auf unsere Expertise</span></h1> 
+                    </div>
+                    <div class="container-wrap gap-3 grid grid-cols-1 max-w-7xl sm:grid-cols-2">
+                        <!-- Card 1 -->
+                        <div href="#" class="backdrop-blur-sm border flex flex-col group p-5 relative rounded-xl shadow-xs lg:bg-img_gray-50 lg:bg-opacity-40"> 
+                            <div class="flex flex-col gap-1 h-full">
+                                <div class="flex flex-col gap-3 items-center md:text-center">
+                                    <div class="bg-img_red-500 flex h-10 items-center justify-center rounded-full shadow-xs shrink-0 text-white w-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-bold leading-tight text-2xl text-zinc-700 transition-colors group-hover:text-stone-600">Schnellere Verkaufsprozesse</h3>
+                                </div>
+                                <span class="-mt-1 italic leading-tight pl-0 text-center text-img_red-500 text-lg">durch professionelle Präsentation und smarte Strategien</span>
+                            </div>                             
+                        </div>
+                        <!-- Card 2 -->
+                        <div href="#" class="backdrop-blur-sm border flex flex-col group p-5 relative rounded-xl shadow-xs lg:bg-img_gray-50 lg:bg-opacity-40"> 
+                            <div class="flex flex-col gap-1 h-full">
+                                <div class="flex flex-col gap-3 items-center md:text-center">
+                                    <div class="bg-img_red-500 flex h-10 items-center justify-center rounded-full shadow-xs shrink-0 text-white w-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M12 2v20"/>
+                                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-bold leading-tight text-2xl text-zinc-700 transition-colors group-hover:text-stone-600">Höhere Verkaufserlöse</h3>
+                                </div>
+                                <span class="-mt-1 italic leading-tight pl-0 text-center text-img_red-500 text-lg">dank gezielter Vermarktung und optimaler Positionierung</span>
+                            </div>                             
+                        </div>
+                        <!-- Card 3 -->
+                        <div href="#" class="backdrop-blur-sm border flex flex-col group p-5 relative rounded-xl shadow-xs lg:bg-img_gray-50 lg:bg-opacity-40"> 
+                            <div class="flex flex-col gap-1 h-full">
+                                <div class="flex flex-col gap-3 items-center md:text-center">
+                                    <div class="bg-img_red-500 flex h-10 items-center justify-center rounded-full shadow-xs shrink-0 text-white w-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-bold leading-tight text-2xl text-center text-zinc-700">Weniger Aufwand</h3>
+                                </div>
+                                <span class="-mt-1 italic leading-tight pl-0 text-center text-img_red-500 text-lg">für Sie – wir übernehmen die komplette Abwicklung</span>
+                            </div>                             
+                        </div>
+                        <!-- Card 4 -->
+                        <div href="#" class="backdrop-blur-sm border flex flex-col group p-5 relative rounded-xl shadow-xs lg:bg-img_gray-50 lg:bg-opacity-40"> 
+                            <div class="flex flex-col gap-1 h-full">
+                                <div class="flex flex-col gap-3 items-center md:text-center">
+                                    <div class="bg-img_red-500 flex h-10 items-center justify-center rounded-full shadow-xs shrink-0 text-white w-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                            <path d="M12 17h.01"/>
+                                        </svg>
+                                    </div>
+                                    <h3 class="font-bold leading-tight text-2xl text-center text-zinc-700">Individuelle Lösungen</h3>
+                                </div>
+                                <span class="-mt-1 italic leading-tight pl-0 text-center text-img_red-500 text-lg">für Makler, Projektentwickler und Privatverkäufer</span>
+                            </div>                             
+                        </div>
+                        <!-- Card 5 -->
+                        <!-- Card 6 -->
+                        <!-- Card 7 -->
+                    </div>                     
+                </div>
+                <div class="mx-auto relative w-96 z-100">
+                    <button type="button" class="bg-img_red-500 border-white/5 duration-300 flex font-normal gap-2 group items-center justify-center mt-9 px-8 py-3 rounded-lg text-lg text-white transition-all w-full hover:bg-zinc-700">
+                        Kostenlose Beratung Buchen
+                        <svg class="h-5 hidden text-white transition-transform w-5 group-hover:translate-x-1 md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </button>
+                </div>                 
+            </section>
+            <div data-pg-name="divider-img" class="-mt-7 -space-x-10 flex flex-row justify-center lg:-mt-16">
+                <img alt="placeholder" src="asset/images/visualisation-interior/Diele.jpeg" data-pg-name="img-left" class="border-10 border-8 border-white object-cover rounded-full size-32 z-10 lg:size-56">
+                <img alt="placeholder" src="asset/images/visualisation/3d-immobilienvisualisierungen-1.jpg" data-pg-name="img-mdl" class="-mt-11 border-10 border-8 border-white h-80 object-cover rounded-full size-52 z-30 lg:w-[450px]">
+                <img alt="placeholder" src="asset/images/visualisation/Garten-und-Terrasse.jpeg" sizes="64px" data-pg-name="img-right" class="border-10 border-8 border-white object-cover rounded-full size-32 z-10 lg:size-56">
+            </div>
+            <div data-pg-name="divider-img" class="-mt-7 -space-x-10 flex flex-row justify-center lg:-mt-16">
+                <img alt="placeholder" src="asset/images/visualisation-interior/Diele.jpeg" data-pg-name="img-left" class="border-10 border-8 border-white object-cover rounded-full size-32 z-10 lg:size-56">
+                <img alt="placeholder" src="asset/images/visualisation/3d-immobilienvisualisierungen-1.jpg" data-pg-name="img-mdl" class="-mt-11 border-10 border-8 border-white h-80 object-cover rounded-full size-52 z-30 lg:w-[450px]">
+                <img alt="placeholder" src="asset/images/visualisation/Garten-und-Terrasse.jpeg" sizes="64px" data-pg-name="img-right" class="border-10 border-8 border-white object-cover rounded-full size-32 z-10 lg:size-56">
+            </div>
+            <div class="container-heading-2">
+                <div class="-mb-5 gap-2 inline-flex items-center" data-pg-name="sub-heading">
+                    <span class="bg-img_red-500 h-[1px] w-8"></span>
+                    <span class="flex font-normal gap-2 items-center mb-4.5 rounded-lg text-base text-center text-img_red-500 w-fit lg:text-xl">Aptent faucibus dignissim</span>
+                    <span class="bg-img_red-500 h-[1px] w-8"></span>
+                </div>
+                <h2 class="-mb-6 font-bold leading-none text-4xl text-center text-zinc-700 tracking-tighter lg:text-6xl">Ihre Vision-<span class="lg:text-img_red-500">unsere Expertise</span></h2>
+                <p class="max-w-4xl p-3 text-2xl text-center text-zinc-700">Vermarktung eines Immobilienprojekts ist mehr als die Summe seiner einzelnen Teile. Um die Vision und den Mehrwert Ihres Projekts effektiv zu kommunizieren, braucht es spezifisches Know-how und vor allem eine langjährige Kenntnis der Branche. Beides haben wir und wir leihen es Ihnen gern, um Ihr Immobilienprojekt auf einzigartige Weise zu präsentieren und die richtige Zielgruppe zu erreichen.</p>
+            </div>
+            <section>
+                <div data-pg-name="features" class="container-wrap mt-5">
+                    <div class="gap-0 grid grid-cols-1 lg:max-w-5xl lg:w-5xl max-w-fit md:grid-cols-3 relative xl:max-w-7xl xl:w-full" data-pg-name="carts">
+                        <div class="bg-white p-9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-7 text-img_red-500 lg:mb-4">
+                                <path d="M12 16v5"></path>
+                                <path d="M16 14v7"></path>
+                                <path d="M20 10v11"></path>
+                                <path d="m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15"></path>
+                                <path d="M4 18v3"></path>
+                                <path d="M8 14v7"></path>
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold text-2xl text-img_red-500 lg:text-2xl">Branchenerfahrung</h3>
+                                <p class="text-zinc-700">Wir verfügen über langjährige Erfahrung im Immobilienmarkt und wissen, wie wir Ihre Privatimmobilie in Szene zu setzen, um potenzielle Käufer anzuziehen.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-auto lucide lucide-target size-7 text-img_red-500 lg:mb-4">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold text-2xl text-img_red-500 lg:text-2xl">Professionelle Präsentation</h3>
+                                <p class="text-zinc-700">Von hochwertigen Fotos und virtuellen Rundgängen bis hin zu überzeugenden Beschreibungen – wir sorgen dafür, dass Ihre Immobilie im besten Licht erscheint und das Interesse von Interessenten weckt.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-9">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-7 text-img_red-500 lg:mb-4">
+                                <line x1="10" x2="14" y1="2" y2="2"></line>
+                                <line x1="12" x2="15" y1="14" y2="11"></line>
+                                <circle cx="12" cy="14" r="8"></circle>
+                            </svg>
+                            <div>
+                                <h3 class="font-semibold text-2xl text-img_red-500 lg:text-2xl">Zeit- und Ressourceneffizienz</h3>
+                                <p class="text-zinc-700">Indem Sie uns die Vermarktung Ihres Objekts überlassen, können Sie sich auf Ihre täglichen Aufgaben konzentrieren.</p>
+                            </div>
+                        </div>
+                        <div data-pg-name="lines-deco">
+                            <div class="-inset-x-4 absolute bg-gray-200 md:hidden top-0"></div>
+                            <div class="-inset-x-4 absolute bg-gray-200 bg-input h-px md:hidden row-start-2 top-[-0.5px]"></div>
+                            <div class="-inset-x-4 absolute bg-gray-200 h-px md:hidden row-start-3 top-[-0.5px]"></div>
+                            <div class="-inset-x-4 absolute bg-gray-200 bg-input bottom-0 h-px md:hidden row-start-4"></div>
+                            <div class="-left-2 -top-2 absolute bg-gray-200 bg-input bottom-0 md:hidden w-px"></div>
+                            <div class="-right-2 -top-2 absolute bg-gray-200 bg-input bottom-0 col-start-2 md:hidden w-px"></div>
+                            <div class="-inset-x-2 absolute bg-gray-200 bg-input h-px hidden md:block top-0"></div>
+                            <div class="-top-2 absolute bg-gray-200 bg-input bottom-0 hidden left-0 md:block w-px"></div>
+                            <div class="-left-[0.5px] -top-2 absolute bg-gray-200 bg-input bottom-0 col-start-2 hidden md:block w-px"></div>
+                            <div class="-left-[0.5px] -top-2 absolute bg-gray-200 bg-input bottom-0 col-start-3 hidden md:block w-px"></div>
+                            <div class="-top-2 absolute bg-gray-200 bottom-0 hidden md:block right-0 w-px"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container-heading-2">
+                    <div class="-mb-5 gap-2 inline-flex items-center" data-pg-name="sub-heading">
+                        <span class="bg-img_red-500 h-[1px] w-8"></span>
+                        <span class="flex font-normal gap-2 items-center mb-4.5 rounded-lg text-base text-center text-img_red-500 w-fit lg:text-xl">Aptent faucibus dignissim</span>
+                        <span class="bg-img_red-500 h-[1px] w-8"></span>
+                    </div>
+                    <h2 class="-mb-6 font-bold leading-none text-4xl text-center text-zinc-700 tracking-tight lg:text-6xl">Erfolgreiches <br><span class="text-img_red-500">Immobilienmarketing</span></h2>
+                    <p class="max-w-4xl text-2xl text-center text-zinc-700">Lassen Sie uns die Arbeit machen, während Sie die Ergebnisse sehen</p>
+                </div>
+                <div class="flex items-center justify-center ml-[50px]">
+                    <div class=" hidden sm:hidden md:block lg:block" style="transform: translateY(27.5688px); z-index: 0;">
+                        <div class="relative h-[176px] w-[177px] overflow-hidden rounded-3xl border mb-14 border-[#8b8b8b] bg-black shadow-2xl" style="transform:rotate(-7.95deg);margin-left:-50px">
+                            <img src="../asset/images/visualisation/Abend-Aussenansicht-03-B.jpeg" alt="Card 2" class="border-black border-solid object-center object-cover size-full">
+                        </div>
+                    </div>
+                    <div class="md:block lg:block" style="transform: translateY(12px); z-index: 0;">
+                        <div class="relative h-[176px] w-[177px] overflow-hidden rounded-3xl border border-[#cecece] bg-[#f5f5f5] shadow-lg" style="transform:rotate(-4.5deg);margin-left:-50px">
+                            <img src="../asset/images/visualisation/Aussenansicht-01.jpeg" alt="Card 3" class="size-full object-cover object-center">
+                        </div>
+                    </div>
+                    <div class="md:block lg:block" style="transform: none; z-index: 0;">
+                        <div class="bg-[#f5f5f5] border border-[#cecece] overflow-hidden relative rounded-3xl shadow-lg size-80" style="transform:rotate(0deg);margin-left:-50px">
+                            <img src="../asset/images/visualisation/3d-immobilienvisualisierungen-1.jpg" alt="Card 4" class="size-full object-cover object-center">
+                        </div>
+                    </div>
+                    <div class="md:block lg:block" style="transform: translateY(12px); z-index: 0;">
+                        <div class="relative h-[176px] w-[177px] overflow-hidden rounded-3xl border border-[#cecece] bg-[#f5f5f5] shadow-lg" style="transform:rotate(4.5deg);margin-left:-50px">
+                            <img src="../asset/images/visualisation/Ahrensfelde-Kam-1-JPEG.jpeg" alt="Card 5" class="size-full object-cover object-center">
+                        </div>
+                    </div>
+                    <div class=" hidden sm:hidden md:block lg:block" style="transform: translateY(27.5688px); z-index: 0;">
+                        <div class="bg-[#f5f5f5] border border-[#cecece] h-[176px] mt-12 overflow-hidden relative rounded-3xl shadow-lg w-[177px]" style="transform:rotate(7.95deg);margin-left:-50px">
+                            <img src="../asset/images/visualisation/Blick-vom-Brosepark.jpeg" alt="Card 6" class="size-full object-cover object-center">
+                        </div>
+                    </div>
+                </div>
+                <div class="-mt-7 bg-img_red-500 border border-gray-200 container-wrap flex flex-col items-center pb-5 pt-9 px-9 rounded-b-none rounded-t-3xl space-y-5" data-pg-name="stats">
+                    <div class="flex flex-row items-end space-y-8 w-full">
+                        <div class="border-b-[1px] border-img_red-100 border-opacity-40 flex flex-1 flex-col gap-3 p-3 text-center md:border-b-0 md:border-r-[1px]">
+                            <div class="font-medium text-5xl text-primary text-white tracking-tight">200+</div>
+                            <div class="font-medium text-white tracking-tight lg:text-lg">Lorem ipsum dolor</div>
+                        </div>
+                        <div class="border-b-[1px] border-img_red-100 border-opacity-40 flex flex-1 flex-col gap-3 p-2 text-center md:border-b-0 md:border-r-[1px]">
+                            <div class="font-medium text-5xl text-primary text-white tracking-tight">20%</div>
+                            <div class="font-medium text-white tracking-tight lg:text-lg">Lorem ipsum dolor</div>
+                        </div>
+                        <div class="border-img_red-100 border-opacity-40 flex flex-1 flex-col gap-3 p-2 text-center md:border-b-0">
+                            <div class="font-medium text-5xl text-primary text-white tracking-tight">50k</div>
+                            <div class="font-medium text-white tracking-tight lg:text-lg">Lorem ipsum dolor</div>
+                        </div>
+                    </div>
+                    <div class="border-img_red-300 border-opacity-40 border-t px-5 w-full"></div>
+                    <div class="flex flex-col gap-3 items-center p-0">
+                        <span class="border-img_red-200 border-opacity-40 flex font-normal justify-center text-white md:text-2xl md:text-center md:tracking-tight"> Top-Qualität, schnelle Bearbeitung und persönlicher Kundenservice </span>
+                        <div class="border-solid flex gap-1 justify-center mt-6 w-full sm:flex-row md:flex-col lg:flex-row lg:items-center lg:justify-start lg:mt-0 lg:w-44">
+                            <span class="-space-x-4 flex items-center"><span class="border border-img_beige-700 flex overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full object-center object-cover w-full" alt="placeholder" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDV8fHBvcnRyYWl0fGVufDB8fHx8MTc1NDUxODMxN3ww&ixlib=rb-4.1.0&q=80&w=400"></span><span class="border border-img_beige-700 flex overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full object-center object-cover w-full" alt="placeholder" src="https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE0OXx8cG9ydHJhaXR8ZW58MHx8fHwxNzU0NTE5MDE0fDA&ixlib=rb-4.1.0&q=80&w=400"></span><span class="border border-img_beige-700 flex overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full object-center object-cover w-full" alt="placeholder" src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDU2fHxwb3J0cmFpdHxlbnwwfHx8fDE3NTQ1MTg5NTV8MA&ixlib=rb-4.1.0&q=80&w=400"></span><span class="border border-img_beige-700 flex object-center object-cover overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full w-full" alt="placeholder" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDgxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTQ1MTg5Nzh8MA&ixlib=rb-4.1.0&q=80&w=400"></span><span class="border border-img_beige-700 flex overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full object-center object-cover w-full" alt="placeholder" src="https://images.unsplash.com/photo-1531860494978-9326a0388ef4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDEyOXx8cG9ydHJhaXR8ZW58MHx8fHwxNzU0NTE5MDAxfDA&ixlib=rb-4.1.0&q=80&w=400"></span></span> 
+                            <div> 
+                                <div class="flex gap-1 items-center text-img_red-500"> 
+                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-img_beige-900 text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
+                                    </svg>
+                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-img_beige-900 text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
+                                    </svg>                                     
+                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-img_beige-900 text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
+                                    </svg>                                     
+                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-img_beige-900 text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
+                                    </svg>                                     
+                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
+                                    </svg>
+                                    <span class="font-semibold text-white text-xs">5.0</span> 
+                                </div>                                 
+                            </div>                             
+                        </div>
+                    </div>
+                    <div class="border-img_red-300 border-opacity-40 border-t px-5 w-full"></div>
+                    <ul class="content-center flex flex-row flex-wrap gap-2 justify-center place-content-start place-items-start">
+                        <li list="item" class="flex flex-row gap-2 items-center text-white"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <path d="M22 4 12 14.01l-3-3"/>
+                            </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                        </li>
+                        <li list="item" class="flex flex-row gap-2 items-center text-white"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <path d="M22 4 12 14.01l-3-3"/>
+                            </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                        </li>
+                        <li list="item" class="flex flex-row gap-2 items-center text-white"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <path d="M22 4 12 14.01l-3-3"/>
+                            </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                        </li>
+                        <li list="item" class="flex flex-row gap-2 items-center text-white"> 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <path d="M22 4 12 14.01l-3-3"/>
+                            </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                        </li>
+                    </ul>
+                </div>
+                <div id="slider-2" class="pt-2 slider-component" data-pg-name="slider">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="swiper" id="swiper-2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide px-2" data-pg-name="3D Immobilienvisualisierungen">
+                                    <figure class="w-full h-full">
+                                        <img src="../asset/images/visualisation/Abend-Aussenansicht-03-B.jpeg" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                        <figcaption class="bg-img_red-500 flex flex-col-reverse font-semibold">
+                                            <small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>3D Immobilienvisualisierungen 
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <!-- end swiper-slide -->
+                                <div class="swiper-slide px-2" data-pg-name="Grundrisse zeichnen in 2D und 3D">
+                                    <figure class="w-full h-full">
+                                        <img src="../asset/images/bgr-img/sieben-todsuenden-bei-der-grundrissplanung.jpg" alt="Marbella, Spain" class="h-full object-cover w-full"/>
+                                        <figcaption class="bg-cyan-900/85 bg-img_red-500 flex flex-col font-semibold">
+                                            Grundrisse zeichnen in 2D und 3D<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <!-- end swiper-slide -->
+                                <div class="swiper-slide px-2" data-pg-name="Architekturfotografie">
+                                    <figure class="w-full h-full">
+                                        <img src="../asset/images/visualisation-interior/Wohnen.jpeg" alt="Architekturfotografie" class="w-full h-full object-cover"/>
+                                        <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">
+                                            Architekturfotografie<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide px-2" data-pg-name="Matterport 360° Rundgang">
+                                    <figure class="w-full h-full">
+                                        <img src="../asset/images/drons-photos/MG_8308.jpeg" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                        <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">
+                                            Matterport 360° Rundgang<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <!-- end swiper-slide -->
+                                <!-- end swiper-slide -->
+                                <div class="swiper-slide px-2" data-pg-name="Webdesign">
+                                    <figure class="w-full h-full">
+                                        <img src="https://images.unsplash.com/photo-1482874478989-aaf30c03fe37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDV8fHdlYnNpdGUlMjBkZXNpbmclMjB8ZW58MHx8fHwxNzU0NzkwODQyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                        <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">
+                                            Webdesign<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide px-2" data-pg-name="Exposeerstellung">
+                                    <figure class="w-full h-full">
+                                        <img src="../asset/images/expose/02_Ruderclub_02-1.jpeg" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                        <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">Exposeerstellung<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="swiper-slide px-2" data-pg-name="Lead Generation">
+                                    <figure class="w-full h-full">
+                                        <img src="../asset/images/expose/bauschild-baubanner-gestalten-1.jpg" alt="Marbella, Spain" class="h-full object-cover w-full"/>
+                                        <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">Lead Generation<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <!-- end swiper-slide -->
+                            </div>
+                            <!-- end swiper-wrapper -->
+                            <div class="swiper-custom-nav" style="width: 95%;">
+                                <svg width="64" height="64" viewBox="0 0 64 64" id="nav-left" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M32 2.79753e-06C14.3269 4.34256e-06 -4.34256e-06 14.3269 -2.79753e-06 32C-1.2525e-06 49.6731 14.3269 64 32 64C49.6731 64 64 49.6731 64 32C64 14.3269 49.6731 1.2525e-06 32 2.79753e-06ZM28.9334 24.3999C28.6667 24.1333 28.4 23.9999 28 23.9999C27.6 23.9999 27.3334 24.1333 27.0667 24.3999L20.4 31.0666L20.4 31.0667C20.2 31.2667 20.075 31.5041 20.025 31.751C19.9417 32.1624 20.0666 32.6 20.4 32.9333L27.0667 39.6C27.6 40.1333 28.4 40.1333 28.9333 39.6C29.4667 39.0667 29.4667 38.2667 28.9333 37.7333L24.5334 33.3334L42.7222 33.3334C43.4889 33.3334 44 32.8 44 32C44 31.2 43.4889 30.6667 42.7222 30.6667L24.5333 30.6667L28.9334 26.2666C29.4667 25.7333 29.4667 24.9333 28.9334 24.3999Z" fill="white"/>
+                                </svg>
+                                <svg width="64" height="64" viewBox="0 0 64 64" id="nav-right" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M32 64C49.6731 64 64 49.6731 64 32C64 14.3269 49.6731 0 32 0C14.3269 0 0 14.3269 0 32C0 49.6731 14.3269 64 32 64ZM35.0666 39.6001C35.3333 39.8667 35.6 40.0001 36 40.0001C36.4 40.0001 36.6666 39.8667 36.9333 39.6001L43.6 32.9334L43.6 32.9333C43.8 32.7333 43.925 32.4959 43.975 32.249C44.0583 31.8376 43.9334 31.4 43.6 31.0667L36.9333 24.4C36.4 23.8667 35.6 23.8667 35.0667 24.4C34.5333 24.9333 34.5333 25.7333 35.0667 26.2667L39.4666 30.6666H21.2778C20.5111 30.6666 20 31.2 20 32C20 32.8 20.5111 33.3333 21.2778 33.3333H39.4667L35.0666 37.7334C34.5333 38.2667 34.5333 39.0667 35.0666 39.6001Z" fill="white"/>
+                                </svg>
+                            </div>
+                            <!-- end swiper-custom-nav -->
+                            <div class="swiper-custom-pagination"></div>
+                        </div>
+                        <!-- end swiper -->
+                    </div>
+                    <!-- end container -->
+                </div>
+            </section>
+            <section>
+                <div class="container-heading-2">
+                    <div class="-mb-5 gap-2 inline-flex items-center" data-pg-name="sub-heading">
+                        <span class="bg-img_red-500 h-[1px] w-8"></span>
+                        <span class="flex font-normal gap-2 items-center mb-4.5 rounded-lg text-base text-center text-img_red-500 w-fit lg:text-xl">Aptent faucibus dignissim</span>
+                        <span class="bg-img_red-500 h-[1px] w-8"></span>
+                    </div>
+                    <h2 class="-mb-6 font-bold leading-none text-4xl text-center text-zinc-700 tracking-tighter lg:text-6xl">Wie sieht die <br><span class="lg:text-img_red-500">Zusammenarbeit aus?</span></h2>
+                    <p class="max-w-4xl text-2xl text-center text-zinc-700">Geben Sie Ihr Immobilienprojekt in kompetente, engagierte Hände</p>
+                </div>
+            </section>
+            <section>
+                <div class="container-wrap flex flex-row flex-wrap gap-2 mb-7 w-full" data-pg-name="img">
+                    <img src="../asset/images/photos/texte-schreiben-texting-1.jpg" class="aspect-square border-1 border-slate-300/100 flex-1 h-48 object-center object-cover rounded-2xl w-60"/>
+                    <img src="asset/images/drons-photos/IMG_5126.jpeg" class="aspect-square border-1 border-slate-300/100 flex-1 h-48 object-center object-cover rounded-2xl w-60"/>
+                    <img src="../asset/images/photos/moderne-immobilienpraesentation-mit-360-fotos-expose.jpg" class="aspect-square border-1 border-slate-300/100 flex-1 h-48 object-center object-cover rounded-2xl w-60"/>
+                    <img src="asset/images/bgr-img/sieben-todsuenden-bei-der-grundrissplanung.jpg" class="aspect-square border-1 border-slate-300/100 flex-1 h-48 object-center object-cover rounded-2xl w-60"/>
+                </div>
+                <div class="container-wrap-has-bg max-w-6xl mx-auto md:p-10" data-pg-name="steps">
+                    <div class="md:w-full w-full" data-pg-name="steps-item">
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div>
+                                    <div class="border border-img_red-500 flex h-10 items-center justify-center rounded-full w-10">
+                                        <svg class="text-img_red-500 w-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <line fill="none" stroke-miterlimit="10" x1="12" y1="2" x2="12" y2="22"></line>
+                                            <polyline fill="none" stroke-miterlimit="10" points="19,15 12,22 5,15"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bg-img_red-500 bg-opacity-60 h-full w-px"></div>
+                            </div>
+                            <div class="pt-1 pb-8">
+                                <h3 class="font-medium text-2xl text-img_red-500">1. Analyse & Strategie</h3>
+                                <p class="text-zinc-700">
+       Eine Analyse der Bedürfnisse, der Ziele und der Zielgruppe – ohne diesen Arbeitsschritt geht es einfach nicht. Darauf beruht die Entwicklung einer maßgeschneiderten Strategie. Diese beinhaltet die Auswahl der geeigneten Marketingkanäle sowie die Content-Erstellung. </p>
+                                <ul class="content-center flex flex-row flex-wrap gap-6 justify-start mt-4 place-content-start place-items-start">
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div>
+                                    <div class="border border-img_red-500 flex h-10 items-center justify-center rounded-full w-10">
+                                        <svg class="text-img_red-500 w-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <line fill="none" stroke-miterlimit="10" x1="12" y1="2" x2="12" y2="22"></line>
+                                            <polyline fill="none" stroke-miterlimit="10" points="19,15 12,22 5,15"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bg-img_red-500 bg-opacity-60 h-full w-px"></div>
+                            </div>
+                            <div class="pt-1 pb-8">
+                                <h3 class="font-medium text-2xl text-img_red-500">2. Content-Erstellung</h3>
+                                <p class="text-zinc-700">
+           Diese Erkenntnisse und alle relevanten Infos rund um Ihre Immobilienvision gießen wir anschließend so kreativ wie professionell in Wort und Bild. Seien Sie gespannt auf hochauflösende Fotos durch unsere Expert*innen oder passende Grafiken aus bewährten Internet-Datenbanken. Die Optik ergänzen zudem Grundrisse, akkurat reingezeichnet oder als virtuelle 2D- oder 3D-Modellierungen und eine Lagekarte mit attraktiven Hotspots der Gegend. </p>
+                                <ul class="content-center flex flex-row flex-wrap gap-6 justify-start mt-4 place-content-start place-items-start">
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div>
+                                    <div class="border border-img_red-500 flex h-10 items-center justify-center rounded-full w-10">
+                                        <svg class="text-img_red-500 w-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                                            <line fill="none" stroke-miterlimit="10" x1="12" y1="2" x2="12" y2="22"></line>
+                                            <polyline fill="none" stroke-miterlimit="10" points="19,15 12,22 5,15"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="bg-img_red-500 bg-opacity-60 h-full w-px"></div>
+                            </div>
+                            <div class="pt-1 pb-8">
+                                <h3 class="font-medium text-2xl text-img_red-500">3. Finalisierung & Präsentation</h3>
+                                <p class="text-zinc-700">
+          Nachdem unser Text-Team griffige und verkaufsfördernde Kurztexte zum Objekt selbst, zur Ausstattung und zur Lage verfasst hat, verquicken wir all diese Elemente zu einem professionellen Exposé in anspruchsvollem Design, dass Sie selbst auswählen dürfen. Auf Wunsch integrieren wir Ihre Property Brand und erstellen eine repräsentative One-Page-Webseite. </p>
+                                <ul class="content-center flex flex-row flex-wrap gap-6 justify-start mt-4 place-content-start place-items-start">
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                    <li list="item" class="flex flex-row gap-2 items-center text-img_red-500"> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                            <path d="M22 4 12 14.01l-3-3"/>
+                                        </svg>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     Virtuelle Rundgänge                 
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div>
+                                    <div class="border border-img_red-500 flex h-10 items-center justify-center rounded-full w-10">
+                                        <svg class="text-img_red-500 w-6" stroke="currentColor" viewBox="0 0 24 24">
+                                            <polyline fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="6,12 10,16 18,8"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-1">
+                                <h3 class="font-medium text-2xl text-img_red-500">Success !</h3>
+                                <p class="text-gray-700"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container-heading-2">
+                    <div class="-mb-5 gap-2 inline-flex items-center" data-pg-name="sub-heading">
+                        <span class="bg-img_red-500 h-[1px] w-8"></span>
+                        <span class="flex font-normal gap-2 items-center mb-4.5 rounded-lg text-base text-center text-img_red-500 w-fit lg:text-xl">FAQ</span>
+                        <span class="bg-img_red-500 h-[1px] w-8"></span>
+                    </div>
+                    <h2 class="-mb-6 font-bold leading-none text-4xl text-center text-zinc-700 tracking-tighter lg:text-6xl">Alles was Sie <br><span class="lg:text-img_red-500">über unsere Projektentwickler-Services wissen müsse</span></h2>
+                </div>
+                <div class="accordion max-w-4xl mx-auto space-y-4 mt-12" data-pg-name="accordion">
+                    <!-- Item 1 -->
+                    <div class="border border-stone-200 rounded-xl bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-img_red-200 transition-all duration-300">
+                        <button class="accordion-button flex w-full items-center justify-between px-6 py-5 text-left bg-white hover:bg-stone-50 transition-colors duration-200 group" data-image="1">
+                            <span class="text-lg font-semibold text-zinc-800 tracking-tight group-hover:text-img_red-500 transition-colors">Wie läuft die Zusammenarbeit ab?</span>
+                            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-stone-100 text-stone-500 group-hover:bg-img_red-50 group-hover:text-img_red-500 transition-all"> <svg class="icon w-5 h-5 transition-transform duration-300 ease-out shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg> </span>
+                        </button>
+                        <div class="accordion-content hidden opacity-0 transition-opacity duration-300 ease-in-out">
+                            <div class="px-6 pb-8 pt-2">
+                                <p class="text-zinc-600 leading-relaxed text-lg">
+                    Unser Prozess beginnt mit einer detaillierten Analyse Ihrer Ziele und Anforderungen. Darauf basierend entwickeln wir eine maßgeschneiderte Strategie. Nach Ihrer Freigabe starten wir mit der Umsetzung, wobei wir Sie in regelmäßigen Abständen über den Fortschritt informieren und Feedback einarbeiten. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="border border-stone-200 rounded-xl bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-img_red-200 transition-all duration-300">
+                        <button class="accordion-button flex w-full items-center justify-between px-6 py-5 text-left bg-white hover:bg-stone-50 transition-colors duration-200 group" data-image="2">
+                            <span class="text-lg font-semibold text-zinc-800 tracking-tight group-hover:text-img_red-500 transition-colors">Welche Unterlagen werden benötigt?</span>
+                            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-stone-100 text-stone-500 group-hover:bg-img_red-50 group-hover:text-img_red-500 transition-all"> <svg class="icon w-5 h-5 transition-transform duration-300 ease-out shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg> </span>
+                        </button>
+                        <div class="accordion-content hidden opacity-0 transition-opacity duration-300 ease-in-out">
+                            <div class="px-6 pb-8 pt-2">
+                                <p class="text-zinc-600 leading-relaxed text-lg">
+                    Idealerweise benötigen wir Grundrisse, Schnitte, Ansichten sowie Informationen zu Materialien und Ausstattung. Sollten bestimmte Informationen fehlen, unterstützen wir Sie gerne bei der Beschaffung oder finden basierend auf unserer Erfahrung adäquate Lösungen für die Visualisierung. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="border border-stone-200 rounded-xl bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-img_red-200 transition-all duration-300">
+                        <button class="accordion-button flex w-full items-center justify-between px-6 py-5 text-left bg-white hover:bg-stone-50 transition-colors duration-200 group" data-image="3">
+                            <span class="text-lg font-semibold text-zinc-800 tracking-tight group-hover:text-img_red-500 transition-colors">Wie lange dauert die Erstellung?</span>
+                            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-stone-100 text-stone-500 group-hover:bg-img_red-50 group-hover:text-img_red-500 transition-all"> <svg class="icon w-5 h-5 transition-transform duration-300 ease-out shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg> </span>
+                        </button>
+                        <div class="accordion-content hidden opacity-0 transition-opacity duration-300 ease-in-out">
+                            <div class="px-6 pb-8 pt-2">
+                                <p class="text-zinc-600 leading-relaxed text-lg">
+                    Der Zeitrahmen ist stark projektabhängig. Einfache Visualisierungen können oft innerhalb von 3-5 Werktagen realisiert werden, während komplexe Projektentwicklungen oder umfangreiche Marketingpakete 2-4 Wochen in Anspruch nehmen können. Wir definieren zu Beginn klare Meilensteine. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="border border-stone-200 rounded-xl bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-img_red-200 transition-all duration-300">
+                        <button class="accordion-button flex w-full items-center justify-between px-6 py-5 text-left bg-white hover:bg-stone-50 transition-colors duration-200 group" data-image="4">
+                            <span class="text-lg font-semibold text-zinc-800 tracking-tight group-hover:text-img_red-500 transition-colors">Können Änderungen vorgenommen werden?</span>
+                            <span class="flex items-center justify-center w-10 h-10 rounded-full bg-stone-100 text-stone-500 group-hover:bg-img_red-50 group-hover:text-img_red-500 transition-all"> <svg class="icon w-5 h-5 transition-transform duration-300 ease-out shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg> </span>
+                        </button>
+                        <div class="accordion-content hidden opacity-0 transition-opacity duration-300 ease-in-out">
+                            <div class="px-6 pb-8 pt-2">
+                                <p class="text-zinc-600 leading-relaxed text-lg">
+                    Ja, wir arbeiten mit Korrekturschleifen. In unseren Angeboten sind üblicherweise zwei Korrekturphasen inkludiert, in denen Sie Anpassungswünsche äußern können. So stellen wir sicher, dass das Endergebnis exakt Ihren Vorstellungen entspricht. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section data-pg-name="CTA" class="my-8 text-white">
+                <div class="bg-img_red-500 container-wrap p-11 rounded-2xl">
+                    <div class="flex flex-col items-center text-center max-w-5xl mx-auto">
+                        <div class="gap-2 inline-flex items-center mb-4 text-left"> <span class="bg-white h-[1px] w-8"></span> <span class="font-bold text-base text-white tracking-[0.2em] uppercase">Kontakt &amp; Beratung</span> <span class="bg-white h-[1px] w-8"></span> 
+                        </div>
+                        <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 drop-shadow-sm">Ich berate Sie gerne!</h2>
+                        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
+                            <!-- Profile Image Circle -->
+                            <div class="relative shrink-0">
+                                <div class="border-4 border-white/20 h-40 overflow-hidden rounded-full shadow-2xl w-40 md:h-40 md:w-40">
+                                    <img src="asset/images/staff-pictures/FS8A0793-1-2048x1847.jpeg" alt="Kontaktperson" class="w-full h-full object-cover object-center">
+                                </div>
+                                <div class="font-light italic text-white">Daniel Marczinek</div>
+                                <div class="font-light italic text-sm text-white">Geschäftsführer</div>
+                            </div>
+                            <!-- Action Block -->
+                            <div class="flex flex-col items-center md:text-center">
+                                <button type="button" class="bg-zinc-700 border border-white/5 duration-300 flex font-normal gap-2 group items-center p-8 pb-5 pt-5 rounded-xl text-white text-xl transition-all hover:bg-img_red-900">
+                                    Kostenlose Beratung Buchen
+                                    <svg class="h-4 hidden text-gray-400 transition-transform w-10 group-hover:translate-x-1 md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    </svg>
+                                </button>
+                                <span class="font-light italic mt-3 opacity-90 text-sm tracking-wide md:text-base">
+                        Kostenlos, Provisionsbasiert, Persönlich </span>
+                            </div>
+                        </div>
+                        <!-- Bottom Separator Line -->
+                    </div>
+                </div>
+            </section>
+            <footer class="bg-zinc-700 pt-16 text-white">
+                <div class="container-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:flex-col lg:px-8">
+                    <!-- Main Footer Content -->
+                    <div class="gap-8 grid grid-cols-1 md:grid-cols-1 lg:gap-12 lg:grid-cols-4 xl:gap-16">
+                        <!-- Company Info -->
+                        <div class="lg:col-span-1 lg:text-left">
+                            <div class="flex-col inline-flex items-center">
+                                <img src="asset/images/graphics/img-logo-header-single.png" alt="IMMOBILIENGEFLÜSTER Logo" class="aspect-video h-full mb-6 object-fill w-8/12 md:w-96 lg:h-24">
+                                <p class="-mt-5 font-light leading-tight mb-6 text-base text-white/80 lg:text-center">Professionelle Immobilienberatung, Design, Entwicklung &amp; Vermarktung. Wir helfen Ihnen dabei, Ihre Immobilien schneller und intelligenter zu verkaufen.</p>
+                            </div>
+                            <!-- Social Media -->
+                            <div class="flex justify-center space-x-4 lg:space-x-6">
+                                <a href="#" class="bg-img_red-500 duration-300 p-2 rounded-lg transition-colors hover:bg-white/20" aria-label="Facebook"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                    </svg> </a>
+                                <a href="#" class="bg-img_red-500 duration-300 p-2 rounded-lg transition-colors hover:bg-white/20" aria-label="LinkedIn"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg> </a>
+                                <a href="#" class="bg-img_red-500 duration-300 p-2 rounded-lg transition-colors hover:bg-white/20" aria-label="YouTube"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg> </a>
+                                <a href="#" class="bg-img_red-500 duration-300 p-2 rounded-lg transition-colors hover:bg-white/20" aria-label="Instagram"> <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg> </a>
+                            </div>
+                        </div>
+                        <div class="text-center lg:col-span-1">
+                            <h3 class="border-b border-img_red-500 border-white/15 font-semibold mb-6 pb-2 text-center text-lg lg:mb-8 lg:text-left">Unsere Leistungen</h3>
+                            <ul class="flex flex-col mb-8 place-items-center space-y-3 lg:items-start lg:space-y-4">
+                                <li>
+                                    <a href="3d-immobilienvisualisierungen-erstellen.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        3D Visualisierung </a>
+                                </li>
+                                <li>
+                                    <a href="architekturfotografie.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Architekturfotografie </a>
+                                </li>
+                                <li>
+                                    <a href="expose-immobilien-erstellen.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Exposé Erstellung </a>
+                                </li>
+                                <li>
+                                    <a href="drohnenaufnahmen.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Drohnenaufnahmen </a>
+                                </li>
+                                <li>
+                                    <a href="360-grad-rundgang-erstellen.html" class="flex group items-center text-sm text-white/80 transition-colors hover:text-white"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        360° Rundgänge </a>
+                                </li>
+                                <li>
+                                    <a href="social-media-marketing-berlin.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Social Media Marketing </a>
+                                </li>
+                                <li>
+                                    <a href="google-ads-agentur-berlin.html" class="flex group items-center text-sm text-white/80 transition-colors hover:text-white"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Google Ads </a>
+                                </li>
+                                <li>
+                                    <a href="immobilien-webseite-erstellen.html" class="flex group items-center text-sm text-white/80 transition-colors hover:text-white"> <span class="bg-img_beige-700 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Webdesign </a>
+                                </li>
+                                <a href="#" class="bg-img_red-500 font-light gap-2 inline-flex items-center px-3 py-2 rounded-md text-base text-white transition-colors hover:bg-img_red-800"> <span class="font-medium text-xs uppercase">Alle Leistungen</span></a>
+                            </ul>
+                        </div>
+                        <div class="-mt-4 flex flex-row justify-around lg:col-span-2 lg:mt-0">
+                            <div>
+                                <h3 class="border-b border-white/20 font-semibold mb-6 pb-2 text-center text-img_beige-800 text-lg lg:mb-8">Lösungen für</h3>
+                                <ul class="flex flex-col items-start mb-8 place-items-center space-y-3 lg:space-y-4">
+                                    <li>
+                                        <a href="immobilien-projektentwicklung-marketing.html" class="flex group items-center text-sm text-white/80 transition-colors hover:text-white"> <span class="bg-img_beige-800 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Immobilienentwickler </a>
+                                    </li>
+                                    <li>
+                                        <a href="marketing-fuer-immobilienmakler.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-800 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Immobilienmakler </a>
+                                    </li>
+                                    <li>
+                                        <a href="immobilienverkauf-privat.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-800 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Privatverkäufer </a>
+                                    </li>
+                                    <li>
+                                        <a href="ferienwohnung-marketing.html" class="text-white/80 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-800 h-2 mr-3 rounded-full transition-colors w-2 group-hover:bg-white"></span>
+                                        Ferienhausbesitzer </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- Additional Pages -->
+                            <div>
+                                <h4 class="border-b border-white/20 font-semibold mb-6 pb-2 text-center text-img_beige-800 text-lg lg:mb-8">Weitere Seiten</h4>
+                                <ul class="flex flex-col items-start mb-8 place-items-center space-y-3 lg:space-y-4">
+                                    <li>
+                                        <a href="referenzen.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+                                        Referenzen </a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+                                        Blog </a>
+                                    </li>
+                                    <li>
+                                        <a href="uber-uns.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+                                        Über uns </a>
+                                    </li>
+                                    <li>
+                                        <a href="preise.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+                                        Preise </a>
+                                    </li>
+                                    <li>
+                                        <a href="jobs.html" class="text-white/70 hover:text-white transition-colors text-sm flex items-center group"> <span class="bg-img_beige-700 h-1.5 mr-2 rounded-full transition-colors w-1.5 group-hover:bg-white"></span>
+Job</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Services -->
+                        <!-- Solutions -->
+                        <!-- Contact Info -->
+                    </div>
+                    <!-- Divider -->
+                    <div class="border-t border-white/20 mt-7 my-8"></div>
+                    <div>
+                        <div class="flex flex-col items-baseline justify-center space-x-9 space-y-4 md:flex-row md:flex-wrap">
+                            <div class="flex items-start space-x-3">
+                                <svg class="h-5 mt-0.5 shrink-0 text-img_beige-700 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <div class="text-white/80 text-sm">
+                                    <div>Konrad-Zuse-Straße 4 12489 Berlin</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="h-5 shrink-0 text-img_beige-700 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21L6.16 10.928c-.732.732-.732 1.919 0 2.651l4.261 4.261c.732.732 1.919.732 2.651 0l1.541-1.064a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V21a2 2 0 01-2 2h-1C9.716 23 2 15.284 2 7V6a2 2 0 012-2z"></path>
+                                </svg>
+                                <a href="tel:+4930206091167" class="text-white/80 hover:text-white transition-colors text-sm">+49 (0) 30 206 09 167</a>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="h-5 shrink-0 text-img_beige-700 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <a href="mailto:hallo@immobiliengefluester.de" class="text-white/80 hover:text-white transition-colors text-sm">hallo@immobiliengefluester.de</a>
+                            </div>
+                            <div class="mt-6 lg:mt-8">
+</div>
+                        </div>
+                    </div>
+                    <div class="border-t border-white/20 mt-7 my-8"></div>
+                    <!-- Bottom Footer -->
+                    <div class="flex flex-col-reverse gap-10 items-center justify-between pb-8 pt-4 space-y-4 md:flex-row md:space-y-0">
+                        <div class="text-center text-sm text-white/60">
+                            © 2024 IMMOBILIENGEFLÜSTER GmbH. Alle Rechte vorbehalten.
+</div>
+                        <div class="flex flex-wrap justify-center gap-6">
+                            <a href="impressum.html" class="text-white/60 hover:text-white transition-colors text-sm">Impressum</a>
+                            <a href="datenschutz.html" class="text-white/60 hover:text-white transition-colors text-sm">Datenschutz</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+        <script src="../src/js/menu/nav/ui-mega-menu--1.js"></script>
+        <script src="../src/js/menu/nav/mobile-menu.js"></script>
+        <script src="../src/js/media/hero-slider.js"></script>
+        <script src="../src/js/swiper/swiper-bundle.min.js"></script>
+        <script src="../src/js/swiper/slider-center-swiper.js"></script>
+        <script>
+            // Detect when sticky header is activated and change background to bg-img_red-500
+            document.addEventListener('DOMContentLoaded', function() {
+                const header = document.querySelector('header.sticky');
+                if (!header) return;
+                
+                // Get the initial offset position of the header
+                const headerOffset = header.offsetTop;
+                
+                // Function to check if header is sticky
+                function checkStickyHeader() {
+                    if (window.scrollY > headerOffset) {
+                        header.classList.remove('bg-transparent');
+                        header.classList.add('bg-img_red-500', 'transition-colors', 'duration-300');
+                    } else {
+                        header.classList.remove('bg-img_red-500', 'transition-colors', 'duration-300');
+                        header.classList.add('bg-transparent');
+                    }
+                }
+                
+                // Check on scroll
+                window.addEventListener('scroll', checkStickyHeader);
+                
+                // Check on initial load
+                checkStickyHeader();
+            });
+        </script>
+        <script src="../../src/js/accordians/pg-accordion.js"></script>
+    </body>     
+</html>
