@@ -1,0 +1,16 @@
+# Wrangler: exclude from static assets (format like .gitignore)
+.git/
+node_modules/
+scripts/
+package.json
+package-lock.json
+bun.lockb
+wrangler.jsonc
+config.json
+.assetsignore
+.gitignore
+_pgbackup/
+_pginfo/
+draft-components/
+draft-design/
+projectdb.pgml
