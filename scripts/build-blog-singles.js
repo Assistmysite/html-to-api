@@ -14,10 +14,22 @@ const path = require('path');
 function loadConfig() {
   const configPath = path.join(process.cwd(), 'config.json');
   if (!fs.existsSync(configPath)) {
-    console.error('Missing config.json. Run from html-to-api: node scripts/build-blog-singles.js');
+    if (process.env.WP_API_BASE) return {};
+    console.error('Missing config.json. Run from html-to-api: node scripts/build-blog-singles.js (or set WP_API_BASE)');
     process.exit(1);
   }
   return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+}
+
+function applyUrlRewrites(str, config) {
+  if (!str || typeof str !== 'string') return str;
+  const rewrites = config?.urlRewrites;
+  if (!Array.isArray(rewrites)) return str;
+  let out = str;
+  for (const [from, to] of rewrites) {
+    if (from && to) out = out.split(from).join(to);
+  }
+  return out;
 }
 
 function getFeaturedImageUrl(post, apiBase) {
@@ -62,21 +74,24 @@ function getRelatedPosts(currentPost, allPosts, limit = RELATED_TOTAL) {
   return allPosts.filter((p) => p.id !== excludeId).slice(0, limit);
 }
 
-function toRelatedJsonItem(post, apiBase) {
+function toRelatedJsonItem(post, apiBase, urlRewrites) {
+  let imgSrc = getFeaturedImageUrl(post, apiBase) || 'https://via.placeholder.com/400x200?text=No+image';
+  if (urlRewrites && imgSrc) imgSrc = applyUrlRewrites(imgSrc, urlRewrites);
   return {
     slug: post.slug || post.id,
     title: post.title?.rendered || post.title || 'Untitled',
     excerpt: stripHtml(post.excerpt?.rendered || post.excerpt || ''),
-    img_src: getFeaturedImageUrl(post, apiBase) || 'https://via.placeholder.com/400x200?text=No+image',
+    img_src: imgSrc,
   };
 }
 
-function fillCardTemplate(templateHtml, post, apiBase, hrefPrefix = '') {
+function fillCardTemplate(templateHtml, post, apiBase, hrefPrefix = '', urlRewrites) {
   const title = post.title?.rendered || post.title || 'Untitled';
   const excerpt = stripHtml(post.excerpt?.rendered || post.excerpt || '');
   const slug = post.slug || post.id;
   const href = hrefPrefix + slug + '.html';
-  const imgSrc = getFeaturedImageUrl(post, apiBase) || 'https://via.placeholder.com/400x200?text=No+image';
+  let imgSrc = getFeaturedImageUrl(post, apiBase) || 'https://via.placeholder.com/400x200?text=No+image';
+  if (urlRewrites && imgSrc) imgSrc = applyUrlRewrites(imgSrc, urlRewrites);
   return templateHtml
     .replace(/\{\{title\}\}/g, escapeHtml(title))
     .replace(/\{\{excerpt\}\}/g, escapeHtml(excerpt))
@@ -98,10 +113,12 @@ function fixPathsForSubdir(html, blogSlugs = new Set()) {
   );
 }
 
-function fillTemplate(html, post, apiBase, relatedPostsHtml, blogSlugs, relatedMeta) {
+function fillTemplate(html, post, apiBase, relatedPostsHtml, blogSlugs, relatedMeta, urlRewrites) {
   const title = post.title?.rendered || post.title || 'Untitled';
-  const content = post.content?.rendered || post.content || '';
-  const imgUrl = getFeaturedImageUrl(post, apiBase);
+  let content = post.content?.rendered || post.content || '';
+  if (urlRewrites) content = applyUrlRewrites(content, urlRewrites);
+  let imgUrl = getFeaturedImageUrl(post, apiBase);
+  if (urlRewrites && imgUrl) imgUrl = applyUrlRewrites(imgUrl, urlRewrites);
   const imgSrc = imgUrl || 'https://pinegrow.com/placeholders/img13.jpg';
 
   html = html.replace(/<title>[^<]*<\/title>/, '<title>' + escapeHtml(title) + '</title>');
@@ -138,7 +155,8 @@ function fillTemplate(html, post, apiBase, relatedPostsHtml, blogSlugs, relatedM
     );
   }
 
-  return fixPathsForSubdir(html, blogSlugs || new Set());
+  html = fixPathsForSubdir(html, blogSlugs || new Set());
+  return urlRewrites ? applyUrlRewrites(html, urlRewrites) : html;
 }
 
 function escapeHtml(s) {
@@ -150,11 +168,34 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
+function isDevOnlyHost(urlStr) {
+  if (!urlStr) return false;
+  try {
+    const u = new URL(urlStr.replace(/\/$/, ''));
+    const h = (u.hostname || '').toLowerCase();
+    const port = u.port || (u.protocol === 'https:' ? '443' : '80');
+    return h === 'localhost' || h === '127.0.0.1' || h.startsWith('dev-') || h.endsWith('.local') || port === '8890';
+  } catch {
+    return false;
+  }
+}
+
 async function main() {
   const config = loadConfig();
   const base = (process.env.WP_API_BASE || config.apiBase || '').replace(/\/$/, '');
   if (!base) {
     console.error('No apiBase. Set in config.json or WP_API_BASE.');
+    process.exit(1);
+  }
+
+  if ((process.env.NETLIFY === 'true' || process.env.CI === 'true') && !process.env.WP_API_BASE && isDevOnlyHost(base)) {
+    console.error('');
+    console.error('Deploy build cannot reach your local dev host.');
+    console.error('config.json points to:', base);
+    console.error('');
+    console.error('Set WP_API_BASE in Cloudflare Pages / Netlify: Settings → Environment variables');
+    console.error('Example: WP_API_BASE = https://your-production-site.com/wp-json');
+    console.error('');
     process.exit(1);
   }
 
@@ -165,7 +206,7 @@ async function main() {
     process.exit(1);
   }
 
-  const url = base + '/wp/v2/posts?per_page=20&_embed';
+  const url = base + '/wp/v2/posts?per_page=30&_embed';
   console.log('Fetching posts:', url);
 
   let posts;
@@ -187,6 +228,12 @@ async function main() {
   }
 
   if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+  // Remove orphaned files from previous builds (posts no longer in API)
+  for (const name of fs.readdirSync(outDir)) {
+    if (name.endsWith('.html') || name.endsWith('.related.json')) {
+      fs.unlinkSync(path.join(outDir, name));
+    }
+  }
 
   const blogSlugs = new Set(posts.map((p) => p.slug || String(p.id)));
   const template = fs.readFileSync(templatePath, 'utf8');
@@ -217,7 +264,7 @@ async function main() {
       const related = getRelatedPosts(post, posts, RELATED_TOTAL);
       if (related.length) {
         const initial = related.slice(0, RELATED_INITIAL);
-        const cardsHtml = initial.map((p) => fillCardTemplate(cardTemplateHtml, p, base, '')).join('\n');
+        const cardsHtml = initial.map((p) => fillCardTemplate(cardTemplateHtml, p, base, '', config)).join('\n');
         if (gridTemplateHtml) {
           relatedPostsHtml = gridTemplateHtml.replace(RELATED_CARDS_PLACEHOLDER, cardsHtml);
         } else {
@@ -226,7 +273,9 @@ async function main() {
         if (related.length > RELATED_INITIAL) {
           const more = related.slice(RELATED_INITIAL);
           const jsonPath = slug + '.related.json';
-          fs.writeFileSync(path.join(outDir, jsonPath), JSON.stringify(more.map((p) => toRelatedJsonItem(p, base))), 'utf8');
+          let jsonStr = JSON.stringify(more.map((p) => toRelatedJsonItem(p, base, config)));
+          jsonStr = applyUrlRewrites(jsonStr, config);
+          fs.writeFileSync(path.join(outDir, jsonPath), jsonStr, 'utf8');
           if (loadMoreTemplateHtml) {
             relatedPostsHtml += '\n                    ' + loadMoreTemplateHtml;
           } else {
@@ -239,7 +288,8 @@ async function main() {
       }
     }
 
-    const html = fillTemplate(template, post, base, relatedPostsHtml, blogSlugs, relatedMeta);
+    let html = fillTemplate(template, post, base, relatedPostsHtml, blogSlugs, relatedMeta, config);
+    html = applyUrlRewrites(html, config);
     fs.writeFileSync(outPath, html, 'utf8');
     written++;
   }

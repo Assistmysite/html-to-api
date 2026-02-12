@@ -1,4 +1,5 @@
 {
-  "apiBase": "https://dev-ahm-wp-api:8890/wp-json",
-  "_comment": "Override apiBase via env WP_API_BASE if needed (e.g. production). Scripts read this file."
+  "apiBase": "https://dev-rest-wp.assistmysite.com/wp-json",
+  "urlRewrites": [["https://dev-ahm-wp-api:8890", "https://dev-rest-wp.assistmysite.com"]],
+  "_comment": "Override apiBase via env WP_API_BASE. urlRewrites: replace legacy URLs in WP content (e.g. after migration)."
 }

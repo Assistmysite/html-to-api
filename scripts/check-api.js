@@ -12,7 +12,8 @@ const path = require('path');
 function loadConfig() {
   const configPath = path.join(process.cwd(), 'config.json');
   if (!fs.existsSync(configPath)) {
-    console.error('Missing config.json in current directory. Run from html-to-api: node scripts/check-api.js');
+    if (process.env.WP_API_BASE) return {};
+    console.error('Missing config.json in current directory. Run from html-to-api: node scripts/check-api.js (or set WP_API_BASE)');
     process.exit(1);
   }
   const raw = fs.readFileSync(configPath, 'utf8');

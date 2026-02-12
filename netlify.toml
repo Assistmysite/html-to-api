@@ -1,6 +1,10 @@
+# See: ai--md/ai-reference/production-workflow.md
 [build]
   command = "npm run build"
   publish = "."
+  # If repo root is parent (e.g. wp-restapi-to-html), set base:
+  # base = "html-to-api"
 
 [build.environment]
   NODE_VERSION = "18"
+  # Required: Set WP_API_BASE in Netlify → Site settings → Environment variables

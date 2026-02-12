@@ -25,10 +25,22 @@ const BLOG_LIST_JSON = 'data/blog-list-more.json';
 function loadConfig() {
   const configPath = path.join(process.cwd(), 'config.json');
   if (!fs.existsSync(configPath)) {
-    console.error('Missing config.json. Run from html-to-api: node scripts/build-blog-list.js');
+    if (process.env.WP_API_BASE) return {};
+    console.error('Missing config.json. Run from html-to-api: node scripts/build-blog-list.js (or set WP_API_BASE)');
     process.exit(1);
   }
   return JSON.parse(fs.readFileSync(configPath, 'utf8'));
+}
+
+function applyUrlRewrites(str, config) {
+  if (!str || typeof str !== 'string') return str;
+  const rewrites = config?.urlRewrites;
+  if (!Array.isArray(rewrites)) return str;
+  let out = str;
+  for (const [from, to] of rewrites) {
+    if (from && to) out = out.split(from).join(to);
+  }
+  return out;
 }
 
 function stripHtml(html) {
@@ -66,12 +78,14 @@ function escapeHtml(s) {
     .replace(/"/g, '&quot;');
 }
 
-function toJsonItem(post) {
+function toJsonItem(post, config) {
+  let imgSrc = getFeaturedImageUrl(post) || 'https://via.placeholder.com/400x200?text=No+image';
+  if (config && imgSrc) imgSrc = applyUrlRewrites(imgSrc, config);
   return {
     slug: post.slug || post.id,
     title: post.title?.rendered || post.title || 'Untitled',
     excerpt: stripHtml(post.excerpt?.rendered || post.excerpt || ''),
-    img_src: getFeaturedImageUrl(post) || 'https://via.placeholder.com/400x200?text=No+image',
+    img_src: imgSrc,
     meta: {
       categories: getTerms(post, 'category'),
       tags: getTerms(post, 'post_tag'),
@@ -102,12 +116,13 @@ function extractBlogFiltersDiv(html) {
   return null;
 }
 
-function fillTemplate(templateHtml, post, singlePath = 'blog') {
+function fillTemplate(templateHtml, post, singlePath = 'blog', config) {
   const title = post.title?.rendered || post.title || 'Untitled';
   const excerpt = stripHtml(post.excerpt?.rendered || post.excerpt || '');
   const slug = post.slug || post.id;
   const href = singlePath + '/' + slug + '.html';
-  const imgSrc = getFeaturedImageUrl(post) || 'https://via.placeholder.com/400x200?text=No+image';
+  let imgSrc = getFeaturedImageUrl(post) || 'https://via.placeholder.com/400x200?text=No+image';
+  if (config && imgSrc) imgSrc = applyUrlRewrites(imgSrc, config);
   return templateHtml
     .replace(/\{\{title\}\}/g, escapeHtml(title))
     .replace(/\{\{excerpt\}\}/g, escapeHtml(excerpt))
@@ -115,11 +130,34 @@ function fillTemplate(templateHtml, post, singlePath = 'blog') {
     .replace(/\{\{img_src\}\}/g, imgSrc);
 }
 
+function isDevOnlyHost(urlStr) {
+  if (!urlStr) return false;
+  try {
+    const u = new URL(urlStr.replace(/\/$/, ''));
+    const h = (u.hostname || '').toLowerCase();
+    const port = u.port || (u.protocol === 'https:' ? '443' : '80');
+    return h === 'localhost' || h === '127.0.0.1' || h.startsWith('dev-') || h.endsWith('.local') || port === '8890';
+  } catch {
+    return false;
+  }
+}
+
 async function main() {
   const config = loadConfig();
   const base = (process.env.WP_API_BASE || config.apiBase || '').replace(/\/$/, '');
   if (!base) {
     console.error('No apiBase. Set in config.json or WP_API_BASE.');
+    process.exit(1);
+  }
+
+  if ((process.env.NETLIFY === 'true' || process.env.CI === 'true') && !process.env.WP_API_BASE && isDevOnlyHost(base)) {
+    console.error('');
+    console.error('Deploy build cannot reach your local dev host.');
+    console.error('config.json points to:', base);
+    console.error('');
+    console.error('Set WP_API_BASE in Cloudflare Pages / Netlify: Settings → Environment variables');
+    console.error('Example: WP_API_BASE = https://your-production-site.com/wp-json');
+    console.error('');
     process.exit(1);
   }
 
@@ -184,7 +222,7 @@ async function main() {
 
   const initial = posts.slice(0, BLOG_LIST_INITIAL);
   const more = posts.slice(BLOG_LIST_INITIAL);
-  const allItems = posts.map(toJsonItem);
+  const allItems = posts.map((p) => toJsonItem(p, config));
 
   let newContent;
   if (posts.length === 0) {
@@ -193,7 +231,7 @@ async function main() {
     const defaultFilterBar = '<div id="blog-filters" class="blog-filters mb-8 rounded-xl bg-white p-5 ring-1 ring-img_gray-50 shadow-sm"><div class="flex items-center gap-2 mb-4 text-img_red-500"><span class="bg-img_red-500 h-[1px] w-8 shrink-0"></span><span class="font-bold text-xs tracking-[0.2em] uppercase">Filtern nach</span><span class="bg-img_red-500 h-[1px] w-8 shrink-0"></span></div><div class="flex flex-wrap gap-6"><div class="blog-filter-group"><label for="filter-search" class="mb-1.5 block text-sm font-medium text-gray-700">Suchen</label><input type="text" id="filter-search" placeholder="Titel, Text…" class="blog-filter-select min-w-[320px] rounded-lg border border-img_gray-100 bg-white px-4 py-2.5 text-sm text-gray-800 transition-colors focus:border-img_red-500 focus:outline-none focus:ring-2 focus:ring-img_red-500/20" autocomplete="off"/></div><div class="blog-filter-group"><label for="filter-category" class="mb-1.5 block text-sm font-medium text-gray-700">Kategorie</label><select id="filter-category" class="blog-filter-select min-w-[180px] rounded-lg border border-img_gray-100 bg-white px-4 py-2.5 text-sm text-gray-800 transition-colors focus:border-img_red-500 focus:outline-none focus:ring-2 focus:ring-img_red-500/20"><option value="">Alle Kategorien</option></select></div></div></div>';
     const filterBar = preservedFilterBar || filterBarHtml || defaultFilterBar;
     const gridHtml = '<div id="blog-list-grid" class="' + GRID_CLASS + '">\n' +
-      initial.map((p) => fillTemplate(templateHtml, p)).join('\n') + '\n</div>';
+      initial.map((p) => fillTemplate(templateHtml, p, 'blog', config)).join('\n') + '\n</div>';
     newContent = filterBar + '\n' + gridHtml;
     if (posts.length > 0) {
       const jsonPathOut = path.join(process.cwd(), BLOG_LIST_JSON);
@@ -213,11 +251,12 @@ async function main() {
   html = before + '\n' + newContent + '\n                        ' + after;
 
   html = html.replace(/\s+data-blog-list-json="[^"]*"/g, '').replace(/\s+data-blog-list-offset="[^"]*"/g, '')
-    .replace(/\s+data-filter-taxonomy=(?:"[^"]*"|'[^']*')/g, '').replace(/\s+data-filter-labels=(?:"[^"]*"|'[^']*')/g, '');
+    .replace(/\s+data-filter-taxonomy=(?:"[^"]*"|'[^']*')/g, '').replace(/\s+data-filter-labels=(?:"[^"]*"|'[^']*')/g, '')
+    .replace(/\s+data-wp-api-base="[^"]*"/g, '');
   if (posts.length > 0) {
     html = html.replace(
       /<div id="blog-list"([^>]*)>/,
-      '<div id="blog-list"$1 data-blog-list-json="' + BLOG_LIST_JSON + '" data-blog-list-offset="' + BLOG_LIST_INITIAL + '" data-filter-taxonomy=\'["category"]\' data-filter-labels=\'{"category":"Kategorien"}\'>'
+      '<div id="blog-list"$1 data-wp-api-base="' + base + '" data-blog-list-json="' + BLOG_LIST_JSON + '" data-blog-list-offset="' + BLOG_LIST_INITIAL + '" data-filter-taxonomy=\'["category"]\' data-filter-labels=\'{"category":"Kategorien"}\'>'
     );
   }
 
