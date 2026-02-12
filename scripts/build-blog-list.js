@@ -136,6 +136,7 @@ function isDevOnlyHost(urlStr) {
     const u = new URL(urlStr.replace(/\/$/, ''));
     const h = (u.hostname || '').toLowerCase();
     const port = u.port || (u.protocol === 'https:' ? '443' : '80');
+    if (h.includes('.')) return false; // Has TLD = public (e.g. dev-rest-wp.assistmysite.com)
     return h === 'localhost' || h === '127.0.0.1' || h.startsWith('dev-') || h.endsWith('.local') || port === '8890';
   } catch {
     return false;
