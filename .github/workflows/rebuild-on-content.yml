@@ -1,0 +1,31 @@
+# Triggers a Cloudflare rebuild when WP content changes.
+# Cloudflare Workers has no Deploy Hooks; it rebuilds on Git push.
+# This runs only when WordPress calls GitHub API (repository_dispatch)
+# or when you trigger manually — no scheduled runs, no Action limits hit.
+#
+# Triggers:
+# - repository_dispatch: WordPress POSTs to GitHub API on publish
+# - workflow_dispatch: Manual trigger from GitHub Actions UI
+
+name: Rebuild on content
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [wordpress-update]
+
+jobs:
+  trigger-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Trigger rebuild (empty commit)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "chore: trigger rebuild for WP content sync"
+          git push
