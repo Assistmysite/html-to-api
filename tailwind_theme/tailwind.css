@@ -3028,14 +3028,8 @@
   .text-center {
     text-align: center;
   }
-  .text-justify {
-    text-align: justify;
-  }
   .text-left {
     text-align: left;
-  }
-  .text-right {
-    text-align: right;
   }
   .font-serif {
     font-family: var(--font-serif);
@@ -3264,15 +3258,6 @@
   }
   .text-zinc-800 {
     color: var(--color-zinc-800);
-  }
-  .capitalize {
-    text-transform: capitalize;
-  }
-  .lowercase {
-    text-transform: lowercase;
-  }
-  .normal-case {
-    text-transform: none;
   }
   .uppercase {
     text-transform: uppercase;
@@ -5195,9 +5180,6 @@
     padding-top: calc(var(--spacing) * 15);
     @media (width >= 48rem) {
       margin-bottom: calc(var(--spacing) * 9);
-    }
-    @media (width >= 80rem) {
-      padding-top: calc(var(--spacing) * 30);
     }
   }
   .container-wrap {

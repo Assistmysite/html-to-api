@@ -43,7 +43,7 @@
     </dmdesigns>
     <dmlocked tw-colors-red="true" tw-colors-orange="true" tw-colors-amber="true" tw-colors-yellow="true" tw-colors-lime="true" tw-colors-green="true" tw-colors-emerald="true" tw-colors-teal="true" tw-colors-cyan="true" tw-colors-sky="true" tw-colors-blue="true" tw-colors-indigo="true" tw-colors-violet="true" tw-colors-purple="true" tw-colors-fuchsia="true" tw-colors-pink="true" tw-colors-rose="true" tw-colors-slate="true" tw-colors-gray="true" tw-colors-zinc="true" tw-colors-neutral="true" tw-colors-stone="true"></dmlocked>
     <classstyles>
-        <classstyle name="section" key="section" class="overflow-hidden mx-auto px-3 w-full md:mb-9 pt-15 xl:pt-30" component count="75"></classstyle>
+        <classstyle name="section" key="section" class="overflow-hidden mx-auto px-3 w-full md:mb-9 pt-15" component count="75" expanded></classstyle>
         <classstyle name=".container-wrap" key=".container-wrap" class="mx-auto w-full lg:max-w-6xl md:max-w-5xl" component states="" count="90"></classstyle>
         <classstyle name=".is--hero" key=".is--hero" class="bg-img_red-500 z-0 relative -mt-16 pt-24 lg:-my-32 lg:pb-44" component states="" count="1"></classstyle>
         <deleted key=".section-wrap" component class="mx-auto px-2 w-full"></deleted>
