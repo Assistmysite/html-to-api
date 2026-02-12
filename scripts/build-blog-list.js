@@ -8,6 +8,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { fetchWpApi } = require('./fetch-wp-api.js');
 
 const TEMPLATE_START = '<!-- blog-card-template start -->';
 const TEMPLATE_END = '<!-- blog-card-template end -->';
@@ -143,12 +144,12 @@ async function main() {
 
   let posts;
   try {
-    const res = await fetch(url);
-    if (!res.ok) {
-      console.error('API error:', res.status, res.statusText);
+    const { ok, status, data } = await fetchWpApi(url);
+    if (!ok) {
+      console.error('API error:', status);
       process.exit(1);
     }
-    posts = await res.json();
+    posts = data;
   } catch (err) {
     console.error('Fetch failed:', err.message);
     process.exit(1);
