@@ -130,35 +130,11 @@ function fillTemplate(templateHtml, post, singlePath = 'blog', config) {
     .replace(/\{\{img_src\}\}/g, imgSrc);
 }
 
-function isDevOnlyHost(urlStr) {
-  if (!urlStr) return false;
-  try {
-    const u = new URL(urlStr.replace(/\/$/, ''));
-    const h = (u.hostname || '').toLowerCase();
-    const port = u.port || (u.protocol === 'https:' ? '443' : '80');
-    if (h.includes('.')) return false; // Has TLD = public (e.g. dev-rest-wp.assistmysite.com)
-    return h === 'localhost' || h === '127.0.0.1' || h.startsWith('dev-') || h.endsWith('.local') || port === '8890';
-  } catch {
-    return false;
-  }
-}
-
 async function main() {
   const config = loadConfig();
   const base = (process.env.WP_API_BASE || config.apiBase || '').replace(/\/$/, '');
   if (!base) {
     console.error('No apiBase. Set in config.json or WP_API_BASE.');
-    process.exit(1);
-  }
-
-  if ((process.env.NETLIFY === 'true' || process.env.CI === 'true') && !process.env.WP_API_BASE && isDevOnlyHost(base)) {
-    console.error('');
-    console.error('Deploy build cannot reach your local dev host.');
-    console.error('config.json points to:', base);
-    console.error('');
-    console.error('Set WP_API_BASE in Cloudflare Pages / Netlify: Settings → Environment variables');
-    console.error('Example: WP_API_BASE = https://your-production-site.com/wp-json');
-    console.error('');
     process.exit(1);
   }
 
