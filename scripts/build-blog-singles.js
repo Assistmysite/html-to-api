@@ -76,7 +76,7 @@ function getRelatedPosts(currentPost, allPosts, limit = RELATED_TOTAL) {
 }
 
 function toRelatedJsonItem(post, apiBase, urlRewrites) {
-  let imgSrc = getFeaturedImageUrl(post, apiBase) || 'https://via.placeholder.com/400x200?text=No+image';
+  let imgSrc = getFeaturedImageUrl(post, apiBase) || 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\'%3E%3Crect fill=\'%23e5e7eb\' width=\'400\' height=\'200\'/%3E%3Ctext fill=\'%239ca3af\' x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\' font-family=\'sans-serif\'%3ENo image%3C/text%3E%3C/svg%3E';
   if (urlRewrites && imgSrc) imgSrc = applyUrlRewrites(imgSrc, urlRewrites);
   return {
     slug: post.slug || post.id,
@@ -91,7 +91,7 @@ function fillCardTemplate(templateHtml, post, apiBase, hrefPrefix = '', urlRewri
   const excerpt = stripHtml(post.excerpt?.rendered || post.excerpt || '');
   const slug = post.slug || post.id;
   const href = hrefPrefix + slug + '.html';
-  let imgSrc = getFeaturedImageUrl(post, apiBase) || 'https://via.placeholder.com/400x200?text=No+image';
+  let imgSrc = getFeaturedImageUrl(post, apiBase) || 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\'%3E%3Crect fill=\'%23e5e7eb\' width=\'400\' height=\'200\'/%3E%3Ctext fill=\'%239ca3af\' x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\' font-family=\'sans-serif\'%3ENo image%3C/text%3E%3C/svg%3E';
   if (urlRewrites && imgSrc) imgSrc = applyUrlRewrites(imgSrc, urlRewrites);
   return templateHtml
     .replace(/\{\{title\}\}/g, escapeHtml(title))

@@ -18,7 +18,7 @@
     var href = (item.slug || '') + '.html';
     var title = escapeHtml(item.title || 'Untitled');
     var excerpt = escapeHtml(item.excerpt || '');
-    var imgSrc = item.img_src || 'https://via.placeholder.com/400x200?text=No+image';
+    var imgSrc = item.img_src || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='200'%3E%3Crect fill='%23e5e7eb' width='400' height='200'/%3E%3Ctext fill='%239ca3af' x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='14' font-family='sans-serif'%3ENo image%3C/text%3E%3C/svg%3E";
     return '<article class="bg-white overflow-hidden ring-1 ring-img_gray-50 rounded-xl shadow-sm transition-all hover:ring-img_red-500 hover:shadow-md">' +
       '<a href="' + href + '" class="block group">' +
       '<div class="overflow-hidden"><img src="' + imgSrc + '" alt="" class="h-48 w-full object-cover object-center" loading="lazy"/></div>' +

@@ -80,7 +80,7 @@ function escapeHtml(s) {
 }
 
 function toJsonItem(post, config) {
-  let imgSrc = getFeaturedImageUrl(post) || 'https://via.placeholder.com/400x200?text=No+image';
+  let imgSrc = getFeaturedImageUrl(post) || 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\'%3E%3Crect fill=\'%23e5e7eb\' width=\'400\' height=\'200\'/%3E%3Ctext fill=\'%239ca3af\' x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\' font-family=\'sans-serif\'%3ENo image%3C/text%3E%3C/svg%3E';
   if (config && imgSrc) imgSrc = applyUrlRewrites(imgSrc, config);
   return {
     slug: post.slug || post.id,
@@ -122,7 +122,7 @@ function fillTemplate(templateHtml, post, singlePath = 'blog', config) {
   const excerpt = stripHtml(post.excerpt?.rendered || post.excerpt || '');
   const slug = post.slug || post.id;
   const href = singlePath + '/' + slug + '.html';
-  let imgSrc = getFeaturedImageUrl(post) || 'https://via.placeholder.com/400x200?text=No+image';
+  let imgSrc = getFeaturedImageUrl(post) || 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'200\'%3E%3Crect fill=\'%23e5e7eb\' width=\'400\' height=\'200\'/%3E%3Ctext fill=\'%239ca3af\' x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'14\' font-family=\'sans-serif\'%3ENo image%3C/text%3E%3C/svg%3E';
   if (config && imgSrc) imgSrc = applyUrlRewrites(imgSrc, config);
   return templateHtml
     .replace(/\{\{title\}\}/g, escapeHtml(title))
