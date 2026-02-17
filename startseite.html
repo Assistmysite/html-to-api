@@ -6,12 +6,14 @@
         <title>Startseite</title>         
         <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
         <link href="src/css/container-wrap-lg-fix.css" rel="stylesheet" type="text/css">
-        <link href="../src/css/mega-menu-animations.css" rel="stylesheet" type="text/css">
-        <link href="../src/css/mobile-menu.css" rel="stylesheet" type="text/css">
-        <link href="../src/css/video-player.css" rel="stylesheet" type="text/css">
+        <link href="src/css/mega-menu-animations.css" rel="stylesheet" type="text/css">
+        <link href="src/css/mobile-menu.css" rel="stylesheet" type="text/css">
+        <link href="src/css/video-player.css" rel="stylesheet" type="text/css">
+        <link href="src/css/slider/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+        <link href="src/css/slider/slider-center-swiper.css" rel="stylesheet" type="text/css">
         <link href="src/css/reviews-slider.css" rel="stylesheet" type="text/css">
     </head>     
-    <body>
+    <body class="overflow-x-hidden">
         <!-- Mega Menu Overlay -->
         <header class="!bg-img_red-500 pt-2 sticky top-0 w-full z-200" data-pgc-define="top-nav" data-pgc-define-name="top nav">
             <div class="mega-menu-overlay" id="megaMenuOverlay"></div>
@@ -400,21 +402,17 @@ bewährte</span> Lösung</h2>
                     <div class="gap-2 inline-flex items-center text-img_red-500 text-left"> <span class="bg-img_red-500 h-[1px] w-8"></span> <span class="font-bold md:text-base text-center text-img_red-500 text-xs tracking-[0.2em] uppercase">Lösungen</span> <span class="bg-img_red-500 h-[1px] w-8"></span> 
                     </div>
                     <h2 class="font-bold leading-none lg:text-6xl md:text-5xl text-4xl text-center text-img_red-500 tracking-tight">Wir haben <span class="text-zinc-700">die Lösung </span>für Sie&nbsp;</h2>
-                    <p class="-mb-4.5 font-normal leading-snug max-w-4xl mt-2.5 text-balance text-center text-lg text-zinc-700 md:text-xl lg:mb-4 lg:text-xl lg:w-full">Ob <b>Immobilienmakler,</b> <b>Projektentwickler</b>, <b>Privatverkäufer</b> oder <b>Ferienhausbesitzer</b> &#8211; wir unterstützen Sie dabei, I<b>hre Immobilie bestmöglich zu präsentieren</b>. Mit klar strukturierten Leistungspaketen und flexiblen Modulen bieten wir maßgeschneiderte Lösungen für <b>Ihre Zielgruppe</b> - Unser Ziel: s<b>chnellere Verkäufe</b>, höhere Einnahmen und weniger Aufwand &#8211; <b>professionell umgesetzt</b>, individuell betreut und auf Wunsch erfolgsbasiert.</p>
+                    <p class="-mb-4.5 break-words font-normal leading-snug lg:mb-4 lg:text-xl lg:w-full max-w-4xl md:text-xl mt-2.5 text-balance text-center text-lg text-zinc-700">Ob <b>Immobilienmakler,</b> <b>Projektentwickler</b>, <b>Privatverkäufer</b> oder <b>Ferienhausbesitzer</b> &#8211; wir unterstützen Sie dabei, I<b>hre Immobilie bestmöglich zu präsentieren</b>. Mit klar strukturierten Leistungspaketen und flexiblen Modulen bieten wir maßgeschneiderte Lösungen für <b>Ihre Zielgruppe</b> - Unser Ziel: s<b>chnellere Verkäufe</b>, höhere Einnahmen und weniger Aufwand &#8211; <b>professionell umgesetzt</b>, individuell betreut und auf Wunsch erfolgsbasiert.</p>
                 </div>
-                <div class="border-gray-200 container-wrap gap-4 grid mt-15 mx-auto md:grid-cols-2 lg:grid-cols-4" data-pg-name="item">
-                    <a href="immobilien-projektentwicklung-marketing.html" class="bg-white cursor-pointer flex flex-col group items-center overflow-hidden pb-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-xs text-center transition-all hover:bg-img_red-500"> <div class="bg-gray-50 flex items-center justify-center mb-5 overflow-hidden w-full">
-                            <img src="../asset/images/visualisation/3d-immobilienvisualisierungen-1.jpg" alt="Product" class="duration-500 h-40 object-center object-cover transition-transform w-full group-hover:scale-105 lg:h-44">
-                        </div> <h3 class="font-semibold mb-2 text-2xl text-zinc-700 group-hover:text-white md:text-xl px-4">Entwickler</h3> </a>
-                    <a href="marketing-fuer-immobilienmakler.html" class="bg-white cursor-pointer flex flex-col group items-center overflow-hidden pb-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-xs text-center transition-all hover:bg-img_red-500"> <div class="flex items-center justify-center mb-5 w-full overflow-hidden bg-gray-50">
-                            <img src="../asset/images/photos/moderne-immobilienpraesentation-mit-360-fotos-expose.jpg" alt="Product" class="duration-500 h-40 object-center object-cover transition-transform w-full group-hover:scale-105 lg:h-44">
-                        </div> <h3 class="font-semibold mb-2 text-2xl text-zinc-700 group-hover:text-white md:text-xl px-4">Immobilienmakler</h3> </a>
-                    <a href="immobilienverkauf-privat.html" class="bg-white cursor-pointer flex flex-col group items-center overflow-hidden pb-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-xs text-center transition-all hover:bg-img_red-500"> <div class="flex items-center justify-center mb-5 w-full overflow-hidden bg-gray-50">
-                            <img src="../asset/images/photos/privates-expose-o.jpg" alt="Product" class="duration-500 h-40 object-center object-cover transition-transform w-full group-hover:scale-105 lg:h-44">
-                        </div> <h3 class="font-semibold mb-2 text-2xl text-zinc-700 group-hover:text-white md:text-xl px-4">Privatverkäufer</h3> </a>
-                    <a href="ferienwohnung-marketing.html" class="bg-white cursor-pointer flex flex-col group items-center overflow-hidden pb-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-xs text-center transition-all hover:bg-img_red-500"> <div class="bg-gray-50 flex items-center justify-center mb-5 overflow-hidden w-full">
-                            <img src="../asset/images/visualisation/K38.jpeg" alt="Product" class="duration-500 h-40 object-center object-cover transition-transform w-full group-hover:scale-105 lg:h-44">
-                        </div> <h3 class="font-semibold mb-2 text-2xl text-zinc-700 group-hover:text-white md:text-xl px-4">Ferienhausbesitzer</h3> </a>
+                <div class="border-gray-200 container-wrap gap-4 grid mx-auto md:grid-cols-2 lg:grid-cols-4" data-pg-name="item">
+                    <a href="immobilien-projektentwicklung-marketing.html" class="bg-img_red-500 cursor-pointer flex flex-col group hover:bg-zinc-700 items-center overflow-hidden pb-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-xs text-center transition-all"> <div class="bg-gray-50 flex items-center justify-center mb-5 overflow-hidden w-full">
+</div> <span class="font-semibold group-hover:text-white mb-2 md:text-xl px-4 text-2xl text-white">Entwickler</span> </a>
+                    <a href="marketing-fuer-immobilienmakler.html" class="bg-img_red-500 cursor-pointer flex flex-col group hover:bg-zinc-700 items-center overflow-hidden pb-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-xs text-center transition-all"> <div class="flex items-center justify-center mb-5 w-full overflow-hidden bg-gray-50">
+</div> <span class="font-semibold group-hover:text-white mb-2 md:text-xl px-4 text-2xl text-white">Immobilienmakler</span> </a>
+                    <a href="immobilienverkauf-privat.html" class="bg-img_red-500 cursor-pointer flex flex-col group hover:bg-zinc-700 items-center overflow-hidden pb-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-xs text-center transition-all"> <div class="flex items-center justify-center mb-5 w-full overflow-hidden bg-gray-50">
+</div> <span class="font-semibold group-hover:text-white mb-2 md:text-xl px-4 text-2xl text-white">Privatverkäufer</span> </a>
+                    <a href="ferienwohnung-marketing.html" class="bg-img_red-500 cursor-pointer flex flex-col group hover:bg-zinc-700 items-center overflow-hidden pb-4 relative ring-1 ring-img_gray-50 rounded-xl shadow-xs text-center transition-all"> <div class="bg-gray-50 flex items-center justify-center mb-5 overflow-hidden w-full">
+</div> <span class="font-semibold group-hover:text-white mb-2 md:text-xl px-4 text-2xl text-white">Ferienhausbesitzer</span> </a>
                 </div>
             </section>
             <section data-pg-name="leistunegen" class="section-wrap">
@@ -656,95 +654,95 @@ bewährte</span> Lösung</h2>
                         </div>
                         <h2 class="font-bold leading-none text-4xl text-center text-img_red-500 tracking-tight lg:text-6xl">
     Lorem ipsum dolor sit amet.<br> <span class="text-zinc-700">Consectetur adipiscing elit</span></h2>
-                        <p class="-mb-4.5 font-normal italic leading-snug max-w-4xl mt-2.5 text-balance text-center text-lg text-zinc-700 md:text-xl lg:mb-4 lg:text-xl lg:w-full">Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel .</p>
+                        <p class="-mb-4.5 font-normal italic leading-snug lg:mb-4 lg:text-xl lg:w-full max-w-4xl md:text-xl mt-2.5 text-balance text-center text-lg text-white">Aenean elementum, erat at aliquet hendrerit, elit nisl posuere tortor, id suscipit diam dui sed nisi. Morbi sollicitudin massa vel .</p>
                     </div>
                 </div>
-                <div class="bg-white container-wrap gap-4 grid mt-3.5 p-2 p-6 ring-1 ring-img_gray-50 rounded-2xl text-zinc-700 lg:-mt-31 lg:!grid-cols-3 lg:pt-35" data-pg-name="leistungen-links">
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group overflow-hidden ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="3D" href="3d-immobilienvisualisierungen-erstellen.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">3D Immobilienvisualisierungen</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Lorem ipsum dolor sit amet consectetur adipiscing elit.Sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Exposeerstellung" href="expose-immobilien-erstellen.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div><div class="flex flex-col p-4">
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Exposeerstellung</h3>
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Ut enim ad minim veniam quis nostrud exercitation.Ullamco laboris nisi ut aliquip ex ea commodo.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Architekturfotografie" href="architekturfotografie.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div><div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Architekturfotografie</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Duis aute irure dolor in reprehenderit voluptate velit.Esse cillum dolore eu fugiat nulla pariatur.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" name="Broschüren" data-pg-name="Broschüren" href="immobilien-broschuere-formulare-erstellen.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Broschüren, Formulare, Flyer & Co.</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Excepteur sint occaecat cupidatat non proident sunt.In culpa qui officia deserunt mollitia animi.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Drohnenaufnahmen" href="drohnenaufnahmen.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Drohnenaufnahmen</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Id est laborum et dolorum fuga et harum.Quidem rerum facilis est et expedita distinctio.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Webdesign" href="immobilien-webseite-erstellen.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Webdesign</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Nam libero tempore cum soluta nobis est eligendi.Optio cumque nihil impedit quo minus maxime.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Matterport 360° Rundgang" href="360-grad-rundgang-erstellen.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Matterport 360° Rundgang</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Placeat facere possimus omnis voluptas assumenda.Est omnis dolor repellendus temporibus autem.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Social Media Marketing" href="social-media-marketing-berlin.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Social Media Marketing</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Quibusdam et aut officiis debitis aut rerum.Necessitatibus saepe eveniet ut et voluptates.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Google Ads" href="google-ads-agentur-berlin.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Google Ads</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Repudiandae sint et molestiae non recusandae.Itaque earum rerum hic tenetur a sapiente.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Grundrisse zeichnen in 2D und 3D" href="3d-immobilien-visualisierung.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Grundrisse zeichnen in 2D und 3D</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Delectus ut aut reiciendis voluptatibus maiores.Alias consequatur aut perferendis doloribus asperiores.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Immobilientexte" href="immobilien-texte.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Immobilientexte</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Repellat ratione voluptatem sequi nesciunt neque.Porro quisquam est qui dolorem ipsum quia.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Lead Generation" href="lead-generator-immobilien.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Lead Generation</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Dolor sit amet consectetur adipiscing elit sed.Do eiusmod tempor incididunt ut labore et dolore.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Property Branding" href="corporate-design-agentur-berlin.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Property Branding</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Magna aliqua ut enim ad minim veniam quis.Nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                        </div> </a>
-                    <a class="bg-white cursor-pointer duration-300 flex flex-col group ring-1 ring-img_gray-50 rounded-lg shadow-xs transform-gpu transition-all hover:bg-img_red-500 hover:shadow-img_gray-100 hover:shadow-lg" data-pg-name="Virtuellen Rundgang erstellen" href="virtueller-rundgang-erstellen.html"> <div class="overflow-hidden rounded-t-md">
-                            <img src="asset/images/visualisation/Aussenansicht-01.jpeg" alt="Real estate agent managing deadlines and schedules" class="duration-500 h-48 object-center object-cover rounded-t-md transition-transform w-full group-hover:scale-105">
-                        </div> <div class="flex flex-col p-4 lg:text-lg"> 
-                            <h3 class="font-bold text-xl text-zinc-700 group-hover:text-white lg:text-lg">Virtuellen Rundgang erstellen</h3> 
-                            <p class="leading-4 text-img_red-500 text-sm group-hover:text-white">Ex ea commodo consequat duis aute irure dolor.In reprehenderit in voluptate velit esse cillum.</p>
-                        </div> </a>
-                </div>
+                <section data-pg-name="slider" class="-mt-17 bg-white border-b border-img_gray-50 border-t">
+                    <div class="container-heading-2 mt-15" data-pg-name="heading">
+                        <div class="is-subheading"> <span class="bg-img_red-500 h-[1px] w-8"></span> <span class="font-bold md:text-base text-center text-img_red-500 text-xs tracking-[0.2em] uppercase">Unser Leistungen fur Immobilienverkauf</span> <span class="bg-img_red-500 h-[1px] w-8"></span> 
+                        </div>
+                    </div>
+                    <div id="slider-2" class="pt-2 slider-component" data-pg-name="slider">
+                        <div class="max-w-7xl mx-auto">
+                            <div class="swiper" id="swiper-2">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide px-2" data-pg-name="3D Immobilienvisualisierungen">
+                                        <figure class="w-full h-full">
+                                            <img src="../asset/images/visualisation/Abend-Aussenansicht-03-B.jpeg" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                            <figcaption class="bg-img_red-500 flex flex-col-reverse font-semibold">
+                                                <small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>3D Immobilienvisualisierungen 
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <!-- end swiper-slide -->
+                                    <div class="swiper-slide px-2" data-pg-name="Grundrisse zeichnen in 2D und 3D">
+                                        <figure class="w-full h-full">
+                                            <img src="../asset/images/bgr-img/sieben-todsuenden-bei-der-grundrissplanung.jpg" alt="Marbella, Spain" class="h-full object-cover w-full"/>
+                                            <figcaption class="bg-cyan-900/85 bg-img_red-500 flex flex-col font-semibold">
+                                                Grundrisse zeichnen in 2D und 3D<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <!-- end swiper-slide -->
+                                    <div class="swiper-slide px-2" data-pg-name="Architekturfotografie">
+                                        <figure class="w-full h-full">
+                                            <img src="../asset/images/visualisation-interior/Wohnen.jpeg" alt="Architekturfotografie" class="w-full h-full object-cover"/>
+                                            <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">
+                                                Architekturfotografie<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide px-2" data-pg-name="Matterport 360° Rundgang">
+                                        <figure class="w-full h-full">
+                                            <img src="../asset/images/drons-photos/MG_8308.jpeg" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                            <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">
+                                                Matterport 360° Rundgang<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <!-- end swiper-slide -->
+                                    <!-- end swiper-slide -->
+                                    <div class="swiper-slide px-2" data-pg-name="Webdesign">
+                                        <figure class="w-full h-full">
+                                            <img src="https://images.unsplash.com/photo-1482874478989-aaf30c03fe37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDV8fHdlYnNpdGUlMjBkZXNpbmclMjB8ZW58MHx8fHwxNzU0NzkwODQyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                            <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">
+                                                Webdesign<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide px-2" data-pg-name="Exposeerstellung">
+                                        <figure class="w-full h-full">
+                                            <img src="../asset/images/expose/02_Ruderclub_02-1.jpeg" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                            <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">Exposeerstellung<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide px-2" data-pg-name="Lead Generation">
+                                        <figure class="w-full h-full">
+                                            <img src="../asset/images/expose/bauschild-baubanner-gestalten-1.jpg" alt="Marbella, Spain" class="h-full object-cover w-full"/>
+                                            <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">Lead Generation<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <!-- end swiper-slide -->
+                                </div>
+                                <!-- end swiper-wrapper -->
+                                <div class="swiper-custom-nav" style="width: 95%;">
+                                    <svg width="64" height="64" viewBox="0 0 64 64" id="nav-left" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M32 2.79753e-06C14.3269 4.34256e-06 -4.34256e-06 14.3269 -2.79753e-06 32C-1.2525e-06 49.6731 14.3269 64 32 64C49.6731 64 64 49.6731 64 32C64 14.3269 49.6731 1.2525e-06 32 2.79753e-06ZM28.9334 24.3999C28.6667 24.1333 28.4 23.9999 28 23.9999C27.6 23.9999 27.3334 24.1333 27.0667 24.3999L20.4 31.0666L20.4 31.0667C20.2 31.2667 20.075 31.5041 20.025 31.751C19.9417 32.1624 20.0666 32.6 20.4 32.9333L27.0667 39.6C27.6 40.1333 28.4 40.1333 28.9333 39.6C29.4667 39.0667 29.4667 38.2667 28.9333 37.7333L24.5334 33.3334L42.7222 33.3334C43.4889 33.3334 44 32.8 44 32C44 31.2 43.4889 30.6667 42.7222 30.6667L24.5333 30.6667L28.9334 26.2666C29.4667 25.7333 29.4667 24.9333 28.9334 24.3999Z" fill="white"/>
+                                    </svg>
+                                    <svg width="64" height="64" viewBox="0 0 64 64" id="nav-right" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M32 64C49.6731 64 64 49.6731 64 32C64 14.3269 49.6731 0 32 0C14.3269 0 0 14.3269 0 32C0 49.6731 14.3269 64 32 64ZM35.0666 39.6001C35.3333 39.8667 35.6 40.0001 36 40.0001C36.4 40.0001 36.6666 39.8667 36.9333 39.6001L43.6 32.9334L43.6 32.9333C43.8 32.7333 43.925 32.4959 43.975 32.249C44.0583 31.8376 43.9334 31.4 43.6 31.0667L36.9333 24.4C36.4 23.8667 35.6 23.8667 35.0667 24.4C34.5333 24.9333 34.5333 25.7333 35.0667 26.2667L39.4666 30.6666H21.2778C20.5111 30.6666 20 31.2 20 32C20 32.8 20.5111 33.3333 21.2778 33.3333H39.4667L35.0666 37.7334C34.5333 38.2667 34.5333 39.0667 35.0666 39.6001Z" fill="white"/>
+                                    </svg>
+                                </div>
+                                <!-- end swiper-custom-nav -->
+                                <div class="swiper-custom-pagination"></div>
+                            </div>
+                            <!-- end swiper -->
+                        </div>
+                        <!-- end container -->
+                    </div>
+                </section>
             </section>
             <section class="pb-20 relative section-wrap" id="reviews" data-pg-name="reviews">
                 <div class="bg-white max-w-5xl mb-11 mx-auto pb-19 pl-15 pr-15 pt-12 ring-1 ring-img_gray-50 rounded-2xl text-center w-full z-5 lg:-mb-8 lg:max-w-4xl lg:mt-1 lg:pb-25 lg:pt-14">
@@ -877,28 +875,36 @@ bewährte</span> Lösung</h2>
         </main>
         <div data-pg-name="footer" data-pgc-define="footer-cta" data-pgc-define-name="footer-cta" data-pgc-define-photo-preview-only class="relative z-10">
             <div data-pg-name="footer-cta" class="relative z-30 text-white pointer-events-none">
-                <div class="!z-50 bg-img_red-500 container-wrap lg:-mb-16 lg:p-12 mx-auto p-5 pointer-events-auto relative ring-1 ring-img_gray-50/15 rounded-3xl shadow-lg">
-                    <div class="flex flex-col items-center text-center max-w-5xl mx-auto">
+                <div class="!z-50 bg-img_red-500 container-wrap lg:-mb-16 lg:p-12 mx-auto p-5 pointer-events-auto relative ring-1 ring-img_red-200/15 rounded-3xl shadow-lg">
+                    <div class="-mt-23 flex flex-col gap-8 items-center justify-center mb-7 md:flex-row md:gap-10">
+                        <!-- Profile Image Circle -->
+                        <div class="relative shrink-0 flex flex-col items-center gap-1">
+                            <div class="border-4 border-white/20 h-40 overflow-hidden rounded-full shadow-2xl w-40 md:h-40 md:w-40">
+                                <img src="asset/images/staff-pictures/FS8A0793-1-2048x1847.jpeg" alt="Kontaktperson" class="w-full h-full object-cover object-center">
+                            </div>
+                        </div>
+                        <!-- Action Block -->
+                    </div>
+                    <div class="flex flex-col gap-2 items-center max-w-5xl mx-auto text-center">
                         <div class="gap-2 inline-flex items-center mb-4 text-left"> <span class="bg-white h-[1px] w-8"></span> <span class="font-bold text-center text-white text-xs tracking-[0.2em] uppercase">Kontakt &amp; Beratung</span> <span class="bg-white h-[1px] w-8"></span> 
                         </div>
                         <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 drop-shadow-xs">Ich berate Sie gerne!</h2>
+                        <p class="-mb-4.5 -mt-6 font-light italic leading-snug lg:max-w-3xl lg:mb-4 lg:text-xl lg:w-full max-w-4xl md:text-xl text-balance text-center text-lg text-white">&bdquo;Ich bin Daniel, Geschäftsführer und Immo-Experte. Gern beantworte ich deine Fragen und begleite dich mit meinem Team durch deinen&nbsp; Immobilienverkauf.&quot;</p>
                         <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
                             <!-- Profile Image Circle -->
-                            <div class="relative shrink-0 flex flex-col items-center gap-1">
-                                <div class="border-4 border-white/20 h-40 overflow-hidden rounded-full shadow-2xl w-40 md:h-40 md:w-40">
-                                    <img src="asset/images/staff-pictures/FS8A0793-1-2048x1847.jpeg" alt="Kontaktperson" class="w-full h-full object-cover object-center">
-                                </div>
-                                <div class="font-light not-italic text-white">Daniel Marczinek</div>
-                                <div class="font-light italic text-sm text-white">Geschäftsführer</div>
-                            </div>
                             <!-- Action Block -->
                             <div class="flex flex-col items-center md:text-center">
-                                <a href="kontakt.html" class="bg-zinc-700/70 border-white/5 duration-300 flex font-normal gap-2 group hover:bg-img_red-900 items-center justify-center px-8 py-3 rounded-lg text-sm text-white transition-all w-full">
-                                        Kostenlose Beratung Buchen <svg class="h-5 hidden text-white transition-transform w-5 group-hover:translate-x-1 md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <a href="kontakt.html" class="bg-zinc-700/100 border-white/5 duration-300 flex font-light gap-2 group hover:bg-img_red-900 items-center justify-center px-8 py-3 rounded-lg text-base text-white transition-all w-full">Beratungstermin buchen<svg class="h-5 hidden text-white transition-transform w-5 group-hover:translate-x-1 md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                    </svg> </a>
-                                <span class="font-light italic mt-3 opacity-90 text-sm tracking-wide md:text-base">
+                                    </svg></a>
+                                <span class="font-light italic mt-3 opacity-65 text-sm text-white tracking-wide">
                         Kostenlos, Provisionsbasiert, Persönlich </span>
+                            </div>
+                            <div class="flex flex-col items-center md:text-center">
+                                <a href="kontakt.html" class="bg-img_red-800 border-white/5 duration-300 flex font-light gap-2 group hover:bg-zinc-700 items-center justify-center px-8 py-3 rounded-lg text-base text-white transition-all w-full">Kontaktformular ausfüllen<svg class="h-5 hidden text-white transition-transform w-5 group-hover:translate-x-1 md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg></a>
+                                <span class="font-light italic mt-3 opacity-65 text-sm text-white tracking-wide">Fast & Professional</span>
                             </div>
                         </div>
                         <!-- Bottom Separator Line -->
@@ -1062,9 +1068,9 @@ Job</a>
                 </div>
             </footer>
         </div>
-        <script src="../src/js/menu/nav/ui-mega-menu--1.js"></script>
-        <script src="../src/js/menu/nav/mobile-menu.js"></script>
-        <script src="../src/js/media/video-player.js"></script>
+        <script src="src/js/menu/nav/ui-mega-menu--1.js"></script>
+        <script src="src/js/menu/nav/mobile-menu.js"></script>
+        <script src="src/js/media/video-player.js"></script>
         <script>
             // Detect when sticky header is activated and change background to bg-img_red-500
             document.addEventListener('DOMContentLoaded', function() {
@@ -1120,5 +1126,7 @@ Job</a>
                 updateButtons();
             });
         </script>
+        <script src="src/js/swiper/swiper-bundle.min.js"></script>
+        <script src="src/js/swiper/slider-center-swiper.js"></script>
     </body>     
 </html>
