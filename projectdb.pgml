@@ -43,15 +43,16 @@
     </dmdesigns>
     <dmlocked tw-colors-red="true" tw-colors-orange="true" tw-colors-amber="true" tw-colors-yellow="true" tw-colors-lime="true" tw-colors-green="true" tw-colors-emerald="true" tw-colors-teal="true" tw-colors-cyan="true" tw-colors-sky="true" tw-colors-blue="true" tw-colors-indigo="true" tw-colors-violet="true" tw-colors-purple="true" tw-colors-fuchsia="true" tw-colors-pink="true" tw-colors-rose="true" tw-colors-slate="true" tw-colors-gray="true" tw-colors-zinc="true" tw-colors-neutral="true" tw-colors-stone="true"></dmlocked>
     <classstyles>
-        <classstyle name="section" key="section" class="overflow-hidden mx-auto px-3 w-full md:mb-9 pt-15" component count="75" expanded></classstyle>
-        <classstyle name=".container-wrap" key=".container-wrap" class="mx-auto w-full lg:max-w-6xl md:max-w-5xl" component states="" count="90"></classstyle>
+        <classstyle name="section" key="section" class="overflow-hidden mx-auto w-full pl-6 pr-6 pb-15 -mt-2" component count="75"></classstyle>
+        <classstyle name=".container-wrap" key=".container-wrap" class="mx-auto w-full lg:max-w-6xl md:max-w-5xl mb-2 pl-6 pr-6 pb-14 lg:-mt-2 mt-0.5" component states="" count="90" expanded></classstyle>
         <classstyle name=".is--hero" key=".is--hero" class="bg-img_red-500 z-0 relative -mt-16 pt-24 lg:-my-32 lg:pb-44" component states="" count="1"></classstyle>
         <deleted key=".section-wrap" component class="mx-auto px-2 w-full"></deleted>
-        <classstyle name=".container-heading-2" key=".container-heading-2" class="flex flex-col items-center md:max-w-5xl mb-6 mx-auto gap-3 mt-0" component count="49"></classstyle>
+        <classstyle name=".container-heading-2" key=".container-heading-2" class="flex flex-col items-center md:max-w-5xl mb-6 mx-auto gap-3" component count="49"></classstyle>
         <classstyle key=".is--hero-white" name=".is--hero-white" class="z-0 relative -mt-16 pt-24 lg:-my-32 lg:pb-44" component count="1" states=""></classstyle>
         <classstyle name=".cart-has-blur" key=".cart-has-blur" class="backdrop-blur-sm border border-white/10 flex flex-col font-normal rounded-lg text-white md:flex-row md:[&_h3]:text-left [&_h3]:text-center gap-3 md:justify-start [&_span]:leading-3 items-center leading-tight text-sm md:[&_span]:text-left [&_span]:!text-center text-center md:text-left [&_h3]:text-xl [&_h3]:leading-snug p-4 [&_h3]:text-img_red-500 [&_h3]:font-bold [&_span]:text-img_red-500" component count="0"></classstyle>
-        <classstyle name=".is-subheading" key=".is-subheading" class="gap-2 inline-flex items-center text-img_red-500 text-left mb-2" expanded component count="23"></classstyle>
+        <classstyle name=".is-subheading" key=".is-subheading" class="gap-2 inline-flex items-center text-img_red-500 mb-2 mx-auto text-left" component count="23" expanded></classstyle>
         <deleted key=".service-list-ul" leave-classes component class="content-center flex flex-row flex-wrap justify-center max-w-5xl mt-4 space-x-6 space-y-1 [&_>_li:nth-of-type(1)_>_ul_>_li]:font-normal [&_>_li:nth-of-type(1)_>_ul_>_li]:text-left [&_>_li:nth-of-type(1)_>_svg]:mt-1 [&_>_li:nth-of-type(1)_>_svg]:shrink-0 [&_>_li:nth-of-type(1)_>_svg]:text-2xl md:[&_>_li:nth-of-type(1)_>_svg]:mt-0 [&_>_li:nth-of-type(1)_>_svg]:size-6 [&_>_li:nth-of-type(1)_>_ul_>_li]:text-2xl"></deleted>
         <deleted key=".service-list" leave-classes component class="content-center flex flex-row flex-wrap justify-center max-w-5xl mt-4 space-x-6 space-y-1 [&_>_li:nth-of-type(100)]:flex [&_>_li:nth-of-type(100)]:flex-row [&_>_li:nth-of-type(100)]:gap-2 [&_>_li:nth-of-type(100)]:items-center [&_>_li:nth-of-type(100)]:text-img_red-500 [&_>_li:nth-of-type(100)]:tracking-tight"></deleted>
+        <classstyle name="body" key="body" class="bg-img_light_gray-200" expanded component></classstyle>
     </classstyles>
 </project>

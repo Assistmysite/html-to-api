@@ -328,7 +328,7 @@ bewährte</span> Lösung</h2>
             </div>
         </header>
         <main> 
-            <section data-pg-name="Hero" class="overflow-hidden pb-2 relative to-img_gray-50"> 
+            <section class="overflow-hidden pb-2 relative to-img_gray-50" data-pg-name="hero"> 
                 <img src="asset/svg/bgr/lines-bgr-vertical-red-reversed.svg" data-pg-name="hero-bg" class="-z-10 absolute h-full inset-0 object-center object-contain opacity-5 visible w-full"/>
                 <div class="flex flex-col h-full items-start justify-center lg:flex-col lg:place-items-center md:gap-0 mt-4.5 mx-auto w-11/12 xl:flex-row xl:gap-20">
                     <div class="lg:w-4xl mx-auto space-y-5 text-center w-full xl:w-[600px] z-10" data-pg-name="col--text">
@@ -399,28 +399,20 @@ bewährte</span> Lösung</h2>
                     </div>                     
                 </div>
             </section>
-            <section>
-                <div class="container-heading-2">
-                    <div class="is-subheading"> <span class="bg-img_red-500 h-[1px] w-8"></span> <span class="font-bold md:text-base text-center text-img_red-500 text-xs tracking-[0.2em] uppercase">Flexibel. Durchdacht. Markenstark</span> <span class="bg-img_red-500 h-[1px] w-8"></span> 
+            <section class="mt-20 section-wrap" data-pg-name="intro">
+                <div class="bg-white container-wrap pt-13 ring-1 ring-img_gray-50 rounded-2xl shadow-xs text-center" data-pg-name="heading">
+                    <div class="is-subheading"> <span class="bg-img_red-500 h-[1px] w-8"></span> <span class="font-bold md:text-base text-center text-img_red-500 text-xs tracking-[0.2em] uppercase">Expose</span> <span class="bg-img_red-500 h-[1px] w-8"></span> 
+                    </div>
+                    <h2 class="font-bold leading-none text-4xl text-center text-img_red-500 tracking-tight lg:text-6xl">Lorem ipsum dolor sit amet.<br> <span class="text-zinc-700">Consectetur adipiscing elit</span></h2>
+                    <p class="font-normal leading-snug max-w-4xl mt-2.5 mx-auto text-balance text-center text-lg text-zinc-700 md:text-xl lg:mb-4 lg:w-full">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </section>
+            <section data-pg-name="slider" class="bg-white border-img_gray-50 border-t mb-20 lg:-mt-21">
+                <div class="container-heading-2 mt-15" data-pg-name="heading">
+                    <div class="is-subheading"> <span class="bg-img_red-500 h-[1px] w-8"></span> <span class="font-bold md:text-base text-center text-img_red-500 text-xs tracking-[0.2em] uppercase">Unser Leistungen fur Immobilienverkauf</span> <span class="bg-img_red-500 h-[1px] w-8"></span> 
                     </div>
                 </div>
-                <div data-pg-name="features" class="max-w-7xl mx-auto pt-0">
-                    <div class="gap-0 grid grid-cols-1 mx-auto relative lg:max-w-9/12" data-pg-name="carts">
-                        <div class="bg-white flex flex-col items-center p-9 rounded-t-2xl text-center w-full xl:pb-9">
-                            <img src="asset/images/expose/02_Ruderclub_02-1.jpeg" class="mx-auto lg:mb-8 lg:w-6xl">
-                        </div>
-                        <div data-pg-name="lines-deco">
-                            <div class="-inset-x-4 absolute bg-gray-200 md:hidden top-0"></div>
-                            <div class="-inset-x-4 absolute bg-gray-200 bg-input bottom-0 h-px md:hidden"></div>
-                            <div class="-left-2 -top-2 absolute bg-gray-200 bg-input bottom-0 md:hidden w-px"></div>
-                            <div class="-right-2 -top-2 absolute bg-gray-200 bg-input bottom-0 md:hidden w-px"></div>
-                            <div class="-inset-x-2 absolute bg-gray-200 bg-input h-px hidden md:block top-0"></div>
-                            <div class="-top-2 absolute bg-gray-200 bg-input bottom-0 hidden left-0 md:block w-px"></div>
-                            <div class="-top-2 absolute bg-gray-200 bottom-0 hidden md:block right-0 w-px"></div>
-                        </div>
-                    </div>
-                </div>
-                <div id="slider-2" class="bg-white border-b border-img_gray-50 border-t container-wrap lg:w-full mt-0 pb-10 pt-10 slider-component" data-pg-name="slider">
+                <div id="slider-2" class="pt-2 slider-component" data-pg-name="slider">
                     <div class="max-w-7xl mx-auto">
                         <div class="swiper" id="swiper-2">
                             <div class="swiper-wrapper">
@@ -444,7 +436,7 @@ bewährte</span> Lösung</h2>
                                 <!-- end swiper-slide -->
                                 <div class="swiper-slide px-2" data-pg-name="Architekturfotografie">
                                     <figure class="w-full h-full">
-                                        <img src="asset/images/expose/05.RSI__Wriezen_02-1.jpeg" alt="Architekturfotografie" class="w-full h-full object-cover"/>
+                                        <img src="../asset/images/visualisation-interior/Wohnen.jpeg" alt="Architekturfotografie" class="w-full h-full object-cover"/>
                                         <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">
                                             Architekturfotografie<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
                                         </figcaption>
@@ -452,7 +444,7 @@ bewährte</span> Lösung</h2>
                                 </div>
                                 <div class="swiper-slide px-2" data-pg-name="Matterport 360° Rundgang">
                                     <figure class="w-full h-full">
-                                        <img src="asset/images/expose/4.png" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                        <img src="../asset/images/drons-photos/MG_8308.jpeg" alt="Marbella, Spain" class="w-full h-full object-cover"/>
                                         <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">
                                             Matterport 360° Rundgang<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
                                         </figcaption>
@@ -462,7 +454,7 @@ bewährte</span> Lösung</h2>
                                 <!-- end swiper-slide -->
                                 <div class="swiper-slide px-2" data-pg-name="Webdesign">
                                     <figure class="w-full h-full">
-                                        <img src="asset/images/expose/2.png" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                        <img src="https://images.unsplash.com/photo-1482874478989-aaf30c03fe37?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDV8fHdlYnNpdGUlMjBkZXNpbmclMjB8ZW58MHx8fHwxNzU0NzkwODQyfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Marbella, Spain" class="w-full h-full object-cover"/>
                                         <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">
                                             Webdesign<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
                                         </figcaption>
@@ -470,14 +462,14 @@ bewährte</span> Lösung</h2>
                                 </div>
                                 <div class="swiper-slide px-2" data-pg-name="Exposeerstellung">
                                     <figure class="w-full h-full">
-                                        <img src="asset/images/expose/13.RSI__Fredersdorf_02.png" alt="Marbella, Spain" class="w-full h-full object-cover"/>
+                                        <img src="../asset/images/expose/02_Ruderclub_02-1.jpeg" alt="Marbella, Spain" class="w-full h-full object-cover"/>
                                         <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">Exposeerstellung<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
                                         </figcaption>
                                     </figure>
                                 </div>
                                 <div class="swiper-slide px-2" data-pg-name="Lead Generation">
                                     <figure class="w-full h-full">
-                                        <img src="asset/images/expose/5.png" alt="Marbella, Spain" class="h-full object-cover w-full"/>
+                                        <img src="../asset/images/expose/bauschild-baubanner-gestalten-1.jpg" alt="Marbella, Spain" class="h-full object-cover w-full"/>
                                         <figcaption class="bg-cyan-900/85 bg-img_red-500 flex-col font-semibold">Lead Generation<small class="font-normal leading-tight">Lorem ipsum dolor sit amet consectetur adipiscing elit dui facilisi inceptos quis massa penatibus</small>
                                         </figcaption>
                                     </figure>
@@ -501,95 +493,283 @@ bewährte</span> Lösung</h2>
                     <!-- end container -->
                 </div>
             </section>
-            <section data-pg-name="why-us" class="pb-11">
-                <div class="container-heading-2" data-pg-name="heading">
-                    <div class="is-subheading"> <span class="bg-img_red-500 h-[1px] w-8"></span> <span class="font-bold md:text-base text-center text-img_red-500 text-xs tracking-[0.2em] uppercase">Leistungen: Exposé </span> <span class="bg-img_red-500 h-[1px] w-8"></span> 
+            <section data-pg-name="price-table">
+                <div class="bg-white mt-1 mx-auto py-10 px-4 sm:px-5 ring-1 ring-img_gray-50 rounded-2xl text-center w-full max-w-4xl z-5 lg:py-14 lg:px-8">
+                    <div class="is-subheading flex items-center justify-center space-x-2"> <span class="bg-img_red-500 h-[1px] w-6 sm:w-8 hidden sm:block"></span> <span class="font-bold text-sm sm:text-base text-img_red-500 tracking-[0.2em] uppercase">FAQ</span> <span class="bg-img_red-500 h-[1px] w-6 sm:w-8 hidden sm:block"></span> 
                     </div>
-                    <h2 class="-mb-6 font-bold leading-none text-4xl text-center text-img_red-500 tracking-tight lg:text-6xl">Warum unser <span class="text-zinc-700"><br>Marketing-Team wählen?</span></h2>
-                    <p class="font-normal italic leading-snug max-w-4xl mb-7 mt-7 text-balance text-center text-lg text-zinc-700 md:text-xl lg:mb-9 lg:mt-9 lg:text-xl lg:w-full">Als Betreiber von Ferienimmobilien wissen Sie, wie wichtig es ist, Ihr Angebot optimal zu präsentieren und Ihre Gäste zu verzaubern. Mit gezieltem Marketing erhöhen Sie nicht nur die Sichtbarkeit Ihrer Ferienwohnung, sondern auch die Buchungszahlen. Fast wie nebenbei bauen Sie langfristige Kundenbeziehungen auf.</p>
+                    <h2 class="mt-3 mb-0 sm:-mb-6 font-bold leading-tight text-3xl sm:text-4xl text-center text-img_red-500 tracking-tighter lg:text-5xl xl:text-6xl">Exposé-Pakete</h2>
                 </div>
-                <div class="-mt-7 border border-gray-200 container-wrap flex flex-col items-center mb-0.5 pb-5 pt-5 px-9 rounded-b-none rounded-t-3xl space-y-5" data-pg-name="stats">
-                    <div class="flex w-full flex-col divide-y divide-img_red-100/40 md:flex-row md:divide-x md:divide-y-0">
-                        <div class="flex flex-1 flex-col items-center justify-center gap-3 p-6 text-center">
-                            <div class="font-medium text-3xl text-img_red-500 tracking-tight md:text-4xl lg:text-5xl">800</div>
-                            <div class="font-normal italic text-base text-img_red-500/90 tracking-tight lg:text-lg">Anzahl erfolgreicher Projekte</div>
+                <div class="bg-white container-wrap gap-4 grid mt-4 overflow-visible pb-17 pt-2 ring-1 ring-img_gray-50 rounded-2xl text-zinc-700 lg:-mt-1.5">
+                    <div class="mx-auto min-w-0 w-full max-w-full px-4">
+                        <div class="min-w-0 w-full overflow-x-auto overflow-y-visible pt-8 px-0 sm:px-6 md:px-9" style="-webkit-overflow-scrolling: touch;">
+                            <p class="mb-3 text-center text-xs text-zinc-500 md:hidden">← Scrollen Sie horizontal für alle Pakete →</p>
+                            <table class="border-zinc-200 min-w-[600px] text-xs w-full sm:text-sm xl:border-b xl:border-l xl:border-r sm:min-w-[680px]">
+                                <thead>
+                                    <tr class="bg-img_red-500 text-white">
+                                        <th class="sticky left-0 z-10 min-w-[140px] max-w-[180px] whitespace-normal rounded-tl-md bg-img_red-500 font-bold pl-4 pr-3 py-3 text-left text-white/90 text-xs tracking-wider sm:min-w-[160px] sm:pl-6 sm:pr-6">Leistung</th>
+                                        <th class="min-w-[6rem] px-2 py-3 text-center font-bold uppercase sm:min-w-[7rem] sm:px-4">Basis</th>
+                                        <th class="min-w-[6rem] bg-img_red-600 px-2 py-3 text-center font-bold uppercase sm:min-w-[7rem] sm:px-4">Beliebt</th>
+                                        <th class="min-w-[6rem] rounded-tr-md px-2 py-3 text-center font-bold uppercase sm:min-w-[7rem] sm:px-4">Premium</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-zinc-600">
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Fotoshoot mit professionellem Fotografen</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Inkl.</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">Inkl.</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Inkl.</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Aufräumen der Immobilie (ohne Keller)</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Gegen Aufpreis möglich</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">Einfach</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Umfassend</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Drohnenaufnahmen</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Gegen Aufpreis möglich</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">Inkl.</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Inkl.</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Matterport 360°-Rundgang</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Gegen Aufpreis möglich</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">Inkl.</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Inkl.</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Grundrisse (bis zu 4 Stck.)</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Reinzeichnen von vorhandenen Grundrissen</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">Attraktive 2D Grundrisse</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Hochwertige 2D/3D Grundrisse und Grundrissideen (falls möglich)</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Ausstattungsüberblick</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Textbeschreibung</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">Liste mit Bildgalerie</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Liste mit Bildgalerie und Beschreibung</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Texte erstellen</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Drei Texte mit je ca. 100 Worten</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">Vier Texte mit je ca. 150 Worten</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Acht Texte mit je 150 bis 250 Worten</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Anzahl Exposéseiten (ca.)</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">10</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">15</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">30</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Exposé-Templates zur Auswahl</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">2</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">5</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">10</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Lagekarte</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Einfach mit 10 Standorten</td>
+                                        <td class="bg-img_light_gray-400/100 px-2 py-2 text-center sm:px-4 sm:py-3">Kategorisiert mit 15 Standorten</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Individuell gezeichnet mit 25 Standorten</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-200">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-2 text-zinc-700 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-3 sm:text-sm">Einstellen in Immobilienportale</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">Gegen Aufpreis möglich</td>
+                                        <td class="bg-img_light_gray-500/100 px-2 py-2 text-center sm:px-4 sm:py-3">3 Monate</td>
+                                        <td class="px-2 py-2 text-center sm:px-4 sm:py-3">6 Monate</td>
+                                    </tr>
+                                    <tr class="bg-zinc-50">
+                                        <td class="sticky left-0 z-10 min-w-0 bg-img_light_gray-500 font-semibold pl-4 pr-3 py-3 text-right text-sm text-zinc-800 shadow-[2px_0_6px_-2px_rgba(0,0,0,0.08)] sm:pl-6 sm:pr-6 sm:py-4 sm:text-base">Preis</td>
+                                        <td class="px-2 py-3 text-center text-xs sm:px-4 sm:py-4 sm:text-sm">
+                                            <div class="border-b border-img_gray-50 mb-1.5 p-2 sm:mb-2.5 sm:p-3.5">
+                                                <span class="font-bold text-base text-zinc-800 block sm:text-lg">2.350 €</span>
+                                                <span class="block text-[10px] text-zinc-500 mt-0.5 sm:text-xs">vor Verkauf, netto</span>
+                                            </div>
+                                            <span class="block font-bold mt-0.5 text-sm text-zinc-700 sm:text-base">2.950 €</span>
+                                            <span class="block text-[10px] text-zinc-500 sm:text-xs">nach Verkauf, netto</span>
+                                        </td>
+                                        <td class="bg-img_gray-50/30 px-2 py-3 text-center text-xs sm:px-4 sm:py-4 sm:text-sm">
+                                            <div class="bg-img_light_gray-400 border-b border-img_gray-50 mb-1.5 p-2 sm:mb-2.5 sm:p-3.5">
+                                                <span class="font-bold text-base text-img_red-500 block sm:text-lg">3.750 €</span>
+                                                <span class="block text-[10px] text-zinc-500 mt-0.5 sm:text-xs">vor Verkauf, netto</span>
+                                            </div>
+                                            <span class="font-bold text-img_red-600 block mt-0.5 text-sm sm:text-base">4.950 €</span>
+                                            <span class="block text-[10px] text-zinc-500 sm:text-xs">nach Verkauf, netto</span>
+                                        </td>
+                                        <td class="px-2 py-3 text-center text-xs sm:px-4 sm:py-4 sm:text-sm"> 
+                                            <div class="border-b border-img_gray-50 mb-1.5 p-2 text-zinc-700 sm:mb-2.5 sm:p-3.5">
+                                                <span class="block font-bold text-base text-zinc-700 sm:text-lg">6.350 €</span>
+                                                <span class="block text-[10px] text-zinc-500 mt-0.5 sm:text-xs">vor Verkauf, inkl. MwSt.</span>
+                                            </div>
+                                            <span class="block font-bold mt-0.5 text-sm text-zinc-700 sm:text-base">8.250 €</span>
+                                            <span class="block text-[10px] text-zinc-500 sm:text-xs">nach Verkauf, inkl. MwSt.</span> 
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="flex flex-1 flex-col items-center justify-center gap-3 p-6 text-center">
-                            <div class="font-medium text-3xl text-img_red-500 tracking-tight md:text-4xl lg:text-5xl">100%</div>
-                            <div class="font-normal italic text-base text-img_red-500/90 tracking-tight lg:text-lg">Zufriedenheitsgarantie</div>
-                        </div>
-                        <div class="flex flex-1 flex-col font-normal gap-3 italic items-center justify-center p-6 text-center">
-                            <div class="font-medium not-italic text-3xl text-img_red-500 tracking-tight md:text-4xl lg:text-5xl">2014</div>
-                            <div class="font-normal italic text-base text-img_red-500/90 tracking-tight lg:text-lg">Am Markt seit</div>
+                        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <a href="kontakt.html" class="order-2 sm:order-1 text-sm text-zinc-500 hover:text-img_red-500 transition-colors">
+                            Individuell · Maßgeschneidertes Angebot → </a>
+                            <a href="kontakt.html" class="order-1 sm:order-2 inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium text-white bg-img_red-500 hover:bg-img_red-600 transition-colors">
+                            Beratung anfragen </a>
                         </div>
                     </div>
-                    <div class="border-img_gray-50 border-t px-5 w-full"></div>
-                    <div class="flex flex-col gap-3 items-center p-0">
-                        <span class="flex font-semibold justify-center text-center text-img_red-500 text-xl md:max-w-lg md:text-2xl md:text-center md:tracking-tight lg:font-medium lg:text-3xl"> Top-Qualität, schnelle Bearbeitung und persönlicher Kundenservice </span>
-                        <div class="border-solid flex flex-col gap-1 items-center justify-center lg:flex-row lg:items-center lg:justify-start lg:mt-0 lg:w-44 md:flex-col md:items-center mt-6 sm:flex-row w-full">
-                            <span class="-space-x-4 flex items-center"><span class="border border-img_gray-50 border-solid flex overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full object-center object-cover w-full" alt="placeholder" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDV8fHBvcnRyYWl0fGVufDB8fHx8MTc1NDUxODMxN3ww&ixlib=rb-4.1.0&q=80&w=400"></span><span class="border border-img_gray-50 border-solid flex overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full object-center object-cover w-full" alt="placeholder" src="https://images.unsplash.com/flagged/photo-1595514191830-3e96a518989b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDE0OXx8cG9ydHJhaXR8ZW58MHx8fHwxNzU0NTE5MDE0fDA&ixlib=rb-4.1.0&q=80&w=400"></span><span class="border border-img_gray-50 border-solid flex overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full object-center object-cover w-full" alt="placeholder" src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDU2fHxwb3J0cmFpdHxlbnwwfHx8fDE3NTQ1MTg5NTV8MA&ixlib=rb-4.1.0&q=80&w=400"></span><span class="border border-img_gray-50 border-solid flex object-center object-cover overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full w-full" alt="placeholder" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDgxfHxwb3J0cmFpdHxlbnwwfHx8fDE3NTQ1MTg5Nzh8MA&ixlib=rb-4.1.0&q=80&w=400"></span><span class="border border-img_gray-50 border-solid flex overflow-hidden relative rounded-full shrink-0 size-10"><img class="aspect-square h-full object-center object-cover w-full" alt="placeholder" src="https://images.unsplash.com/photo-1531860494978-9326a0388ef4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wyMDkyMnwwfDF8c2VhcmNofDEyOXx8cG9ydHJhaXR8ZW58MHx8fHwxNzU0NTE5MDAxfDA&ixlib=rb-4.1.0&q=80&w=400"></span></span> 
-                            <div> 
-                                <div class="flex gap-1 items-center text-img_red-500"> 
-                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-img_beige-900 text-img_red-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
-                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
-                                    </svg>
-                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-img_beige-900 text-img_red-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
-                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
-                                    </svg>                                     
-                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-img_beige-900 text-img_red-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
-                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
-                                    </svg>                                     
-                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-img_beige-900 text-img_red-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
-                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
-                                    </svg>                                     
-                                    <svg width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="!stroke-img_beige-700 fill-current fill-img_beige-700 lucide lucide-star size-3 stroke-current text-img_red-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version xml:space fill="none" stroke="currentColor"> 
-                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>                                         
-                                    </svg>
-                                    <span class="font-semibold text-img_red-500 text-xs">5.0</span> 
-                                </div>                                 
-                            </div>                             
+                </div>
+            </section>
+            <section data-pg-name="faq" class="mb-15 md:-mb-22 lg:mb-14">
+                <div class="bg-white max-w-5xl mb-11 mx-auto pb-19 pl-15 pr-15 pt-12 ring-1 ring-img_gray-50 rounded-2xl text-center w-full z-5 lg:max-w-4xl lg:pb-25 lg:pt-14">
+                    <div class="is-subheading"> <span class="bg-img_red-500 h-[1px] w-8"></span> <span class="font-bold text-base text-img_red-500 tracking-[0.2em] uppercase">FAQ</span> <span class="bg-img_red-500 h-[1px] w-8"></span> 
+                    </div>
+                    <h2 class="-mb-6 font-bold leading-none text-4xl text-center text-img_red-500 tracking-tighter lg:text-6xl"><span class="text-zinc-700">Lorem ipsum</span> dolor sit amet</h2>
+                </div>
+                <div class="-mt-7 bg-white container-wrap gap-4 grid pb-17 pt-2 ring-1 ring-img_gray-50 rounded-2xl text-zinc-700 lg:-mt-14">
+                    <div class="accordion mt-12 mx-auto w-full max-w-4xl space-y-4" data-pg-name="accordion">
+                        <!-- Item 1 -->
+                        <div class="border border-stone-200 rounded-xl bg-white overflow-hidden shadow-xs hover:shadow-md hover:border-img_red-200 transition-all duration-300">
+                            <button class="accordion-button flex w-full items-center justify-between px-6 py-5 text-left bg-white hover:bg-stone-50 transition-colors duration-200 group" data-image="1">
+                                <span class="font-semibold text-lg text-zinc-700 tracking-tight transition-colors group-hover:text-img_red-500">Warum die professionelle Exposéerstellung im Immobilienmarketing so wichtig ist</span>
+                                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-stone-100 text-stone-500 group-hover:bg-img_red-50 group-hover:text-img_red-500 transition-all"> <svg class="icon w-5 h-5 transition-transform duration-300 ease-out shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg> </span>
+                            </button>
+                            <div class="accordion-content hidden opacity-0 transition-opacity duration-300 ease-in-out">
+                                <div class="px-6 pb-8 pt-2">
+                                    <p class="text-zinc-600 leading-relaxed text-lg">Ein Exposé ist die verkaufsfördernde Beschreibung einer Immobilie in Bild und Text. Es fungiert sozusagen als Werbebroschüre im Immobilienmarketing und kann zum Beispiel persönlich überreicht, per Post verschickt, auf Immobilienwebseiten veröffentlicht, zum Download angeboten oder per E-Mail versendet werden. Ein professionelles Exposé ist nicht nur für den Verkauf von Gebrauchtimmobilien von Vorteil, sondern es kann auch zur Verkaufsförderung für Hausmodelle von Bauunternehmen und Hausanbietern von Berlin bis München eingesetzt werden. Je aussagekräftiger das Exposé ist, desto mehr Interessenten spricht es an, desto weniger Fragen bleiben offen und desto eher kann ein hoher Verkaufspreis erzielt werden. Um eine Immobilie möglichst gewinnbringend verkaufen zu können, ist deshalb die professionelle Exposéerstellung besonders wichtig. Doch was gilt es zu beachten? Welche Informationen muss ein Exposé enthalten und wie sieht eine perfekte Gestaltung aus?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="border border-stone-200 rounded-xl bg-white overflow-hidden shadow-xs hover:shadow-md hover:border-img_red-200 transition-all duration-300">
+                            <button class="accordion-button flex w-full items-center justify-between px-6 py-5 text-left bg-white hover:bg-stone-50 transition-colors duration-200 group" data-image="2">
+                                <span class="font-semibold text-lg text-zinc-700 tracking-tight transition-colors group-hover:text-img_red-500">Was ist bei der professionellen Exposéerstellung zu beachten?</span>
+                                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-stone-100 text-stone-500 group-hover:bg-img_red-50 group-hover:text-img_red-500 transition-all"> <svg class="icon w-5 h-5 transition-transform duration-300 ease-out shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg> </span>
+                            </button>
+                            <div class="accordion-content hidden opacity-0 transition-opacity duration-300 ease-in-out">
+                                <div class="px-6 pb-8 pt-2">
+                                    <p class="text-zinc-600 leading-relaxed text-lg">Bei der professionellen Exposéerstellung wird im Immobilienmarketing aus Käufersicht auf die Immobilie geblickt. Das Exposé wird mit der Intention gestaltet, auf den ersten Blick Interesse der Zielgruppe zu wecken, Vertrauen aufzubauen und die wichtigsten Merkmale der Immobilie herauszustellen, wie die ruhige Lage, den schönen Ausblick, den praktischen Grundriss, die gute Infrastruktur in der Umgebung usw. Durch eine Fokussierung auf die Vorteile gelingt es, ehrlich zu bleiben und nicht zu viel zu versprechen.
+Je nach anvisierter Zielgruppe, wie Familien, Singles, Senioren o. Ä., werden andere passende Highlights bei der Exposéerstellung in den Fokus gerückt. Schließlich soll das Immobilienexposé potenzielle Käufer dazu verleiten, einen Besichtigungstermin zu vereinbaren und die Immobilie zum angebotenen Preis zu kaufen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="border border-stone-200 rounded-xl bg-white overflow-hidden shadow-xs hover:shadow-md hover:border-img_red-200 transition-all duration-300">
+                            <button class="accordion-button flex w-full items-center justify-between px-6 py-5 text-left bg-white hover:bg-stone-50 transition-colors duration-200 group" data-image="3">
+                                <span class="font-semibold text-lg text-zinc-700 tracking-tight transition-colors group-hover:text-img_red-500">Welche Informationen muss ein Immobilienexposé enthalten?</span>
+                                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-stone-100 text-stone-500 group-hover:bg-img_red-50 group-hover:text-img_red-500 transition-all"> <svg class="icon w-5 h-5 transition-transform duration-300 ease-out shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg> </span>
+                            </button>
+                            <div class="accordion-content hidden opacity-0 transition-opacity duration-300 ease-in-out">
+                                <div class="pb-8 prose pt-2 px-6">
+                                    <p class="p2"><span class="s1">Damit möglichst alle Fragen vorab geklärt werden, sollten bei der Exposéerstellung möglichst viele Details berücksichtigt werden.</span></p>
+                                    <p class="p3"><span class="s2"><b>Diese Details sollte das Exposé unbedingt enthalten:</b><b></b></span></p>
+                                    <ul class="ul1">
+                                        <li class="li2">
+                                            <span class="s1">Adresse der Immobilie</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Standortbeschreibung (Verkehrsanbindung, Freizeitwert, Infrastruktur usw.)</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Umgebungsbeschreibung (Stadt oder Land, Neubaugebiet oder altes Viertel usw.)</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Grundstücksbeschreibung (Quadratmeter, Grundstücksform usw.)</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Objektbeschreibung (Baujahr, Bauweise, Besonderheiten usw.)</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Eigenschaften der Immobilie (Zimmer, Etagen, Wohnfläche, Nutzfläche, Keller, Dachboden, Zustand, Ausstattung usw.)</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Verbrauchsbeschreibung (Energieträger, Energieausweis, Energieverbrauch)</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">2D-Visualisierungen (Lageplan, Grundrisse)</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Profi-Fotos von innen und außen</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Frühestmögliches Einzugsdatum</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Angestrebter Kaufpreis</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Mögliche Besichtigungstermine oder Zeitraum für Besichtigungen</span>
+                                        </li>
+                                        <li class="li2">
+                                            <span class="s1">Kontaktdaten</span>
+                                        </li>
+                                    </ul>
+                                    <p class="p3"><span class="s2"><b>Diese Details peppen ein Exposé optional zusätzlich auf:</b><b></b></span></p>
+                                    <p class="p2"><span class="s1">Wertgutachten eines Immobiliensachverständigen</span></p>
+                                    <p class="p2"><span class="s1">Drohnenaufnahmen (Luftaufnahmen, Videos)</span></p>
+                                    <p class="p2"><span class="s1">3D-Visualisierungen</span></p>
+                                    <p class="p2"><span class="s1">Visualisierte 360° Rundgänge</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="border border-stone-200 rounded-xl bg-white overflow-hidden shadow-xs hover:shadow-md hover:border-img_red-200 transition-all duration-300">
+                            <button class="accordion-button flex w-full items-center justify-between px-6 py-5 text-left bg-white hover:bg-stone-50 transition-colors duration-200 group" data-image="4">
+                                <span class="font-semibold text-lg text-zinc-700 tracking-tight transition-colors group-hover:text-img_red-500">Wie muss ein werbewirksames Exposé gestaltet sein?</span>
+                                <span class="flex items-center justify-center w-10 h-10 rounded-full bg-stone-100 text-stone-500 group-hover:bg-img_red-50 group-hover:text-img_red-500 transition-all"> <svg class="icon w-5 h-5 transition-transform duration-300 ease-out shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg> </span>
+                            </button>
+                            <div class="accordion-content hidden opacity-0 transition-opacity duration-300 ease-in-out">
+                                <div class="pb-10 pl-8 prose">
+                                    <p>Der erste Eindruck zählt – das gilt auch für ein Exposé. Bei der professionellen Exposéerstellung fürs Immobilienmarketing muss deshalb nicht nur auf die Inhalte, sondern auch auf eine ansprechende Form geachtet werden. Eine ästhetische Gestaltung unterstützt die Werbewirksamkeit des Exposés. Folgender Aufbau hat sich bei der Exposéerstellung bewährt:</p>
+                                    <h4>1. Deckblatt:</h4>
+                                    <p>Auf dem Deckblatt sollte eine Überschrift die Besonderheit der Immobilie in wenigen Worten zusammenfassen, wie „Großzügiges Einfamilienhaus mit Kitas und Schulen in Laufnähe“, „Energiesparhaus mit freiem Blick ins Grüne“ oder „Single-Wohnung mit eigenem Garten“. Ergänzt wird die Überschrift durch ein aussagekräftiges Foto der Immobilie, wobei möglichst die wichtigsten Merkmale bei der Exposéerstellung mit erfasst werden sollten. Für eine bessere Übersicht können auf dem Deckblatt stichpunktartig auch die wichtigsten Eckdaten genannt werden, wie Wohnfläche, Zimmeranzahl und Kaufpreis</p>
+                                    <h4>2. Informationsteil:</h4>
+                                    <p>Im Informationsteil des Exposés werden die oben genannten wichtigen und optionalen Details untergebracht. Dem Texteschreiben für Exposés sollte besondere Aufmerksamkeit geschenkt werden. Vor allem bei der Beschreibung von Standort, Umgebung, Grundstück, Objekt und Eigenschaften der Immobilie ist ein Fließtext vorzuziehen, Aufzählungen wirken weniger ansprechend. Es sollte eine schöne Sprache mit beschreibenden Adjektiven gewählt werden, die Lust aufs Wohnen und/oder Arbeiten in dieser Immobilie macht, wobei der Text immer realistisch und möglichst kurz bleiben sollte. Die Texte werden dann ergänzt durch verschiedene Visualisierungen. Hier bieten sich zum Beispiel Immobilienfotos von außen und innen, 3D-Visualisierungen oder 2D-Pläne wie Lagepläne oder Grundrisse an. Für ein Exposé im Internet kommen beim Immobilienmarketing zudem 360° Rundgänge und Drohnenaufnahmen zum Einsatz. Texte und Bilder müssen eine ästhetische Einheit bilden, um Kaufinteressenten von der Vertrauenswürdigkeit des Verkäufers zu überzeugen, sodass ein professionelles Layout besonders wichtig ist.</p>
+                                    <h4>3. Zusammenfassung:</h4>
+                                    <p>Nicht jeder potenzielle Kaufinteressent hat Lust, die komplette Beschreibung zu lesen, um die wichtigsten Infos zu finden. Deshalb sollte die letzte Seite bzw. Rückseite des Exposés noch mal eine Zusammenfassung der wichtigsten Fakten rund um die Immobilie enthalten, aber auch Informationen zu Besichtigungsmöglichkeiten und die Kontaktdaten. Dadurch gibt das Exposé Kaufinteressenten einen guten Anstoß, sich um einen Besichtigungstermin für ebendiese Immobilie zu kümmern.</p>
+                                    <p>Sie möchten die Exposéerstellung für Ihr Immobilienmarketing in professionelle Hände legen, um noch mehr Kaufinteressenten aus Berlin und Brandenburg anzulocken? Immobiliengeflüster steht Ihnen gerne mit Rat und Tat zur Seite.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="border-img_gray-50 border-t px-5 w-full"></div>
-                    <p class="font-semibold italic leading-snug mb-5 mt-2 text-balance text-center text-img_red-500 text-lg">Vorteile:</p>
-                    <ul class="content-center flex flex-col flex-wrap justify-end max-w-5xl place-content-start place-items-start space-x-6 space-y-2 md:flex-row md:justify-center lg:justify-center">
-                        <li list="item" class="flex flex-row font-semibold gap-2 items-center text-img_red-500 md:items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <path d="M22 4 12 14.01l-3-3"></path>
-                            </svg>
-                            <ul>
-                                <li class="font-normal">Mehr qualifizierte Anfragen</li>
-                            </ul>
-                        </li>
-                        <li list="item" class="flex flex-row font-semibold gap-2 items-center text-img_red-500 md:items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <path d="M22 4 12 14.01l-3-3"></path>
-                            </svg>
-                            <ul>
-                                <li class="font-normal">Höhere Verkaufspreise</li>
-                            </ul>                             
-                        </li>
-                        <li list="item" class="flex flex-row font-semibold gap-2 items-center text-img_red-500 md:items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <path d="M22 4 12 14.01l-3-3"></path>
-                            </svg>
-                            <ul>
-                                <li class="font-normal">professioneller Auftritt</li>
-                            </ul>                             
-                        </li>
-                        <li list="item" class="flex flex-row font-semibold gap-2 items-center text-img_red-500 md:items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" version="1.1">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <path d="M22 4 12 14.01l-3-3"></path>
-                            </svg>
-                            <ul>
-                                <li class="font-normal">Stärkere Marktposition</li>
-                            </ul>                             
-                        </li>
-                    </ul>
+                    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+    
+    accordionButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Toggle current item
+        const content = this.nextElementSibling;
+        const isOpen = content.classList.contains('block');
+        const icon = this.querySelector('.icon');
+        
+        if (isOpen) {
+          // Close this item
+          content.classList.remove('block');
+          content.classList.add('hidden');
+          content.classList.remove('opacity-100');
+          content.classList.add('opacity-0');
+          icon.classList.remove('rotate-180');
+        } else {
+          // Open this item
+          content.classList.remove('hidden');
+          content.classList.add('block');
+          setTimeout(() => {
+            content.classList.remove('opacity-0');
+            content.classList.add('opacity-100');
+          }, 10);
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
                 </div>
             </section>
         </main>

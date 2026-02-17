@@ -1,0 +1,10 @@
+/* Reviews slider - scrollbar hide & touch scrolling (Tailwind doesn't provide these) */
+.reviews-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.reviews-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
